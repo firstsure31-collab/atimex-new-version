@@ -46,7 +46,7 @@
     .ambient.c { width: 180px; height: 180px; background: #1fc47a; bottom: -100px; left: 38%; animation-delay: -8s; }
     @keyframes drift { from { transform: translate3d(0,0,0) scale(.9); } to { transform: translate3d(35px,-45px,0) scale(1.15); } }
 
-    .app-shell { width: 100%; max-width: 490px; min-height: 100vh; margin: 0 auto; position: relative; z-index: 1; padding-bottom: 104px; }
+    .app-shell { width: 100%; max-width: 390px; min-height: 100vh; margin: 0 auto; position: relative; z-index: 1; padding-bottom: 104px; }
     .topbar {
       position: sticky; top: 0; z-index: 30; height: 76px; padding: 12px 19px;
       display: flex; justify-content: space-between; align-items: center;
@@ -186,7 +186,7 @@
     .logout .menu-ico { background: #fff0ed; color: #d47d6f; }
 
     /* Bottom navigation */
-    .bottom-nav { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); z-index: 40; width: min(100%,490px); padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); display: grid; grid-template-columns: repeat(5,1fr); align-items: end; background: rgba(255,255,255,.91); backdrop-filter: blur(20px); border-top: 1px solid #e6f0e9; box-shadow: 0 -10px 35px rgba(24,87,51,.07); }
+    .bottom-nav { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); z-index: 40; width: min(100%,390px); padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); display: grid; grid-template-columns: repeat(5,1fr); align-items: end; background: rgba(255,255,255,.91); backdrop-filter: blur(20px); border-top: 1px solid #e6f0e9; box-shadow: 0 -10px 35px rgba(24,87,51,.07); }
     .nav-btn { border: 0; background: transparent; color: #9baa9f; font-family: 'DM Sans',sans-serif; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px; padding: 3px 2px 1px; min-width: 0; cursor: pointer; transition: .2s; }
     .nav-btn i { font-size: 17px; }
     .nav-btn span { font-size: 8px; font-weight: 800; }
@@ -211,17 +211,119 @@
     @media (min-width: 700px) { body { padding: 18px 0; } .app-shell { min-height: calc(100vh - 36px); border: 1px solid #e5f0e8; border-radius: 30px; overflow: hidden; background: rgba(250,254,251,.42); box-shadow: 0 25px 85px rgba(33,94,59,.08); } .topbar { border-radius: 30px 30px 0 0; } .bottom-nav { bottom: 18px; border-radius: 0 0 30px 30px; } main { padding-left: 20px; padding-right: 20px; } }
     @media (max-width: 360px) { main { padding-left: 12px; padding-right: 12px; } .page-title { font-size: 21px; } .balance-amount { font-size: 28px; } .stats-grid { gap: 6px; } .stat-card { padding: 11px 7px; } .stat-value { font-size: 13px; } .plan-card { padding: 12px; } }
     @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+
+    /* Reference-inspired centered header and profile dashboard */
+    .topbar { justify-content:center; }
+    .topbar .brand { position:absolute; left:50%; transform:translateX(-50%); gap:8px; }
+    .topbar .logo-orbit { width:34px; height:34px; border-radius:11px; padding:1.7px; }
+    .topbar .logo-inner { border-radius:9px; }
+    .topbar .logo-inner i { font-size:15px; }
+    .topbar .brand-name { font-size:17px; letter-spacing:-.2px; }
+    .topbar .brand-sub { display:none; }
+    .header-side { position:absolute; left:15px; }
+    .top-actions { position:absolute; right:15px; }
+    .profile-headline { display:flex; align-items:center; justify-content:space-between; }
+    .profile-headline .page-title { font-size:21px; }
+    .profile-cover { text-align:left; padding:18px 16px 15px; margin-top:15px; background:linear-gradient(125deg,#fff 0%,#f5fcf8 100%); border-radius:23px; position:relative; overflow:hidden; }
+    .profile-cover::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#0b4033,#119b62,#b4db56); }
+    .profile-main-row { display:flex; align-items:center; gap:12px; position:relative; }
+    .profile-avatar { width:66px; height:66px; flex:0 0 auto; margin:0; border:3px solid #fff; border-radius:50%; background:linear-gradient(145deg,#152b25,#0f7651); color:#d7ffdf; box-shadow:0 5px 16px rgba(13,61,40,.18),0 0 0 2px #203c31; font-size:23px; }
+    .profile-identity { min-width:0; flex:1; }
+    .profile-identity h3 { margin:0; font:900 14px 'Plus Jakarta Sans',sans-serif; color:#162e23; }
+    .profile-identity p { margin:4px 0 7px; color:#7f9187; font-size:9px; overflow-wrap:anywhere; }
+    .profile-identity p i { color:#119b62; margin-right:4px; }
+    .profile-status-warning { display:inline-flex; align-items:center; gap:5px; padding:5px 8px; border-radius:30px; color:#fff; background:#f04449; font-size:7px; font-weight:900; letter-spacing:.55px; box-shadow:0 4px 10px rgba(240,68,73,.14); }
+    .profile-edit { width:31px; height:31px; position:absolute; right:0; top:0; border:1px solid #e4eee7; border-radius:50%; background:#fff; color:#1c4a32; box-shadow:0 4px 10px rgba(24,80,48,.07); cursor:pointer; }
+    .profile-divider { height:1px; background:linear-gradient(90deg,transparent,#e6eee8,transparent); margin:17px 0 13px; }
+    .profile-level-grid { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+    .profile-level-item { min-width:0; display:flex; align-items:center; gap:8px; border:1px solid #edf1f3; border-radius:14px; padding:9px; background:#f9fbfc; }
+    .level-icon { width:29px; height:29px; flex:0 0 auto; display:grid; place-items:center; border-radius:9px; background:#15202c; color:#27cf8a; font-size:12px; }
+    .level-icon.purple { color:#ad8dff; }
+    .profile-level-item small { display:block; color:#81918a; font-size:7px; font-weight:800; letter-spacing:.45px; }
+    .profile-level-item b { display:block; margin-top:3px; color:#243a2d; font-size:9px; }
+    .account-alert { display:flex; align-items:center; gap:9px; margin-top:12px; padding:10px; border:1px solid #ffddb5; background:#fff9f1; border-radius:14px; }
+    .alert-lock { width:33px; height:33px; flex:0 0 auto; display:grid; place-items:center; border-radius:11px; background:#fff0d8; color:#df8d30; font-size:13px; }
+    .alert-copy { flex:1; min-width:0; }
+    .alert-copy b { display:block; color:#b75e27; font-size:9px; }
+    .alert-copy small { display:block; margin-top:3px; color:#8b775f; font-size:7px; line-height:1.4; }
+    .activate-btn { flex:0 0 auto; border:0; border-radius:30px; padding:8px 10px; background:#172334; color:#fff; font-size:7px; font-weight:900; cursor:pointer; }
+    .revenue-card { min-height:90px; position:relative; display:flex; align-items:center; justify-content:space-between; gap:12px; overflow:hidden; margin-top:16px; padding:17px; border-radius:20px; background:linear-gradient(115deg,#191b20,#111a1c 72%,#241c0d); color:#fff; box-shadow:0 14px 28px rgba(14,28,23,.19); }
+    .revenue-card::before { content:''; position:absolute; inset:0; background:linear-gradient(130deg,transparent 28%,rgba(255,255,255,.04) 28.2%,transparent 55%); pointer-events:none; }
+    .revenue-card > div { position:relative; z-index:1; }
+    .revenue-card small { display:block; color:#a2a9aa; font-size:7px; font-weight:900; letter-spacing:1px; }
+    .revenue-card strong { display:block; margin-top:7px; color:#13c98c; font:900 24px 'Plus Jakarta Sans',sans-serif; letter-spacing:-.6px; text-shadow:0 0 13px rgba(19,201,140,.15); }
+    .revenue-card span { display:block; margin-top:3px; color:#7f8d87; font-size:7px; }
+    .cashout-btn { position:relative; z-index:2; border:0; border-radius:30px; background:linear-gradient(110deg,#0da77b,#17c78e); color:#fff; padding:11px 13px; font-size:8px; font-weight:900; box-shadow:0 6px 17px rgba(10,194,132,.28); cursor:pointer; }
+    .cashout-btn i { margin-right:4px; }
+    .revenue-watermark { position:absolute; right:100px; bottom:-11px; color:rgba(255,255,255,.035); font-size:75px; transform:rotate(-14deg); }
+    .profile-mini-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:9px; margin-top:10px; }
+    .profile-mini-stats > div { padding:12px 6px; text-align:center; border-radius:15px; background:#fff; border:1px solid #edf2ee; box-shadow:0 6px 18px rgba(29,74,48,.045); }
+    .profile-mini-stats small { display:block; color:#8a9b90; font-size:7px; font-weight:800; letter-spacing:.45px; }
+    .profile-mini-stats b { display:block; margin-top:5px; color:#243b2c; font:900 11px 'Plus Jakarta Sans',sans-serif; }
+    .profile-section-head { margin-top:22px; }
+    .profile-services { padding:5px 14px; border-radius:19px; box-shadow:0 8px 24px rgba(30,94,61,.045); }
+    .service-row { width:100%; display:flex; align-items:center; gap:11px; padding:12px 1px; border:0; border-bottom:1px solid #edf2ee; background:transparent; text-align:left; cursor:pointer; }
+    .service-row:last-child { border-bottom:0; }
+    .service-icon { width:34px; height:34px; flex:0 0 auto; display:grid; place-items:center; border-radius:11px; background:#def8e9; color:#109967; font-size:12px; }
+    .service-icon.mint { background:#e3f8f0; color:#0c9d77; }
+    .service-icon.gold { background:#fff3d7; color:#c99220; }
+    .service-icon.violet { background:#f0eaff; color:#8660d3; }
+    .service-icon.blue { background:#e7f2ff; color:#3985c7; }
+    .service-copy { flex:1; min-width:0; }
+    .service-copy b { display:block; color:#283b30; font-size:10px; }
+    .service-copy small { display:block; margin-top:3px; color:#94a198; font-size:7px; }
+    .service-row > i { color:#bfcbc3; font-size:9px; }
+    .service-row.logout .service-icon { background:#fff0ed; color:#d47d6f; }
+    .service-row.logout .service-copy b { color:#be756b; }
+
+    /* Standalone registration preview based on the supplied reference screen. */
+    .auth-screen { display:none; position:fixed; inset:0; z-index:100; overflow-y:auto; background:#eef2ef; color:#142b21; padding:0 12px 26px; }
+    .auth-screen.show { display:block; animation:authFade .22s ease both; }
+    @keyframes authFade { from { opacity:0; } to { opacity:1; } }
+    .auth-shell { width:min(100%,390px); min-height:100vh; margin:0 auto; background:#fffdfa; box-shadow:0 0 38px rgba(24,61,39,.08); }
+    .auth-topbar { height:60px; padding:0 15px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #e9eee9; background:rgba(255,253,250,.96); }
+    .auth-icon { width:35px; height:35px; display:grid; place-items:center; border:1px solid #e9eee9; border-radius:50%; background:#fff; color:#119b74; cursor:pointer; }
+    .auth-brand { display:flex; align-items:center; gap:8px; color:#079b76; font:800 17px 'Plus Jakarta Sans',sans-serif; }
+    .auth-brand-icon { width:28px; height:28px; display:grid; place-items:center; border-radius:50%; background:#e6faf3; color:#0a9d77; font-size:12px; }
+    .auth-content { padding:13px 16px 24px; }
+    .auth-secure { display:flex; align-items:center; justify-content:center; gap:6px; width:max-content; margin:0 auto 15px; padding:7px 12px; border:1px solid #bdf0df; border-radius:30px; background:#effdf8; color:#079a78; font-size:8px; font-weight:900; letter-spacing:.6px; }
+    .auth-secure i { font-size:6px; }
+    .auth-content h1 { margin:0; text-align:center; color:#142a45; font:900 21px Georgia,serif; line-height:1.2; }
+    .auth-intro { max-width:295px; margin:13px auto 21px; color:#718091; text-align:center; font-size:10px; line-height:1.8; }
+    .auth-form { position:relative; overflow:hidden; padding:20px 15px 15px; border:1px solid #e9e8e0; border-radius:23px; background:#fff; box-shadow:0 9px 19px rgba(35,50,40,.07); }
+    .auth-form::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,#0b8f69,#17b886,#6bd49a); }
+    .auth-form label { display:block; margin:0 0 7px; color:#18334e; font-size:8px; font-weight:900; letter-spacing:.25px; }
+    .auth-input-wrap { height:45px; display:flex; align-items:center; gap:11px; margin-bottom:13px; padding:0 13px; border:1px solid #e4e9ee; border-radius:14px; background:#f7f9fb; }
+    .auth-input-wrap i { width:14px; color:#079d7b; font-size:12px; text-align:center; }
+    .auth-input-wrap input { min-width:0; width:100%; height:100%; border:0; outline:0; background:transparent; color:#233b4e; font:500 10px 'DM Sans',sans-serif; }
+    .auth-input-wrap input::placeholder { color:#9aa7b6; }
+    .auth-submit { min-height:45px; margin-top:1px; border-radius:13px; }
+    .auth-or { display:flex; align-items:center; gap:10px; margin:14px 0; color:#92a0ac; font-size:8px; }
+    .auth-or span { height:1px; flex:1; background:#e8edf0; }
+    .auth-google { width:100%; height:43px; display:flex; align-items:center; justify-content:center; gap:9px; border:1px solid #e4e9ee; border-radius:13px; background:#f8fafc; color:#273b50; font:700 10px 'DM Sans',sans-serif; cursor:pointer; }
+    .auth-google i { color:#4285f4; font-size:14px; }
+    .auth-login-line { margin:13px 0 0; text-align:center; color:#84928b; font-size:9px; }
+    .auth-login-line button { border:0; padding:0; background:transparent; color:#099a72; font-weight:900; cursor:pointer; }
+    .auth-security-note { display:flex; align-items:center; gap:11px; margin-top:18px; padding:14px; border-radius:18px; background:#142541; color:#fff; }
+    .auth-security-note > span { width:37px; height:37px; flex:0 0 auto; display:grid; place-items:center; border-radius:12px; background:#fff; color:#0c9c76; font-size:16px; }
+    .auth-security-note b { display:block; font-size:10px; }
+    .auth-security-note small { display:block; margin-top:4px; color:#c1cfdd; font-size:8px; line-height:1.55; }
+    .auth-preview-note { margin:15px 0 0; text-align:center; color:#a5b2aa; font-size:7px; font-weight:800; letter-spacing:.75px; }
+    @media (min-width:700px) { .auth-screen { padding-top:0; } .auth-shell { min-height:100vh; } }
+    @media (max-width:370px) { .account-alert { gap:6px; padding:8px; } .activate-btn { padding:7px 8px; font-size:6px; } .profile-level-item { padding:7px; gap:6px; } .profile-level-item b { font-size:8px; } }
+
   </style>
 </head>
 <body>
   <div class="ambient a"></div><div class="ambient b"></div><div class="ambient c"></div>
   <div class="app-shell">
     <header class="topbar">
+      <button class="icon-btn header-side" aria-label="Help and support" onclick="openAction('ATIMEX Support','Support information and contact options will be added in a later step.')"><i class="fa-solid fa-headset"></i></button>
       <div class="brand">
         <div class="logo-orbit"><div class="logo-inner"><i class="fa-solid fa-bolt"></i></div></div>
         <div><div class="brand-name">ATIMEX</div><div class="brand-sub">EARN · GROW · REWARD</div></div>
       </div>
-      <div class="top-actions"><span class="preview-pill">DESIGN PREVIEW</span><button class="icon-btn" aria-label="Notifications" onclick="openAction('Notifications','Your account updates and important notices will appear here.')"><i class="fa-regular fa-bell"></i><span class="dot"></span></button></div>
+      <div class="top-actions"><button class="icon-btn" aria-label="Notifications" onclick="openAction('Notifications','Your account updates and important notices will appear here.')"><i class="fa-regular fa-bell"></i><span class="dot"></span></button></div>
     </header>
 
     <main>
@@ -303,21 +405,44 @@
 
       <!-- PROFILE TAB -->
       <section id="tabProfile" class="page">
-        <div class="eyebrow">YOUR ATIMEX ACCOUNT</div><h1 class="page-title">My Profile</h1><p class="page-subtitle">Manage your details and personal account settings.</p>
-        <div class="card profile-cover"><div class="profile-avatar"><i class="fa-solid fa-user"></i></div><h3>Member Name</h3><p>member@example.com · ATIMEX Member</p><span class="verified"><i class="fa-solid fa-circle-check"></i> ACTIVE MEMBER</span></div>
-        <div class="section-head"><h2 class="section-title">Account Overview</h2><span class="eyebrow">SAMPLE DETAILS</span></div>
-        <div class="stats-grid"><div class="card stat-card"><div class="stat-icon"><i class="fa-solid fa-wallet"></i></div><div class="stat-value">৳2,450</div><div class="stat-label">BALANCE</div></div><div class="card stat-card"><div class="stat-icon"><i class="fa-solid fa-box"></i></div><div class="stat-value">02</div><div class="stat-label">PACKAGES</div></div><div class="card stat-card"><div class="stat-icon"><i class="fa-solid fa-users"></i></div><div class="stat-value">12</div><div class="stat-label">REFERRALS</div></div></div>
-        <div class="section-head"><h2 class="section-title">Account Settings</h2></div>
-        <div class="card profile-menu">
-          <div class="menu-row" onclick="openAction('Edit Profile','Nickname, profile photo and contact details can be edited in this section later.')"><div class="menu-ico"><i class="fa-regular fa-user"></i></div><b>Edit Profile</b><i class="fa-solid fa-chevron-right"></i></div>
-          <div class="menu-row" onclick="openAction('Active Packages','Your active server packages and expiry dates will be listed here.')"><div class="menu-ico"><i class="fa-solid fa-cubes"></i></div><b>Active Packages</b><i class="fa-solid fa-chevron-right"></i></div>
-          <div class="menu-row" onclick="openAction('Daily Claim Calendar','Your monthly daily claim calendar will be shown here.')"><div class="menu-ico"><i class="fa-regular fa-calendar-check"></i></div><b>Daily Claim History</b><i class="fa-solid fa-chevron-right"></i></div>
-          <div class="menu-row" onclick="openAction('Refer & Earn','Your referral link, referred members and earned rewards will be shown here.')"><div class="menu-ico"><i class="fa-solid fa-user-group"></i></div><b>Refer & Earn</b><i class="fa-solid fa-chevron-right"></i></div>
-          <div class="menu-row" onclick="openAction('Transaction History','Your wallet deposits, withdrawals and package transactions will be listed here.')"><div class="menu-ico"><i class="fa-solid fa-clock-rotate-left"></i></div><b>Transaction History</b><i class="fa-solid fa-chevron-right"></i></div>
-          <div class="menu-row" onclick="openAction('Help & Support','Support links and contact information will be added here.')"><div class="menu-ico"><i class="fa-regular fa-circle-question"></i></div><b>Help & Support</b><i class="fa-solid fa-chevron-right"></i></div>
-          <div class="menu-row logout" onclick="openAction('Log Out','The real sign-out action will be connected after authentication setup.')"><div class="menu-ico"><i class="fa-solid fa-arrow-right-from-bracket"></i></div><b>Log Out</b><i class="fa-solid fa-chevron-right"></i></div>
+        <div class="profile-headline"><div><div class="eyebrow">PERSONAL ACCOUNT</div><h1 class="page-title">My Profile</h1></div><button class="icon-btn" aria-label="Edit profile" onclick="openAction('Edit Profile','Profile editing will be connected after authentication and database setup.')"><i class="fa-solid fa-pen"></i></button></div>
+        <div class="card profile-cover">
+          <div class="profile-main-row">
+            <div class="profile-avatar"><i class="fa-solid fa-user"></i></div>
+            <div class="profile-identity"><h3>ATIMEX MEMBER</h3><p><i class="fa-regular fa-envelope"></i> member@example.com</p><span class="profile-status-warning"><i class="fa-solid fa-triangle-exclamation"></i> ACTION REQUIRED</span></div>
+            <button class="profile-edit" aria-label="Edit profile" onclick="openAction('Edit Profile','Nickname and profile settings will be connected later.')"><i class="fa-solid fa-pen"></i></button>
+          </div>
+          <div class="profile-divider"></div>
+          <div class="profile-level-grid">
+            <div class="profile-level-item"><span class="level-icon"><i class="fa-solid fa-crown"></i></span><div><small>ACCOUNT LEVEL</small><b>Basic Member</b></div></div>
+            <div class="profile-level-item"><span class="level-icon purple"><i class="fa-solid fa-award"></i></span><div><small>DESIGNATION</small><b>Not Active</b></div></div>
+          </div>
+          <div class="account-alert"><span class="alert-lock"><i class="fa-solid fa-lock"></i></span><div class="alert-copy"><b>Account Not Active</b><small>Activate your account to unlock member features.</small></div><button class="activate-btn" onclick="openAction('Activate Account','Account activation and payment will be connected after the final workflow is confirmed.')">Activate Now</button></div>
         </div>
-        <div class="foot-note">ATIMEX · Version 2.0 design concept</div>
+
+        <div class="revenue-card">
+          <div><small>TOTAL REVENUE</small><strong>৳ 0.00</strong><span>All-time rewards overview</span></div>
+          <button class="cashout-btn" onclick="openAction('Cashout','Withdrawal eligibility and request flow will be connected later.')"><i class="fa-solid fa-paper-plane"></i> CASHOUT</button>
+          <i class="fa-solid fa-chart-line revenue-watermark"></i>
+        </div>
+
+        <div class="profile-mini-stats">
+          <div><small>MAIN BALANCE</small><b>৳0.00</b></div>
+          <div><small>PACKAGE</small><b>৳0.00</b></div>
+          <div><small>REFERRAL</small><b>৳0.00</b></div>
+        </div>
+
+        <div class="section-head profile-section-head"><h2 class="section-title">Financial Services</h2><span class="eyebrow">ACCOUNT TOOLS</span></div>
+        <div class="card profile-services">
+          <button class="service-row" onclick="switchTab('tabWallet')"><span class="service-icon"><i class="fa-solid fa-wallet"></i></span><span class="service-copy"><b>Wallet</b><small>Manage your balance and transactions</small></span><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="service-row" onclick="switchTab('tabServer')"><span class="service-icon mint"><i class="fa-solid fa-cubes"></i></span><span class="service-copy"><b>Active Packages</b><small>View your packages and plan details</small></span><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="service-row" onclick="openAction('Daily Claim','Your daily reward calendar will be connected here.')"><span class="service-icon gold"><i class="fa-solid fa-calendar-check"></i></span><span class="service-copy"><b>Daily Claim</b><small>Check your daily reward status</small></span><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="service-row" onclick="switchTab('tabTasks')"><span class="service-icon violet"><i class="fa-solid fa-ranking-star"></i></span><span class="service-copy"><b>Referral Leaderboard</b><small>See member activity and rankings</small></span><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="service-row" onclick="openAction('Transaction History','Your completed wallet transactions will be listed here after database connection.')"><span class="service-icon blue"><i class="fa-solid fa-clock-rotate-left"></i></span><span class="service-copy"><b>Transaction History</b><small>Review deposits, withdrawals and rewards</small></span><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="service-row" onclick="openRegisterPreview()"><span class="service-icon"><i class="fa-solid fa-user-plus"></i></span><span class="service-copy"><b>Registration Screen Preview</b><small>Open the new member registration design</small></span><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="service-row logout" onclick="openAction('Log Out','Sign out will be connected when authentication is added.')"><span class="service-icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span><span class="service-copy"><b>Log Out</b><small>Sign out of your ATIMEX account</small></span><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <div class="foot-note">ATIMEX · Premium member experience</div>
       </section>
     </main>
 
@@ -336,6 +461,40 @@
       <p id="modalBody"></p><button class="gbtn full" onclick="closeAction()">Got it</button>
     </div>
   </div>
+
+  <section class="auth-screen" id="registerPreview" aria-label="Registration screen preview">
+    <div class="auth-shell">
+      <header class="auth-topbar">
+        <button class="auth-icon" aria-label="Back to app" onclick="closeRegisterPreview()"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="auth-brand"><span class="auth-brand-icon"><i class="fa-solid fa-chart-line"></i></span><b>ATIMEX</b></div>
+        <button class="auth-icon" aria-label="Support" onclick="openAction('ATIMEX Support','Support options will be connected later.')"><i class="fa-solid fa-headset"></i></button>
+      </header>
+      <div class="auth-content">
+        <span class="auth-secure"><i class="fa-solid fa-circle"></i> SECURE REGISTRATION</span>
+        <h1>CREATE YOUR ATIMEX<br>ACCOUNT</h1>
+        <p class="auth-intro">Join ATIMEX and start your progress journey with a secure member account.</p>
+        <form class="auth-form" onsubmit="submitRegisterPreview(event)">
+          <label for="regName">FULL NAME</label>
+          <div class="auth-input-wrap"><i class="fa-regular fa-user"></i><input id="regName" name="name" autocomplete="name" placeholder="Enter your name" required></div>
+          <label for="regEmail">EMAIL ADDRESS</label>
+          <div class="auth-input-wrap"><i class="fa-regular fa-envelope"></i><input id="regEmail" name="email" type="email" autocomplete="email" placeholder="Enter your email" required></div>
+          <label for="regMobile">MOBILE NUMBER</label>
+          <div class="auth-input-wrap"><i class="fa-solid fa-mobile-screen-button"></i><input id="regMobile" name="mobile" inputmode="numeric" autocomplete="tel" placeholder="01XXXXXXXXX" required></div>
+          <label for="regPassword">PASSWORD</label>
+          <div class="auth-input-wrap"><i class="fa-solid fa-lock"></i><input id="regPassword" name="password" type="password" autocomplete="new-password" placeholder="Create password" required></div>
+          <label for="regConfirm">CONFIRM PASSWORD</label>
+          <div class="auth-input-wrap"><i class="fa-solid fa-shield-halved"></i><input id="regConfirm" name="confirm" type="password" autocomplete="new-password" placeholder="Confirm password" required></div>
+          <button class="gbtn full auth-submit" type="submit">CREATE ACCOUNT</button>
+          <div class="auth-or"><span></span> OR <span></span></div>
+          <button class="auth-google" type="button" onclick="showToast('Google sign-in will be connected later.')"><i class="fa-brands fa-google"></i> Continue with Google</button>
+          <p class="auth-login-line">Already have an account? <button type="button" onclick="showToast('Login screen will be added in the next step.')">Log in</button></p>
+        </form>
+        <div class="auth-security-note"><span><i class="fa-solid fa-shield-halved"></i></span><div><b>Secure ATIMEX Account</b><small>Your member profile and account features will be protected by secure sign-in.</small></div></div>
+        <p class="auth-preview-note">DESIGN PREVIEW · Registration is not connected to a live account system.</p>
+      </div>
+    </div>
+  </section>
+
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script>
@@ -366,7 +525,30 @@
       clearTimeout(toastTimer);
       toastTimer = setTimeout(() => toast.classList.remove('show'), 2300);
     }
-    document.addEventListener('keydown', event => { if (event.key === 'Escape') closeAction(); });
+
+    function openRegisterPreview() {
+      const screen = document.getElementById('registerPreview');
+      if (!screen) return;
+      screen.classList.add('show');
+      document.body.style.overflow = 'hidden';
+      screen.scrollTop = 0;
+    }
+    function closeRegisterPreview() {
+      document.getElementById('registerPreview')?.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+    function submitRegisterPreview(event) {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const password = form.querySelector('#regPassword')?.value || '';
+      const confirm = form.querySelector('#regConfirm')?.value || '';
+      if (password !== confirm) {
+        showToast('Password and confirm password do not match.');
+        return;
+      }
+      showToast('Registration design preview only — account creation is not connected.');
+    }
+    document.addEventListener('keydown', event => { if (event.key === 'Escape') { closeAction(); closeRegisterPreview(); } });
   </script>
 </body>
 </html>
