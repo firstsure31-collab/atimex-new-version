@@ -414,57 +414,28 @@
     .splash-particle:nth-of-type(7) { left:7%; top:46%; animation-delay:-2.7s; }
     .splash-particle:nth-of-type(8) { left:94%; top:47%; animation-delay:-1.4s; }
     @keyframes particleRise { 0%,100% { transform:translate3d(0,0,0) scale(.65); opacity:.25; } 50% { transform:translate3d(9px,-34px,0) scale(1.5); opacity:1; } }
-    /* Glass-block shatter that carries the ATIMEX lettering outward */
-    .splash-word.shatter-source-hidden { opacity:0; filter:blur(4px); transition:opacity .12s ease,filter .3s ease; }
-    .splash-shards { position:absolute; inset:0; z-index:12; overflow:visible; pointer-events:none; }
-    .splash-shard {
-      position:absolute; display:block; overflow:hidden; transform-style:preserve-3d;
-      border:1px solid rgba(226,255,237,.48);
-      box-shadow:inset 0 0 7px rgba(255,255,255,.22),0 0 8px rgba(45,255,145,.24);
-      opacity:.98; mix-blend-mode:screen; will-change:transform,opacity,filter;
-      backface-visibility:hidden;
-      animation:splashGlassFly 1.12s cubic-bezier(.16,.74,.18,1) var(--shard-delay,0s) forwards;
+    /* Prebuilt single-canvas glass transition: no DOM burst at the final moment */
+    .splash-word.shatter-source-hidden { opacity:0; visibility:hidden; }
+    .splash-shatter-canvas {
+      position:absolute; inset:0; z-index:12; display:block; width:100%; height:100%;
+      pointer-events:none; opacity:0; transition:opacity .12s ease-out;
     }
-    .splash-shard::after {
-      content:""; position:absolute; inset:0; pointer-events:none;
-      background:linear-gradient(118deg,rgba(255,255,255,.58),transparent 31%,rgba(132,255,190,.2) 68%,rgba(255,255,255,.12));
-      opacity:.7;
+    .splash-shatter-canvas.active { opacity:1; }
+    #atimexSplash.shattering { background:transparent; transition:background .9s ease; }
+    #atimexSplash.shattering::before,#atimexSplash.shattering::after {
+      opacity:0; transition:opacity .72s ease;
     }
-    @keyframes splashGlassFly {
-      0% {
-        opacity:.98;
-        transform:perspective(700px) translate3d(0,0,0) rotate3d(0,0,1,0) scale(1);
-        filter:brightness(1.35) saturate(1.25) blur(0);
-      }
-      16% { opacity:1; }
-      100% {
-        opacity:0;
-        transform:perspective(700px) translate3d(var(--fly-x),var(--fly-y),var(--fly-z)) rotate3d(var(--rot-x),var(--rot-y),.35,var(--spin)) scale(.18);
-        filter:brightness(1.75) saturate(1.5) blur(3px);
-      }
-    }
-    .splash-shatter-flash {
-      position:absolute; z-index:13; left:50%; top:50%; width:min(74vw,360px); height:2px;
-      pointer-events:none; transform:translate(-50%,-50%) scaleX(0);
-      background:linear-gradient(90deg,transparent,#eafff1 35%,#75ffae 50%,#fff 62%,transparent);
-      box-shadow:0 0 16px 4px rgba(72,255,153,.55);
-      animation:splashFlash .52s cubic-bezier(.18,.7,.18,1) forwards;
-    }
-    @keyframes splashFlash {
-      0% { opacity:0; transform:translate(-50%,-50%) scaleX(0); }
-      24% { opacity:1; transform:translate(-50%,-50%) scaleX(1); }
-      100% { opacity:0; transform:translate(-50%,-50%) scaleX(.35); }
-    }
-    #atimexSplash.shattering::before,#atimexSplash.shattering::after { opacity:0; transition:opacity .62s ease; }
     #atimexSplash.shattering .splash-aura,
     #atimexSplash.shattering .splash-orbit,
     #atimexSplash.shattering .splash-particle,
     #atimexSplash.shattering .splash-center > :not(.splash-word) {
-      opacity:0; filter:blur(8px); transition:opacity .42s ease,filter .5s ease;
+      opacity:0; filter:blur(5px); transform:scale(.94);
+      transition:opacity .48s ease,filter .55s ease,transform .65s cubic-bezier(.2,.7,.2,1);
     }
-    #atimexSplash.leaving { animation:splashLeave .68s cubic-bezier(.22,.72,.22,1) forwards; pointer-events:none; }
-    @keyframes splashLeave { to { opacity:0; visibility:hidden; transform:scale(1.06); filter:blur(7px); } }
-
+    #atimexSplash.leaving {
+      opacity:0; visibility:hidden; transition:opacity .24s ease,visibility .24s ease;
+      pointer-events:none;
+    }
     /* Auth welcome screen: registration opens first, login is one tap away */
     .auth-screen { z-index:9990; background:radial-gradient(circle at 8% 4%,rgba(33,203,119,.13),transparent 30%),radial-gradient(circle at 95% 45%,rgba(96,225,147,.12),transparent 32%),#f3faf5; }
     .auth-shell { width:min(100%,420px); min-height:100vh; background:rgba(255,255,255,.96); border-left:1px solid rgba(223,241,229,.9); border-right:1px solid rgba(223,241,229,.9); }
@@ -811,107 +782,181 @@
     function googlePreview() {
       showToast('Continue with Google — Supabase Google Auth will be connected later.');
     }
-    function createATIMEXGlassShatter(splash) {
+    function prepareATIMEXGlassShatter(splash) {
       const word = splash?.querySelector('.splash-word');
-      if (!splash || !word) return;
-      const wordRect = word.getBoundingClientRect();
+      if (!splash || !word) return null;
+
       const splashRect = splash.getBoundingClientRect();
-      if (!wordRect.width || !wordRect.height) return;
+      const wordRect = word.getBoundingClientRect();
+      if (!wordRect.width || !wordRect.height) return null;
+
+      // Build the exact word texture and all shard physics while the intro is still playing.
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.25);
+      const texture = document.createElement('canvas');
+      texture.width = Math.max(1, Math.ceil(wordRect.width * dpr));
+      texture.height = Math.max(1, Math.ceil(wordRect.height * dpr));
+      const textureCtx = texture.getContext('2d', { alpha:true });
+      if (!textureCtx) return null;
+
+      textureCtx.scale(dpr, dpr);
+      textureCtx.textBaseline = 'top';
+      textureCtx.shadowColor = 'rgba(31,255,139,.65)';
+      textureCtx.shadowBlur = 9;
+      const gradient = textureCtx.createLinearGradient(0, 0, 0, wordRect.height);
+      gradient.addColorStop(0, '#f5fff8');
+      gradient.addColorStop(.24, '#9effc3');
+      gradient.addColorStop(.54, '#23e987');
+      gradient.addColorStop(1, '#078a4d');
+      textureCtx.fillStyle = gradient;
 
       const letters = Array.from(word.querySelectorAll('.splash-letter'));
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      const canvas = document.createElement('canvas');
-      canvas.width = Math.max(1, Math.ceil(wordRect.width * dpr));
-      canvas.height = Math.max(1, Math.ceil(wordRect.height * dpr));
-      const ctx = canvas.getContext('2d');
-      let texture = '';
-      if (ctx) {
-        ctx.scale(dpr, dpr);
-        ctx.textBaseline = 'top';
-        const firstStyle = getComputedStyle(letters[0]);
-        ctx.font = firstStyle.fontWeight + ' ' + firstStyle.fontSize + ' ' + firstStyle.fontFamily;
-        const fill = ctx.createLinearGradient(0, 0, 0, wordRect.height);
-        fill.addColorStop(0, '#f5fff8');
-        fill.addColorStop(.24, '#9effc3');
-        fill.addColorStop(.54, '#23e987');
-        fill.addColorStop(1, '#078a4d');
-        ctx.fillStyle = fill;
-        ctx.shadowColor = 'rgba(33,255,139,.7)';
-        ctx.shadowBlur = 12;
-        letters.forEach(letter => {
-          const rect = letter.getBoundingClientRect();
-          const style = getComputedStyle(letter);
-          ctx.font = style.fontWeight + ' ' + style.fontSize + ' ' + style.fontFamily;
-          ctx.fillText(letter.textContent || '', rect.left - wordRect.left, rect.top - wordRect.top - 2);
-        });
-        texture = canvas.toDataURL('image/png');
-      }
+      letters.forEach(letter => {
+        const rect = letter.getBoundingClientRect();
+        const style = getComputedStyle(letter);
+        textureCtx.font = style.font;
+        textureCtx.fillText(letter.textContent || '', rect.left - wordRect.left, rect.top - wordRect.top - 2);
+      });
 
-      const layer = document.createElement('div');
-      layer.className = 'splash-shards';
-      layer.setAttribute('aria-hidden', 'true');
-      const columns = Math.max(12, Math.ceil(wordRect.width / 19));
-      const rows = Math.max(4, Math.ceil(wordRect.height / 17));
-      const cellW = wordRect.width / columns;
-      const cellH = wordRect.height / rows;
-      const centerX = wordRect.width / 2;
-      const centerY = wordRect.height / 2;
+      const pixelData = textureCtx.getImageData(0, 0, texture.width, texture.height).data;
+      const columns = Math.max(15, Math.min(22, Math.round(wordRect.width / 19)));
+      const rows = Math.max(5, Math.min(8, Math.round(wordRect.height / 10)));
+      const cellW = texture.width / columns;
+      const cellH = texture.height / rows;
+      const originX = wordRect.left - splashRect.left;
+      const originY = wordRect.top - splashRect.top;
+      const centerX = originX + wordRect.width / 2;
+      const centerY = originY + wordRect.height / 2;
+      const shards = [];
 
       for (let row = 0; row < rows; row++) {
         for (let col = 0; col < columns; col++) {
-          const shard = document.createElement('span');
-          shard.className = 'splash-shard';
-          const left = col * cellW;
-          const top = row * cellH;
-          const centerOfX = left + cellW / 2;
-          const centerOfY = top + cellH / 2;
-          const vx = centerOfX - centerX;
-          const vy = centerOfY - centerY;
+          const sx = Math.floor(col * cellW);
+          const sy = Math.floor(row * cellH);
+          const sw = Math.max(1, Math.ceil(cellW));
+          const sh = Math.max(1, Math.ceil(cellH));
+          let visible = false;
+          for (let py = sy; py < Math.min(texture.height, sy + sh) && !visible; py += 3) {
+            for (let px = sx; px < Math.min(texture.width, sx + sw); px += 3) {
+              if (pixelData[(py * texture.width + px) * 4 + 3] > 18) {
+                visible = true;
+                break;
+              }
+            }
+          }
+          if (!visible) continue;
+
+          const x = originX + (sx + sw / 2) / dpr;
+          const y = originY + (sy + sh / 2) / dpr;
+          const vx = x - centerX;
+          const vy = y - centerY;
           const distance = Math.hypot(vx, vy) || 1;
-          const force = 70 + Math.random() * 145;
-          const driftX = (vx / distance) * force + (Math.random() - .5) * 55;
-          const driftY = (vy / distance) * force + (Math.random() - .5) * 48 - 18;
-          const spin = (Math.random() < .5 ? -1 : 1) * (85 + Math.random() * 310);
-
-          shard.style.left = (wordRect.left - splashRect.left + left) + 'px';
-          shard.style.top = (wordRect.top - splashRect.top + top) + 'px';
-          shard.style.width = (cellW + .8) + 'px';
-          shard.style.height = (cellH + .8) + 'px';
-          shard.style.setProperty('--fly-x', driftX.toFixed(1) + 'px');
-          shard.style.setProperty('--fly-y', driftY.toFixed(1) + 'px');
-          shard.style.setProperty('--fly-z', (35 + Math.random() * 145).toFixed(1) + 'px');
-          shard.style.setProperty('--rot-x', (Math.random() * 1.8 - .9).toFixed(2));
-          shard.style.setProperty('--rot-y', (Math.random() * 1.8 - .9).toFixed(2));
-          shard.style.setProperty('--spin', spin.toFixed(1) + 'deg');
-          shard.style.setProperty('--shard-delay', (Math.random() * .13).toFixed(2) + 's');
-
-          const cuts = [
-            'polygon(0 0, 100% 8%, 88% 100%, 9% 88%)',
-            'polygon(7% 0, 100% 0, 91% 91%, 0 100%)',
-            'polygon(0 12%, 88% 0, 100% 82%, 15% 100%)',
-            'polygon(12% 0, 100% 18%, 83% 100%, 0 78%)'
-          ];
-          shard.style.clipPath = cuts[(row * 3 + col) % cuts.length];
-          shard.style.backgroundImage = texture
-            ? 'linear-gradient(135deg,rgba(226,255,238,.24),rgba(37,255,145,.08)),url("' + texture + '")'
-            : 'linear-gradient(135deg,rgba(245,255,248,.65),rgba(37,255,145,.2),rgba(7,138,77,.16))';
-          shard.style.backgroundSize = texture
-            ? '100% 100%,' + wordRect.width + 'px ' + wordRect.height + 'px'
-            : '100% 100%';
-          shard.style.backgroundPosition = texture
-            ? 'center,-' + left + 'px -' + top + 'px'
-            : 'center';
-          shard.style.backgroundRepeat = 'no-repeat';
-          layer.appendChild(shard);
+          const power = 115 + Math.random() * 155;
+          const swirl = (Math.random() - .5) * 82;
+          shards.push({
+            sx, sy, sw, sh,
+            x, y,
+            dx: (vx / distance) * power - (vy / distance) * swirl + (Math.random() - .5) * 28,
+            dy: (vy / distance) * power + (vx / distance) * swirl + (Math.random() - .5) * 25 - 12,
+            rotation: (Math.random() - .5) * 1.1,
+            spin: (Math.random() < .5 ? -1 : 1) * (.9 + Math.random() * 3.7),
+            scale: .92 + Math.random() * .16,
+            cut: Math.floor(Math.random() * 4),
+            delay: Math.random() * .075
+          });
         }
       }
 
-      splash.appendChild(layer);
-      word.classList.add('shatter-source-hidden');
-      const flash = document.createElement('div');
-      flash.className = 'splash-shatter-flash';
-      flash.setAttribute('aria-hidden', 'true');
-      splash.appendChild(flash);
+      // One canvas for all fragments. It is inserted and its first frame is drawn before the transition.
+      const canvas = document.createElement('canvas');
+      canvas.className = 'splash-shatter-canvas';
+      canvas.setAttribute('aria-hidden', 'true');
+      canvas.width = Math.max(1, Math.ceil(splashRect.width * dpr));
+      canvas.height = Math.max(1, Math.ceil(splashRect.height * dpr));
+      canvas.style.width = splashRect.width + 'px';
+      canvas.style.height = splashRect.height + 'px';
+      const ctx = canvas.getContext('2d', { alpha:true, desynchronized:true });
+      if (!ctx) return null;
+
+      const cache = { canvas, ctx, texture, shards, dpr, width:splashRect.width, height:splashRect.height, started:false };
+      drawATIMEXGlassFrame(cache, 0);
+      splash.appendChild(canvas);
+      return cache;
+    }
+
+    function drawATIMEXGlassFrame(cache, progress) {
+      const { ctx, texture, shards, dpr, width, height } = cache;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, width, height);
+
+      const p = Math.max(0, Math.min(1, progress));
+      const travel = 1 - Math.pow(1 - p, 2.55);
+      for (let i = 0; i < shards.length; i++) {
+        const shard = shards[i];
+        const localP = Math.max(0, Math.min(1, (p - shard.delay) / (1 - shard.delay)));
+        const eased = 1 - Math.pow(1 - localP, 2.45);
+        const fade = Math.max(0, 1 - Math.pow(Math.max(0, (localP - .28) / .72), 1.18));
+        if (fade <= .005) continue;
+
+        const x = shard.x + shard.dx * eased;
+        const y = shard.y + shard.dy * eased + 46 * eased * eased;
+        const scale = shard.scale * (1 - .22 * eased);
+        const rotation = shard.rotation + shard.spin * eased;
+
+        ctx.save();
+        ctx.globalAlpha = fade;
+        ctx.translate(x, y);
+        ctx.rotate(rotation);
+        ctx.scale(scale, scale);
+
+        const w = shard.sw / dpr;
+        const h = shard.sh / dpr;
+        const left = -w / 2;
+        const top = -h / 2;
+        const cut = Math.min(3.1, Math.min(w, h) * .22);
+        ctx.beginPath();
+        if (shard.cut === 0) {
+          ctx.moveTo(left + cut, top); ctx.lineTo(left + w, top + cut);
+          ctx.lineTo(left + w - cut, top + h); ctx.lineTo(left, top + h - cut);
+        } else if (shard.cut === 1) {
+          ctx.moveTo(left, top + cut); ctx.lineTo(left + w - cut, top);
+          ctx.lineTo(left + w, top + h - cut); ctx.lineTo(left + cut, top + h);
+        } else if (shard.cut === 2) {
+          ctx.moveTo(left + cut, top); ctx.lineTo(left + w, top);
+          ctx.lineTo(left + w - cut, top + h); ctx.lineTo(left, top + h - cut);
+        } else {
+          ctx.moveTo(left, top); ctx.lineTo(left + w - cut, top + cut);
+          ctx.lineTo(left + w, top + h); ctx.lineTo(left + cut, top + h - cut);
+        }
+        ctx.closePath();
+        ctx.clip();
+        ctx.drawImage(texture, shard.sx, shard.sy, shard.sw, shard.sh, left, top, w, h);
+
+        // Fine glass sheen and bevel are drawn in the same canvas pass.
+        const shine = ctx.createLinearGradient(left, top, left + w, top + h);
+        shine.addColorStop(0, 'rgba(255,255,255,.34)');
+        shine.addColorStop(.38, 'rgba(180,255,211,.04)');
+        shine.addColorStop(1, 'rgba(24,255,133,.2)');
+        ctx.fillStyle = shine;
+        ctx.fillRect(left, top, w, h);
+        ctx.strokeStyle = 'rgba(235,255,242,' + (.24 + .28 * fade) + ')';
+        ctx.lineWidth = .65;
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      // A restrained emerald energy ring expands behind the fragments.
+      if (p < .84) {
+        const ringP = Math.min(1, p / .84);
+        const radius = 14 + ringP * Math.min(width, height) * .44;
+        ctx.save();
+        ctx.globalAlpha = (1 - ringP) * .28;
+        ctx.strokeStyle = '#a4ffc7';
+        ctx.lineWidth = 1.5 + (1 - ringP) * 1.4;
+        ctx.beginPath();
+        ctx.arc(width / 2, height / 2, radius, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.restore();
+      }
     }
 
     function showAuthAfterSplash() {
@@ -920,20 +965,42 @@
         openRegisterPreview();
         return;
       }
-      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        splash.remove();
-        openRegisterPreview();
+      const cache = window.atimexSplashShatterCache;
+      if (!cache || !cache.ctx || !cache.shards.length) {
+        splash.classList.add('leaving');
+        window.setTimeout(() => {
+          splash.remove();
+          openRegisterPreview();
+        }, 260);
         return;
       }
-      createATIMEXGlassShatter(splash);
+
+      // No canvas encoding, DOM shard creation, layout measurement or physics setup here.
       splash.classList.add('shattering');
-      window.setTimeout(() => {
-        splash.remove();
-        openRegisterPreview();
-      }, 1320);
+      splash.querySelector('.splash-word')?.classList.add('shatter-source-hidden');
+      cache.canvas.classList.add('active');
+      const start = performance.now();
+      const duration = 1080;
+
+      function animate(now) {
+        const progress = Math.min(1, (now - start) / duration);
+        drawATIMEXGlassFrame(cache, progress);
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          splash.classList.add('leaving');
+          window.setTimeout(() => {
+            splash.remove();
+            openRegisterPreview();
+          }, 220);
+        }
+      }
+      requestAnimationFrame(animate);
     }
     window.addEventListener('load', () => {
       document.body.style.overflow = 'hidden';
+      // Prepare the canvas texture and every fragment before the 6.7-second intro finishes.
+      window.atimexSplashShatterCache = prepareATIMEXGlassShatter(document.getElementById('atimexSplash'));
       window.setTimeout(showAuthAfterSplash, 6700);
     }, { once: true });
     document.addEventListener('keydown', event => { if (event.key === 'Escape') { closeAction(); closeRegisterPreview(); } });
