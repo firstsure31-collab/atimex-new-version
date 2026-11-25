@@ -800,7 +800,7 @@
           <button class="service-row" onclick="switchTab('tabServer')"><span class="service-icon violet"><i class="fa-solid fa-award"></i></span><span class="service-copy"><b>Achievements</b><small>Review free member milestones</small></span><i class="fa-solid fa-chevron-right"></i></button>
           <button class="service-row" onclick="openAction('Privacy & Security','Security controls, data policy and account recovery links will be added before a live launch.')"><span class="service-icon blue"><i class="fa-solid fa-shield-halved"></i></span><span class="service-copy"><b>Privacy & Security</b><small>Account safety and data settings</small></span><i class="fa-solid fa-chevron-right"></i></button>
           <button class="service-row" onclick="openAction('Help Centre','Verified support links and contact details will be added here.')"><span class="service-icon"><i class="fa-solid fa-headset"></i></span><span class="service-copy"><b>Help Centre</b><small>Contact support and view guidance</small></span><i class="fa-solid fa-chevron-right"></i></button>
-          <button class="service-row logout" onclick="switchAuthMode('login');openRegisterPreview()"><span class="service-icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span><span class="service-copy"><b>Login Preview</b><small>Return to the account access screen</small></span><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="service-row logout" onclick="openRegisterPreview();switchAuthMode('login')"><span class="service-icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span><span class="service-copy"><b>Login Preview</b><small>Return to the account access screen</small></span><i class="fa-solid fa-chevron-right"></i></button>
         </div>
         <div class="foot-note">ATIMEX · Premium member experience preview</div>
       </section>
@@ -1212,7 +1212,7 @@
     }
     function updateDemoDashboard() {
       const state = getDemoState();
-      const done = state.completed.length;
+      const done = Math.min(4, state.completed.length + (state.checkinDate === localDayKey() ? 1 : 0));
       const pct = Math.round(done / 4 * 100);
       const level = state.points >= 200 ? 'Champion' : state.points >= 100 ? 'Achiever' : state.points >= 40 ? 'Explorer' : 'Starter';
       const values = {
