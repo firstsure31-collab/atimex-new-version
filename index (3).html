@@ -474,6 +474,121 @@
       .splash-aura,.splash-orbit,.splash-emblem,.splash-letter,.splash-tagline,.splash-loading span,.splash-particle,.auth-form::before { animation-duration:.01ms !important; animation-iteration-count:1 !important; }
     }
 
+  
+    /* Premium compact member dashboard refresh */
+    .app-shell { max-width:480px; padding-bottom:100px; }
+    .topbar { height:70px; padding:10px 16px; }
+    main { padding:17px 14px 16px; }
+    .page-title { font-size:23px; }
+    .page-subtitle { font-size:10px; margin-top:5px; }
+    .eyebrow { letter-spacing:1.45px; }
+    .section-head { margin:21px 2px 11px; }
+    .section-title { font-size:13px; }
+    .dash-hero {
+      position:relative; overflow:hidden; padding:20px 18px; border-radius:25px;
+      color:#fff; background:linear-gradient(135deg,#075b39 0%,#0a8650 48%,#19b96e 100%);
+      box-shadow:0 16px 34px rgba(10,119,68,.18);
+    }
+    .dash-hero::before {
+      content:""; position:absolute; width:235px; height:235px; right:-90px; top:-145px;
+      border:1px solid rgba(220,255,235,.24); border-radius:50%;
+      box-shadow:0 0 0 17px rgba(230,255,239,.055),0 0 0 39px rgba(230,255,239,.04),0 0 0 65px rgba(230,255,239,.025);
+    }
+    .dash-hero::after {
+      content:""; position:absolute; width:110px; height:110px; right:26px; bottom:-78px;
+      border-radius:50%; background:rgba(180,255,207,.17); filter:blur(5px);
+    }
+    .dash-hero > * { position:relative; z-index:1; }
+    .dash-hero-top { display:flex; justify-content:space-between; align-items:center; gap:8px; }
+    .dash-hero-kicker { color:rgba(239,255,245,.78); font-size:9px; font-weight:900; letter-spacing:1px; }
+    .dash-status { display:inline-flex; align-items:center; gap:6px; border:1px solid rgba(231,255,240,.26); background:rgba(255,255,255,.12); padding:6px 9px; border-radius:99px; font-size:7px; font-weight:900; letter-spacing:.7px; }
+    .dash-status::before { content:""; width:6px; height:6px; border-radius:50%; background:#8dffb9; box-shadow:0 0 0 4px rgba(141,255,185,.12); }
+    .dash-balance { margin:12px 0 2px; color:#fff; font:900 31px 'Plus Jakarta Sans',sans-serif; letter-spacing:-1.25px; }
+    .dash-balance-note { color:rgba(236,255,243,.72); font-size:8px; }
+    .dash-hero-actions { display:grid; grid-template-columns:1fr 1fr; gap:9px; margin-top:18px; }
+    .dash-hero-actions button { min-height:39px; border:1px solid rgba(255,255,255,.24); border-radius:12px; background:rgba(255,255,255,.14); color:white; font:800 9px 'DM Sans',sans-serif; cursor:pointer; backdrop-filter:blur(8px); }
+    .dash-hero-actions button:first-child { background:#fff; color:#087b49; border-color:#fff; box-shadow:0 5px 15px rgba(0,0,0,.08); }
+    .dash-metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:11px; }
+    .dash-metric { min-width:0; padding:12px 10px; border:1px solid #e7f0e9; border-radius:16px; background:rgba(255,255,255,.94); box-shadow:0 6px 17px rgba(30,94,61,.04); }
+    .dash-metric-icon { width:27px; height:27px; display:grid; place-items:center; margin-bottom:8px; border-radius:9px; background:#eaf9ef; color:#15955b; font-size:11px; }
+    .dash-metric b { display:block; color:#254f37; font:900 14px 'Plus Jakarta Sans',sans-serif; white-space:nowrap; }
+    .dash-metric small { display:block; margin-top:4px; color:#8b9b91; font-size:7px; font-weight:800; letter-spacing:.3px; }
+    .dash-quick-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
+    .dash-quick { border:1px solid #e5efe8; border-radius:16px; background:#fff; padding:12px 4px 10px; color:#52735f; text-align:center; cursor:pointer; box-shadow:0 6px 16px rgba(30,94,61,.035); transition:transform .18s,border-color .18s; }
+    .dash-quick:active { transform:scale(.96); }
+    .dash-quick i { display:grid; place-items:center; width:34px; height:34px; margin:0 auto 7px; border-radius:12px; background:#eaf9ef; color:#11955a; font-size:13px; }
+    .dash-quick span { display:block; font-size:7px; font-weight:900; }
+    .dash-progress { padding:15px; border:1px solid #e5efe8; border-radius:19px; background:#fff; box-shadow:0 6px 17px rgba(30,94,61,.035); }
+    .dash-progress-line { display:flex; justify-content:space-between; align-items:center; gap:8px; font-size:9px; color:#698373; font-weight:800; }
+    .dash-progress-track { height:7px; margin-top:11px; border-radius:99px; overflow:hidden; background:#edf5ef; }
+    .dash-progress-fill { width:0; height:100%; border-radius:inherit; background:linear-gradient(90deg,#078c52,#25c579); transition:width .35s ease; }
+    .dash-note { padding:13px 14px; border:1px solid #dcefe2; border-radius:17px; background:linear-gradient(120deg,#f0fbf4,#fff); color:#587764; font-size:9px; line-height:1.7; }
+    .wallet-feature {
+      position:relative; overflow:hidden; padding:19px; border-radius:23px;
+      color:#fff; background:linear-gradient(140deg,#102c22,#14583b 67%,#168c54);
+      box-shadow:0 15px 34px rgba(14,71,44,.15);
+    }
+    .wallet-feature::after { content:""; position:absolute; right:-55px; top:-82px; width:190px; height:190px; border-radius:50%; border:1px solid rgba(255,255,255,.17); box-shadow:0 0 0 17px rgba(255,255,255,.035),0 0 0 39px rgba(255,255,255,.025); }
+    .wallet-feature > * { position:relative; z-index:1; }
+    .wallet-feature .balance-label { color:rgba(239,255,245,.74); }
+    .wallet-feature .balance-amount { color:white; font-size:30px; margin:11px 0 2px; }
+    .wallet-feature .balance-foot { color:rgba(238,255,244,.65); }
+    .wallet-feature .live-tag { color:#eafff1; border-color:rgba(255,255,255,.2); background:rgba(255,255,255,.1); }
+    .wallet-kpi-row { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:11px; }
+    .wallet-kpi { padding:12px 9px; border:1px solid #e7f0e9; background:#fff; border-radius:15px; }
+    .wallet-kpi small { display:block; color:#8b9b91; font-size:7px; font-weight:900; }
+    .wallet-kpi b { display:block; margin-top:6px; color:#28533a; font:900 13px 'Plus Jakarta Sans',sans-serif; }
+    .wallet-channel-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:9px; }
+    .wallet-channel { display:flex; align-items:center; gap:10px; padding:12px; border:1px solid #e7f0e9; border-radius:15px; background:#fff; }
+    .wallet-channel .method-logo { width:34px; height:34px; flex:0 0 auto; }
+    .wallet-channel b { display:block; color:#365b43; font-size:9px; }
+    .wallet-channel small { display:block; margin-top:3px; color:#96a49a; font-size:7px; }
+    .tx-filters,.task-filters { display:flex; gap:7px; overflow-x:auto; padding:2px 0 5px; scrollbar-width:none; }
+    .tx-filters::-webkit-scrollbar,.task-filters::-webkit-scrollbar { display:none; }
+    .filter-chip { flex:0 0 auto; min-height:30px; padding:0 12px; border:1px solid #e2eee5; border-radius:99px; background:#fff; color:#789080; font:800 8px 'DM Sans',sans-serif; cursor:pointer; }
+    .filter-chip.active { border-color:#14965c; background:#eaf9ef; color:#118a53; }
+    .tx-row { display:flex; align-items:center; gap:10px; padding:13px 0; border-bottom:1px solid #edf3ee; }
+    .tx-row:last-child { border-bottom:0; }
+    .tx-icon { width:34px; height:34px; flex:0 0 auto; display:grid; place-items:center; border-radius:12px; background:#eaf9ef; color:#15955b; }
+    .tx-icon.pending { background:#fff7e8; color:#c48a28; }
+    .tx-copy { min-width:0; flex:1; }
+    .tx-copy b { display:block; color:#3c6048; font-size:9px; }
+    .tx-copy small { display:block; margin-top:4px; color:#9aa79f; font-size:7px; }
+    .tx-amount { color:#148d57; font:900 10px 'Plus Jakarta Sans',sans-serif; }
+    .tx-amount.neutral { color:#7e9185; }
+    .task-filter-count { font-size:7px; color:#94a59a; font-weight:800; }
+    .task-list { display:grid; gap:9px; }
+    .task-modern { display:flex; align-items:center; gap:11px; padding:13px; border:1px solid #e6efe8; border-radius:17px; background:#fff; box-shadow:0 6px 17px rgba(30,94,61,.035); }
+    .task-modern.done { background:#f4fbf6; border-color:#cfead8; }
+    .task-modern-icon { width:40px; height:40px; flex:0 0 auto; display:grid; place-items:center; border-radius:14px; background:#eaf9ef; color:#14975b; font-size:15px; }
+    .task-modern-copy { flex:1; min-width:0; }
+    .task-modern-copy b { display:block; color:#315a40; font-size:9px; }
+    .task-modern-copy small { display:block; margin-top:4px; color:#94a198; font-size:7px; line-height:1.5; }
+    .task-points { display:block; margin-top:5px; color:#158a54; font-size:8px; font-weight:900; }
+    .task-modern .gbtn { min-height:31px; padding:0 10px; font-size:8px; }
+    .task-modern .gbtn:disabled { opacity:.65; cursor:default; transform:none; }
+    .reward-level-card { padding:17px; border-radius:20px; border:1px solid #dcefe2; background:linear-gradient(120deg,#effbf3,#fff); }
+    .reward-badge-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+    .reward-badge { padding:13px 5px; border:1px solid #e6efe8; border-radius:15px; background:#fff; text-align:center; color:#5f7c69; }
+    .reward-badge i { display:grid; place-items:center; width:34px; height:34px; margin:0 auto 8px; border-radius:12px; background:#eaf9ef; color:#15965c; font-size:13px; }
+    .reward-badge b { display:block; font-size:7px; }
+    .reward-badge small { display:block; margin-top:4px; color:#9aa79f; font-size:6px; }
+    .profile-identity .profile-status-warning { background:#eaf9ef; color:#138a54; border-color:#d6efdf; }
+    .profile-services { padding:4px 14px; }
+    .profile-services .service-row { width:100%; text-align:left; }
+    .profile-mini-stats { margin-top:10px; }
+    .profile-hero-premium { background:linear-gradient(120deg,#eaf9ef,#fff); }
+    .foot-note { color:#9aaa9f; font-size:7px; }
+    .bottom-nav { max-width:480px; padding-top:9px; }
+    @media (max-width:370px) {
+      .dash-metric { padding:10px 7px; }
+      .dash-metric b { font-size:12px; }
+      .dash-quick { padding-left:2px; padding-right:2px; }
+      .dash-quick span { font-size:6.5px; }
+      .task-modern { gap:8px; padding:10px; }
+      .task-modern .gbtn { padding:0 8px; }
+    }
+
   </style>
 </head>
 <body>
@@ -502,122 +617,192 @@
     </header>
 
     <main>
-      <!-- HOME TAB -->
+      <!-- HOME -->
       <section id="tabHome" class="page active">
         <div class="welcome-row">
-          <div class="welcome-copy"><div class="eyebrow">YOUR SPACE · YOUR PROGRESS</div><h1>Welcome back, Alex <span>✦</span></h1><p>Small steps today. Bigger rewards tomorrow.</p></div>
-          <div class="avatar"><i class="fa-solid fa-user"></i></div>
+          <div class="welcome-copy">
+            <div class="eyebrow">MEMBER DASHBOARD</div>
+            <h1>Welcome to <span style="color:#13965c">ATIMEX</span></h1>
+            <p>Your activity, verified rewards and account updates.</p>
+          </div>
+          <button class="avatar" aria-label="Open profile" onclick="switchTab('tabProfile')"><i class="fa-solid fa-user"></i></button>
         </div>
-        <div class="balance-card">
-          <div class="balance-top"><span class="balance-label">TOTAL WALLET BALANCE</span><span class="live-tag">ACCOUNT ACTIVE</span></div>
-          <div class="balance-amount">৳ 2,450.00</div>
-          <div class="balance-foot">Sample balance · Live wallet connection will be added later</div>
-          <div class="balance-actions"><button class="gbtn" onclick="openAction('Add Money','Deposit options and payment verification will be connected in the next development step.')"><i class="fa-solid fa-plus"></i> Add Money</button><button class="gbtn soft" onclick="switchTab('tabWallet')"><i class="fa-solid fa-arrow-up-right-from-square"></i> Wallet</button></div>
+        <div class="dash-hero">
+          <div class="dash-hero-top"><span class="dash-hero-kicker">VERIFIED REWARDS BALANCE</span><span class="dash-status">PREVIEW ACCOUNT</span></div>
+          <div class="dash-balance">৳ 0.00</div>
+          <div class="dash-balance-note">Illustrative preview only · Not a live balance</div>
+          <div class="dash-hero-actions">
+            <button onclick="switchTab('tabTasks')"><i class="fa-solid fa-list-check"></i> EXPLORE TASKS</button>
+            <button onclick="switchTab('tabWallet')"><i class="fa-solid fa-wallet"></i> OPEN WALLET</button>
+          </div>
         </div>
-        <div class="stats-grid">
-          <div class="card stat-card"><div class="stat-icon"><i class="fa-solid fa-chart-line"></i></div><div class="stat-value">৳ 860</div><div class="stat-label">TOTAL EARNED</div></div>
-          <div class="card stat-card"><div class="stat-icon"><i class="fa-solid fa-user-group"></i></div><div class="stat-value">12</div><div class="stat-label">REFERRALS</div></div>
-          <div class="card stat-card"><div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div><div class="stat-value">08</div><div class="stat-label">TASKS DONE</div></div>
+        <div class="dash-metrics">
+          <div class="dash-metric"><span class="dash-metric-icon"><i class="fa-solid fa-circle-check"></i></span><b id="homeTasksDone">0/4</b><small>TASKS DONE</small></div>
+          <div class="dash-metric"><span class="dash-metric-icon"><i class="fa-solid fa-star"></i></span><b id="homePoints">0</b><small>DEMO POINTS</small></div>
+          <div class="dash-metric"><span class="dash-metric-icon"><i class="fa-solid fa-fire"></i></span><b id="homeStreak">0 days</b><small>CHECK-IN STREAK</small></div>
         </div>
-        <div class="section-head"><h2 class="section-title">Quick Access</h2><span class="eyebrow">EXPLORE ATIMEX</span></div>
-        <div class="quick-grid">
-          <button class="quick-item" onclick="openAction('Daily Claim','Your daily reward calendar will be connected here.')"><i class="fa-solid fa-calendar-check"></i><span>Daily Claim</span></button>
-          <button class="quick-item" onclick="switchTab('tabTasks')"><i class="fa-solid fa-list-check"></i><span>Tasks</span></button>
-          <button class="quick-item" onclick="switchTab('tabServer')"><i class="fa-solid fa-crown"></i><span>VIP Plans</span></button>
-          <button class="quick-item" onclick="openAction('Refer & Earn','Your personal referral link, active referrals and rewards will be shown here.')"><i class="fa-solid fa-gift"></i><span>Refer & Earn</span></button>
+
+        <div class="section-head"><h2 class="section-title">Quick Access</h2><span class="eyebrow">YOUR TOOLS</span></div>
+        <div class="dash-quick-grid">
+          <button class="dash-quick" onclick="switchTab('tabTasks')"><i class="fa-solid fa-list-check"></i><span>Tasks</span></button>
+          <button class="dash-quick" onclick="recordDemoCheckin()"><i class="fa-solid fa-calendar-check"></i><span>Check-in</span></button>
+          <button class="dash-quick" onclick="switchTab('tabWallet')"><i class="fa-solid fa-wallet"></i><span>Wallet</span></button>
+          <button class="dash-quick" onclick="openAction('Help Centre','Support information and verified contact links will be added here.')"><i class="fa-solid fa-headset"></i><span>Help Centre</span></button>
         </div>
-        <div class="section-head"><h2 class="section-title">Featured for You</h2><button class="section-link" onclick="switchTab('tabServer')">View Plans <i class="fa-solid fa-arrow-right"></i></button></div>
-        <div class="card promo-card"><div class="promo-copy"><strong>Unlock your next level</strong><small>Explore premium server plans and choose a package that fits your goals.</small><button class="gbtn small" style="margin-top:11px" onclick="switchTab('tabServer')">Explore Plans <i class="fa-solid fa-arrow-right"></i></button></div><div class="promo-symbol"><i class="fa-solid fa-gem"></i></div></div>
-        <div class="section-head"><h2 class="section-title">Recent Activity</h2><button class="section-link" onclick="switchTab('tabWallet')">See all</button></div>
-        <div class="card activity-list">
-          <div class="activity-row"><div class="activity-icon"><i class="fa-solid fa-check"></i></div><div class="activity-text"><b>Daily reward credited</b><small>Today · Sample activity</small></div><div class="activity-amount">+৳20</div></div>
-          <div class="activity-row"><div class="activity-icon"><i class="fa-solid fa-users"></i></div><div class="activity-text"><b>Referral reward</b><small>Yesterday · Sample activity</small></div><div class="activity-amount">+৳50</div></div>
+
+        <div class="section-head"><h2 class="section-title">Your Activity</h2><button class="section-link" onclick="switchTab('tabTasks')">View tasks <i class="fa-solid fa-arrow-right"></i></button></div>
+        <div class="dash-progress">
+          <div class="dash-progress-line"><span>Task completion</span><b id="homeProgressLabel">0 of 4 completed</b></div>
+          <div class="dash-progress-track"><div class="dash-progress-fill" id="homeProgressFill"></div></div>
+          <p style="margin:9px 0 0;color:#91a096;font-size:8px">Complete genuine activities and review their status here.</p>
         </div>
-        <div class="foot-note">ATIMEX · A fresh way to track your progress</div>
+
+        <div class="section-head"><h2 class="section-title">Featured Activities</h2><span class="eyebrow">DEMO LIST</span></div>
+        <div class="task-list">
+          <div class="task-modern"><span class="task-modern-icon"><i class="fa-solid fa-user-check"></i></span><span class="task-modern-copy"><b>Complete your profile</b><small>Add your member details to keep your account information up to date.</small><span class="task-points">+10 demo points</span></span><button class="gbtn small" onclick="switchTab('tabProfile')">OPEN</button></div>
+          <div class="task-modern"><span class="task-modern-icon"><i class="fa-solid fa-book-open"></i></span><span class="task-modern-copy"><b>Read the member guide</b><small>Understand account settings, privacy and activity tracking.</small><span class="task-points">+15 demo points</span></span><button class="gbtn small" onclick="switchTab('tabTasks')">VIEW</button></div>
+        </div>
+        <div class="dash-note" style="margin-top:14px"><b><i class="fa-solid fa-circle-info"></i> Transparent rewards</b><br>Only completed and independently verified activities should appear as eligible rewards. This preview does not accept deposits or promise returns.</div>
+        <div class="foot-note">ATIMEX · Member activity dashboard preview</div>
       </section>
 
-      <!-- WALLET TAB -->
+      <!-- WALLET -->
       <section id="tabWallet" class="page">
-        <div class="eyebrow">MONEY MANAGEMENT</div><h1 class="page-title">My Wallet</h1><p class="page-subtitle">Keep track of your balance, payment methods and activity.</p>
-        <div class="balance-card wallet-total"><div class="balance-top"><span class="balance-label">AVAILABLE BALANCE</span><span class="live-tag">OVERVIEW</span></div><div class="balance-amount">৳ 2,450.00</div><div class="balance-foot">Sample balance · Not connected to a real wallet</div><div class="wallet-actions"><button class="gbtn" onclick="openAction('Deposit','Deposit service and provider selection will be added after the design is approved.')"><i class="fa-solid fa-plus"></i> Deposit</button><button class="gbtn soft" onclick="openAction('Withdraw','Withdrawal request flow will be added in a later step.')"><i class="fa-solid fa-arrow-up"></i> Withdraw</button></div></div>
-        <div class="section-head"><h2 class="section-title">Payment Channels</h2><span class="eyebrow">AVAILABLE OPTIONS · PREVIEW</span></div>
-        <div class="method-grid">
-          <div class="method-card"><div class="method-logo bkash">b</div><div><b>bKash</b><small>Payment channel</small></div></div>
-          <div class="method-card"><div class="method-logo nagad">ন</div><div><b>Nagad</b><small>Payment channel</small></div></div>
-          <div class="method-card"><div class="method-logo rocket"><i class="fa-solid fa-rocket"></i></div><div><b>Rocket</b><small>Payment channel</small></div></div>
-          <div class="method-card"><div class="method-logo upay">u</div><div><b>Upay</b><small>Payment channel</small></div></div>
+        <div class="eyebrow">YOUR ACCOUNT LEDGER</div><h1 class="page-title">Wallet</h1><p class="page-subtitle">View verified rewards, payout history and available channels.</p>
+        <div class="wallet-feature" style="margin-top:16px">
+          <div class="balance-top"><span class="balance-label">VERIFIED REWARD BALANCE</span><span class="live-tag">PREVIEW</span></div>
+          <div class="balance-amount">৳ 0.00</div>
+          <div class="balance-foot">Sample only · No live payment or balance is connected</div>
+          <div class="wallet-actions">
+            <button class="gbtn" onclick="openAction('Payout information','A payout can only be requested for a balance that has been genuinely earned, verified and made available. The live payout service is not connected in this preview.')"><i class="fa-solid fa-arrow-up-right-from-square"></i> Payout info</button>
+            <button class="gbtn soft" onclick="filterTransactions('all')"><i class="fa-solid fa-clock-rotate-left"></i> Activity</button>
+          </div>
         </div>
-        <div class="section-head"><h2 class="section-title">Recent Transactions</h2><button class="section-link" onclick="openAction('Transaction History','Complete transaction history will be shown here after the database is connected.')">View all</button></div>
-        <div class="card activity-list"><div class="activity-row"><div class="activity-icon"><i class="fa-solid fa-arrow-down"></i></div><div class="activity-text"><b>Wallet credit</b><small>Today · Sample</small></div><div class="activity-amount">+৳200</div></div><div class="activity-row"><div class="activity-icon"><i class="fa-solid fa-crown"></i></div><div class="activity-text"><b>VIP package</b><small>18 Nov · Sample</small></div><div class="activity-amount" style="color:#bd7861">−৳300</div></div><div class="activity-row"><div class="activity-icon"><i class="fa-solid fa-gift"></i></div><div class="activity-text"><b>Referral bonus</b><small>16 Nov · Sample</small></div><div class="activity-amount">+৳50</div></div></div>
-        <div class="foot-note">All amounts shown here are sample design data.</div>
+        <div class="wallet-kpi-row">
+          <div class="wallet-kpi"><small>VERIFIED</small><b>৳0.00</b></div>
+          <div class="wallet-kpi"><small>UNDER REVIEW</small><b>৳0.00</b></div>
+          <div class="wallet-kpi"><small>PAID OUT</small><b>৳0.00</b></div>
+        </div>
+        <div class="section-head"><h2 class="section-title">Payout Channels</h2><span class="eyebrow">PREVIEW ONLY</span></div>
+        <div class="wallet-channel-grid">
+          <div class="wallet-channel"><span class="method-logo bkash">b</span><span><b>bKash</b><small>Mobile financial service</small></span></div>
+          <div class="wallet-channel"><span class="method-logo nagad">ন</span><span><b>Nagad</b><small>Mobile financial service</small></span></div>
+          <div class="wallet-channel"><span class="method-logo rocket"><i class="fa-solid fa-rocket"></i></span><span><b>Rocket</b><small>Mobile financial service</small></span></div>
+          <div class="wallet-channel"><span class="method-logo upay">u</span><span><b>Upay</b><small>Mobile financial service</small></span></div>
+        </div>
+        <div class="section-head"><h2 class="section-title">Activity History</h2><span class="eyebrow">SAMPLE LEDGER</span></div>
+        <div class="tx-filters" aria-label="Transaction filters">
+          <button class="filter-chip active" data-tx-filter="all" onclick="filterTransactions('all')">All activity</button>
+          <button class="filter-chip" data-tx-filter="reward" onclick="filterTransactions('reward')">Rewards</button>
+          <button class="filter-chip" data-tx-filter="payout" onclick="filterTransactions('payout')">Payouts</button>
+        </div>
+        <div class="card activity-list" id="transactionRows">
+          <div class="tx-row" data-tx-type="reward"><span class="tx-icon"><i class="fa-solid fa-star"></i></span><span class="tx-copy"><b>Verified task reward</b><small>Demo entry · Pending live connection</small></span><b class="tx-amount">+৳0.00</b></div>
+          <div class="tx-row" data-tx-type="payout"><span class="tx-icon pending"><i class="fa-solid fa-arrow-up"></i></span><span class="tx-copy"><b>Payout request</b><small>No payout request has been submitted</small></span><b class="tx-amount neutral">৳0.00</b></div>
+          <div class="tx-row" data-tx-type="reward"><span class="tx-icon"><i class="fa-solid fa-calendar-check"></i></span><span class="tx-copy"><b>Activity check-in</b><small>Demo entry · Points only</small></span><b class="tx-amount">+0 pts</b></div>
+        </div>
+        <div class="dash-note" style="margin-top:13px">No deposit is required to view tasks or track verified rewards. Payment processing will only be added after a compliant payout setup is ready.</div>
+        <div class="foot-note">Wallet data is illustrative and stored nowhere.</div>
       </section>
 
-      <!-- TASKS TAB -->
+      <!-- TASKS -->
       <section id="tabTasks" class="page">
-        <div class="eyebrow">YOUR DAILY PROGRESS</div><h1 class="page-title">Tasks & Rewards</h1><p class="page-subtitle">Complete activities, build your streak and follow your rewards.</p>
-        <div class="card task-summary"><div><div class="eyebrow">TODAY'S COMPLETION</div><div style="font:900 23px 'Plus Jakarta Sans';margin-top:5px;color:#1c5638">4 <span style="color:#92a397;font-size:12px">/ 6 tasks</span></div><div style="font-size:9px;color:#8a9c90;margin-top:5px">You're making great progress.</div></div><div class="task-progress"><span>68%</span></div></div>
-        <div class="section-head"><h2 class="section-title">Available Tasks</h2><span class="eyebrow">DAILY LIST</span></div>
-        <div class="card task-card"><div class="task-badge"><i class="fa-solid fa-calendar-check"></i></div><div class="task-info"><b>Daily Check-in</b><small>Visit daily and keep your streak active.</small><span class="reward">Reward · ৳20</span></div><button class="gbtn small" onclick="openAction('Daily Check-in','The daily claim calendar and claim rules will be connected in the next step.')">Open</button></div>
-        <div class="card task-card"><div class="task-badge"><i class="fa-brands fa-facebook-f"></i></div><div class="task-info"><b>Social Activity</b><small>Explore the latest ATIMEX community update.</small><span class="reward">Reward · ৳10</span></div><button class="gbtn small" onclick="openAction('Social Activity','Task verification and completion rules will be added later.')">View</button></div>
-        <div class="card task-card"><div class="task-badge"><i class="fa-solid fa-user-plus"></i></div><div class="task-info"><b>Invite a Friend</b><small>Share your referral link with someone.</small><span class="reward">Reward · ৳50</span></div><button class="gbtn small" onclick="openAction('Invite a Friend','Your unique referral code and share link will appear here.')">Share</button></div>
-        <div class="card task-card"><div class="task-badge"><i class="fa-solid fa-star"></i></div><div class="task-info"><b>Bonus Challenge</b><small>A new challenge will be announced soon.</small><span class="task-state">COMING SOON</span></div><button class="gbtn small soft" onclick="showToast('This task is coming soon.')">Soon</button></div>
-        <div class="foot-note">Task status and rewards are illustrative placeholders.</div>
-      </section>
-
-      <!-- SERVER TAB -->
-      <section id="tabServer" class="page">
-        <div class="eyebrow">UPGRADE YOUR EXPERIENCE</div><h1 class="page-title">Server Plans</h1><p class="page-subtitle">Choose a plan and explore the ATIMEX premium experience.</p>
-        <div class="card server-hero"><h3>Find your next level</h3><p>Compare plan details, daily rewards and duration in one clean place.</p></div>
-        <div class="section-head"><h2 class="section-title">Choose Your Plan</h2><span class="eyebrow">VIP COLLECTION</span></div>
-        <div class="plan-grid">
-          <div class="card plan-card"><span class="plan-ribbon">STARTER</span><div class="plan-name">Starter VIP</div><div class="plan-price">৳300</div><div class="plan-meta">20 days · Sample plan</div><div class="plan-divider"></div><div class="plan-detail"><span>Daily reward</span><b>৳30</b></div><div class="plan-detail"><span>Total reward</span><b>৳600</b></div><button class="gbtn small" onclick="openAction('Starter VIP','Package selection and purchase confirmation will be developed after the layout is approved.')">View Plan</button></div>
-          <div class="card plan-card featured"><span class="plan-ribbon"><i class="fa-solid fa-sparkles"></i> POPULAR</span><div class="plan-name">Standard VIP</div><div class="plan-price">৳500</div><div class="plan-meta">20 days · Sample plan</div><div class="plan-divider"></div><div class="plan-detail"><span>Daily reward</span><b>৳55</b></div><div class="plan-detail"><span>Total reward</span><b>৳1,100</b></div><button class="gbtn small" onclick="openAction('Standard VIP','Package selection and purchase confirmation will be developed after the layout is approved.')">View Plan</button></div>
-          <div class="card plan-card"><span class="plan-ribbon">ADVANCED</span><div class="plan-name">Advanced VIP</div><div class="plan-price">৳800</div><div class="plan-meta">25 days · Sample plan</div><div class="plan-divider"></div><div class="plan-detail"><span>Daily reward</span><b>৳72</b></div><div class="plan-detail"><span>Total reward</span><b>৳1,800</b></div><button class="gbtn small" onclick="openAction('Advanced VIP','Package selection and purchase confirmation will be developed after the layout is approved.')">View Plan</button></div>
-          <div class="card plan-card"><span class="plan-ribbon">PREMIUM</span><div class="plan-name">Premium VIP</div><div class="plan-price" style="font-size:17px">Coming Soon</div><div class="plan-meta">New plan · Details soon</div><div class="plan-divider"></div><div class="plan-detail"><span>Package details</span><b>To be announced</b></div><div class="plan-detail"><span>Status</span><b>Coming soon</b></div><button class="gbtn small soft" onclick="openAction('Premium VIP','Premium plan details will be announced soon.')">Explore</button></div>
+        <div class="eyebrow">ACTIVITY & PROGRESS</div><h1 class="page-title">Tasks</h1><p class="page-subtitle">Track real activities and the demo points attached to each task.</p>
+        <div class="card task-summary" style="margin-top:16px">
+          <div><div class="eyebrow">YOUR PROGRESS</div><div style="font:900 23px 'Plus Jakarta Sans';margin-top:5px;color:#1c5638"><span id="taskDoneCount">0</span> <span style="color:#92a397;font-size:12px">/ 4 tasks</span></div><div style="font-size:8px;color:#8a9c90;margin-top:5px">Points are for interface preview only.</div></div>
+          <div class="task-progress" id="taskProgressCircle"><span id="taskProgressText">0%</span></div>
         </div>
-        <div class="foot-note">Plan amounts are mock content for visual layout only.</div>
+        <div class="section-head"><h2 class="section-title">Activity Categories</h2><span class="eyebrow" id="taskFilterCount">4 ACTIVITIES</span></div>
+        <div class="task-filters">
+          <button class="filter-chip active" data-task-filter="all" onclick="filterTasks('all')">All</button>
+          <button class="filter-chip" data-task-filter="daily" onclick="filterTasks('daily')">Daily</button>
+          <button class="filter-chip" data-task-filter="profile" onclick="filterTasks('profile')">Profile</button>
+          <button class="filter-chip" data-task-filter="learning" onclick="filterTasks('learning')">Learning</button>
+        </div>
+        <div class="task-list" id="taskList">
+          <div class="task-modern" data-task-id="profile" data-task-category="profile">
+            <span class="task-modern-icon"><i class="fa-solid fa-user-check"></i></span><span class="task-modern-copy"><b>Complete profile details</b><small>Review the name, email and contact details saved on your profile.</small><span class="task-points">10 demo points</span></span>
+            <button class="gbtn small" id="taskBtnProfile" onclick="completeDemoTask('profile')">MARK DONE</button>
+          </div>
+          <div class="task-modern" data-task-id="daily" data-task-category="daily">
+            <span class="task-modern-icon"><i class="fa-solid fa-calendar-check"></i></span><span class="task-modern-copy"><b>Daily activity check-in</b><small>Record today's visit and keep your activity streak.</small><span class="task-points">5 demo points</span></span>
+            <button class="gbtn small" id="taskBtnDaily" onclick="recordDemoCheckin()">CHECK IN</button>
+          </div>
+          <div class="task-modern" data-task-id="guide" data-task-category="learning">
+            <span class="task-modern-icon"><i class="fa-solid fa-book-open"></i></span><span class="task-modern-copy"><b>Read the member guide</b><small>Learn about privacy, account safety and activity history.</small><span class="task-points">15 demo points</span></span>
+            <button class="gbtn small" id="taskBtnGuide" onclick="completeDemoTask('guide')">MARK DONE</button>
+          </div>
+          <div class="task-modern" data-task-id="security" data-task-category="learning">
+            <span class="task-modern-icon"><i class="fa-solid fa-shield-halved"></i></span><span class="task-modern-copy"><b>Review security settings</b><small>Check sign-in and contact preferences in the preview.</small><span class="task-points">10 demo points</span></span>
+            <button class="gbtn small" id="taskBtnSecurity" onclick="completeDemoTask('security')">MARK DONE</button>
+          </div>
+        </div>
+        <div class="dash-note" style="margin-top:14px">Demo task buttons only update local preview points. They do not create cash earnings or submit activity to a server.</div>
+        <div class="foot-note">Task progress in this preview is saved only in this browser.</div>
       </section>
 
-      <!-- PROFILE TAB -->
+      <!-- REWARD HUB (replaces paid server plans) -->
+      <section id="tabServer" class="page">
+        <div class="eyebrow">MILESTONES & ACHIEVEMENTS</div><h1 class="page-title">Reward Hub</h1><p class="page-subtitle">Explore non-paid milestones for consistent, genuine participation.</p>
+        <div class="card server-hero"><h3>Progress you can trust</h3><p>Levels are earned by completing activities. No purchase or deposit is needed to view or unlock these demo milestones.</p></div>
+        <div class="reward-level-card" style="margin-top:13px">
+          <div style="display:flex;align-items:center;gap:12px">
+            <span class="task-badge" style="width:48px;height:48px"><i class="fa-solid fa-seedling"></i></span>
+            <span style="flex:1"><b style="display:block;color:#28553a;font:900 12px 'Plus Jakarta Sans'">Starter Member</b><small style="display:block;margin-top:4px;color:#8fa095;font-size:8px">Your activity journey begins here.</small></span>
+            <span class="verified"><i class="fa-solid fa-check"></i> FREE</span>
+          </div>
+          <div class="dash-progress-line" style="margin-top:16px"><span>Progress to Explorer</span><b id="hubProgressLabel">0 / 40 points</b></div>
+          <div class="dash-progress-track"><div class="dash-progress-fill" id="hubProgressFill"></div></div>
+        </div>
+        <div class="section-head"><h2 class="section-title">Achievement Levels</h2><span class="eyebrow">POINT MILESTONES</span></div>
+        <div class="plan-grid">
+          <div class="card plan-card featured"><span class="plan-ribbon">LEVEL 01</span><div class="plan-name">Starter</div><div class="plan-price" style="font-size:17px">0–39 pts</div><div class="plan-meta">Available to every member</div><div class="plan-divider"></div><div class="plan-detail"><span>Requirement</span><b>Join</b></div><button class="gbtn small soft" disabled>UNLOCKED</button></div>
+          <div class="card plan-card"><span class="plan-ribbon">LEVEL 02</span><div class="plan-name">Explorer</div><div class="plan-price" style="font-size:17px">40–99 pts</div><div class="plan-meta">Activity milestone</div><div class="plan-divider"></div><div class="plan-detail"><span>Requirement</span><b>40 points</b></div><button class="gbtn small soft" onclick="showToast('Complete activities to reach Explorer.')">VIEW</button></div>
+          <div class="card plan-card"><span class="plan-ribbon">LEVEL 03</span><div class="plan-name">Achiever</div><div class="plan-price" style="font-size:17px">100–199 pts</div><div class="plan-meta">Activity milestone</div><div class="plan-divider"></div><div class="plan-detail"><span>Requirement</span><b>100 points</b></div><button class="gbtn small soft" onclick="showToast('Complete activities to reach Achiever.')">VIEW</button></div>
+          <div class="card plan-card"><span class="plan-ribbon">LEVEL 04</span><div class="plan-name">Champion</div><div class="plan-price" style="font-size:17px">200+ pts</div><div class="plan-meta">Activity milestone</div><div class="plan-divider"></div><div class="plan-detail"><span>Requirement</span><b>200 points</b></div><button class="gbtn small soft" onclick="showToast('Complete activities to reach Champion.')">VIEW</button></div>
+        </div>
+        <div class="section-head"><h2 class="section-title">Your Badges</h2></div>
+        <div class="reward-badge-grid">
+          <div class="reward-badge"><i class="fa-solid fa-calendar-check"></i><b>Check-in</b><small>Visit consistently</small></div>
+          <div class="reward-badge"><i class="fa-solid fa-book-open"></i><b>Learner</b><small>Read member guides</small></div>
+          <div class="reward-badge"><i class="fa-solid fa-shield-halved"></i><b>Secure</b><small>Review account safety</small></div>
+        </div>
+        <div class="foot-note">Milestones are non-cash demo achievements.</div>
+      </section>
+
+      <!-- PROFILE -->
       <section id="tabProfile" class="page">
         <div class="profile-headline"><div><div class="eyebrow">PERSONAL ACCOUNT</div><h1 class="page-title">My Profile</h1></div><button class="icon-btn" aria-label="Edit profile" onclick="openAction('Edit Profile','Profile editing will be connected after authentication and database setup.')"><i class="fa-solid fa-pen"></i></button></div>
-        <div class="card profile-cover">
+        <div class="card profile-cover profile-hero-premium">
           <div class="profile-main-row">
             <div class="profile-avatar"><i class="fa-solid fa-user"></i></div>
-            <div class="profile-identity"><h3>ATIMEX MEMBER</h3><p><i class="fa-regular fa-envelope"></i> member@example.com</p><span class="profile-status-warning"><i class="fa-solid fa-triangle-exclamation"></i> ACTION REQUIRED</span></div>
-            <button class="profile-edit" aria-label="Edit profile" onclick="openAction('Edit Profile','Nickname and profile settings will be connected later.')"><i class="fa-solid fa-pen"></i></button>
+            <div class="profile-identity"><h3>PREVIEW MEMBER</h3><p><i class="fa-regular fa-envelope"></i> member@example.com</p><span class="verified"><i class="fa-solid fa-circle-check"></i> DESIGN PREVIEW</span></div>
+            <button class="profile-edit" aria-label="Edit profile" onclick="openAction('Edit Profile','Member name, contact details and profile photo can be connected after authentication is ready.')"><i class="fa-solid fa-pen"></i></button>
           </div>
           <div class="profile-divider"></div>
           <div class="profile-level-grid">
-            <div class="profile-level-item"><span class="level-icon"><i class="fa-solid fa-crown"></i></span><div><small>ACCOUNT LEVEL</small><b>Basic Member</b></div></div>
-            <div class="profile-level-item"><span class="level-icon purple"><i class="fa-solid fa-award"></i></span><div><small>DESIGNATION</small><b>Not Active</b></div></div>
+            <div class="profile-level-item"><span class="level-icon"><i class="fa-solid fa-award"></i></span><div><small>MEMBER LEVEL</small><b id="profileLevel">Starter</b></div></div>
+            <div class="profile-level-item"><span class="level-icon purple"><i class="fa-solid fa-star"></i></span><div><small>DEMO POINTS</small><b id="profilePoints">0</b></div></div>
           </div>
-          <div class="account-alert"><span class="alert-lock"><i class="fa-solid fa-lock"></i></span><div class="alert-copy"><b>Account Not Active</b><small>Activate your account to unlock member features.</small></div><button class="activate-btn" onclick="openAction('Activate Account','Account activation and payment will be connected after the final workflow is confirmed.')">Activate Now</button></div>
-        </div>
-
-        <div class="revenue-card">
-          <div><small>TOTAL REVENUE</small><strong>৳ 0.00</strong><span>All-time rewards overview</span></div>
-          <button class="cashout-btn" onclick="openAction('Cashout','Withdrawal eligibility and request flow will be connected later.')"><i class="fa-solid fa-paper-plane"></i> CASHOUT</button>
-          <i class="fa-solid fa-chart-line revenue-watermark"></i>
         </div>
 
         <div class="profile-mini-stats">
-          <div><small>MAIN BALANCE</small><b>৳0.00</b></div>
-          <div><small>PACKAGE</small><b>৳0.00</b></div>
-          <div><small>REFERRAL</small><b>৳0.00</b></div>
+          <div><small>TASKS DONE</small><b id="profileTasksDone">0</b></div>
+          <div><small>CHECK-IN STREAK</small><b id="profileStreak">0 days</b></div>
+          <div><small>REWARD BALANCE</small><b>৳0.00</b></div>
         </div>
 
-        <div class="section-head profile-section-head"><h2 class="section-title">Financial Services</h2><span class="eyebrow">ACCOUNT TOOLS</span></div>
+        <div class="section-head profile-section-head"><h2 class="section-title">Account & Support</h2><span class="eyebrow">MEMBER TOOLS</span></div>
         <div class="card profile-services">
-          <button class="service-row" onclick="switchTab('tabWallet')"><span class="service-icon"><i class="fa-solid fa-wallet"></i></span><span class="service-copy"><b>Wallet</b><small>Manage your balance and transactions</small></span><i class="fa-solid fa-chevron-right"></i></button>
-          <button class="service-row" onclick="switchTab('tabServer')"><span class="service-icon mint"><i class="fa-solid fa-cubes"></i></span><span class="service-copy"><b>Active Packages</b><small>View your packages and plan details</small></span><i class="fa-solid fa-chevron-right"></i></button>
-          <button class="service-row" onclick="openAction('Daily Claim','Your daily reward calendar will be connected here.')"><span class="service-icon gold"><i class="fa-solid fa-calendar-check"></i></span><span class="service-copy"><b>Daily Claim</b><small>Check your daily reward status</small></span><i class="fa-solid fa-chevron-right"></i></button>
-          <button class="service-row" onclick="switchTab('tabTasks')"><span class="service-icon violet"><i class="fa-solid fa-ranking-star"></i></span><span class="service-copy"><b>Referral Leaderboard</b><small>See member activity and rankings</small></span><i class="fa-solid fa-chevron-right"></i></button>
-          <button class="service-row" onclick="openAction('Transaction History','Your completed wallet transactions will be listed here after database connection.')"><span class="service-icon blue"><i class="fa-solid fa-clock-rotate-left"></i></span><span class="service-copy"><b>Transaction History</b><small>Review deposits, withdrawals and rewards</small></span><i class="fa-solid fa-chevron-right"></i></button>
-          <button class="service-row" onclick="openRegisterPreview()"><span class="service-icon"><i class="fa-solid fa-user-plus"></i></span><span class="service-copy"><b>Registration Screen Preview</b><small>Open the new member registration design</small></span><i class="fa-solid fa-chevron-right"></i></button>
-          <button class="service-row logout" onclick="openAction('Log Out','Sign out will be connected when authentication is added.')"><span class="service-icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span><span class="service-copy"><b>Log Out</b><small>Sign out of your ATIMEX account</small></span><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="service-row" onclick="openAction('Personal Details','Your profile details will be editable after secure account sign-in is connected.')"><span class="service-icon"><i class="fa-solid fa-user-pen"></i></span><span class="service-copy"><b>Personal Details</b><small>Manage your member information</small></span><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="service-row" onclick="switchTab('tabWallet')"><span class="service-icon mint"><i class="fa-solid fa-wallet"></i></span><span class="service-copy"><b>Wallet & Activity</b><small>Review verified rewards and payout records</small></span><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="service-row" onclick="switchTab('tabTasks')"><span class="service-icon gold"><i class="fa-solid fa-list-check"></i></span><span class="service-copy"><b>Task History</b><small>See completed and available activities</small></span><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="service-row" onclick="switchTab('tabServer')"><span class="service-icon violet"><i class="fa-solid fa-award"></i></span><span class="service-copy"><b>Achievements</b><small>Review free member milestones</small></span><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="service-row" onclick="openAction('Privacy & Security','Security controls, data policy and account recovery links will be added before a live launch.')"><span class="service-icon blue"><i class="fa-solid fa-shield-halved"></i></span><span class="service-copy"><b>Privacy & Security</b><small>Account safety and data settings</small></span><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="service-row" onclick="openAction('Help Centre','Verified support links and contact details will be added here.')"><span class="service-icon"><i class="fa-solid fa-headset"></i></span><span class="service-copy"><b>Help Centre</b><small>Contact support and view guidance</small></span><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="service-row logout" onclick="switchAuthMode('login');openRegisterPreview()"><span class="service-icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span><span class="service-copy"><b>Login Preview</b><small>Return to the account access screen</small></span><i class="fa-solid fa-chevron-right"></i></button>
         </div>
-        <div class="foot-note">ATIMEX · Premium member experience</div>
+        <div class="foot-note">ATIMEX · Premium member experience preview</div>
       </section>
     </main>
 
@@ -625,7 +810,7 @@
       <button class="nav-btn active" data-tab="tabHome" onclick="switchTab('tabHome')"><i class="fa-solid fa-house"></i><span>Home</span></button>
       <button class="nav-btn" data-tab="tabWallet" onclick="switchTab('tabWallet')"><i class="fa-solid fa-wallet"></i><span>Wallet</span></button>
       <button class="nav-btn tasks-nav" data-tab="tabTasks" onclick="switchTab('tabTasks')"><i class="fa-solid fa-list-check"></i><span>Tasks</span></button>
-      <button class="nav-btn" data-tab="tabServer" onclick="switchTab('tabServer')"><i class="fa-solid fa-crown"></i><span>Server</span></button>
+      <button class="nav-btn" data-tab="tabServer" onclick="switchTab('tabServer')"><i class="fa-solid fa-award"></i><span>Rewards</span></button>
       <button class="nav-btn" data-tab="tabProfile" onclick="switchTab('tabProfile')"><i class="fa-solid fa-user"></i><span>Profile</span></button>
     </nav>
   </div>
@@ -1003,6 +1188,112 @@
       window.atimexSplashShatterCache = prepareATIMEXGlassShatter(document.getElementById('atimexSplash'));
       window.setTimeout(showAuthAfterSplash, 6700);
     }, { once: true });
+    const demoTaskPoints = { profile:10, daily:5, guide:15, security:10 };
+    const demoTaskLabels = { profile:'Complete profile details', daily:'Daily activity check-in', guide:'Read the member guide', security:'Review security settings' };
+    const demoTaskCategories = { profile:'profile', daily:'daily', guide:'learning', security:'learning' };
+    function getDemoState() {
+      try {
+        const raw = JSON.parse(localStorage.getItem('atimex_safe_preview_state') || '{}');
+        return {
+          points:Number(raw.points || 0),
+          completed:Array.isArray(raw.completed) ? raw.completed : [],
+          checkinDate:raw.checkinDate || '',
+          streak:Number(raw.streak || 0)
+        };
+      } catch (_) { return { points:0, completed:[], checkinDate:'', streak:0 }; }
+    }
+    function saveDemoState(state) {
+      try { localStorage.setItem('atimex_safe_preview_state', JSON.stringify(state)); }
+      catch (error) { console.warn('Preview state could not be saved:', error); }
+    }
+    function localDayKey() {
+      const now = new Date();
+      return [now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');
+    }
+    function updateDemoDashboard() {
+      const state = getDemoState();
+      const done = state.completed.length;
+      const pct = Math.round(done / 4 * 100);
+      const level = state.points >= 200 ? 'Champion' : state.points >= 100 ? 'Achiever' : state.points >= 40 ? 'Explorer' : 'Starter';
+      const values = {
+        homeTasksDone:done + '/4',
+        homePoints:state.points,
+        homeStreak:state.streak + (state.streak === 1 ? ' day' : ' days'),
+        taskDoneCount:done,
+        taskProgressText:pct + '%',
+        homeProgressLabel:done + ' of 4 completed',
+        profileLevel:level,
+        profilePoints:state.points,
+        profileTasksDone:done,
+        profileStreak:state.streak + (state.streak === 1 ? ' day' : ' days'),
+        hubProgressLabel:Math.min(state.points,40) + ' / 40 points'
+      };
+      Object.entries(values).forEach(([id,value]) => {
+        const el=document.getElementById(id);
+        if(el) el.textContent=String(value);
+      });
+      const fill=document.getElementById('homeProgressFill');
+      if(fill) fill.style.width=pct+'%';
+      const hubFill=document.getElementById('hubProgressFill');
+      if(hubFill) hubFill.style.width=Math.min(100,state.points/40*100)+'%';
+      const circle=document.getElementById('taskProgressCircle');
+      if(circle) circle.style.background='conic-gradient(#18a766 0 '+pct+'%,#dff2e5 '+pct+'% 100%)';
+      Object.keys(demoTaskPoints).forEach(id=>{
+        const card=document.querySelector('[data-task-id="'+id+'"]');
+        const btn=document.getElementById('taskBtn'+id.charAt(0).toUpperCase()+id.slice(1));
+        const doneNow=state.completed.includes(id);
+        if(card) card.classList.toggle('done',doneNow);
+        if(btn){
+          btn.disabled=doneNow || (id==='daily' && state.checkinDate===localDayKey());
+          btn.textContent=doneNow ? 'COMPLETED' : (id==='daily' && state.checkinDate===localDayKey() ? 'CHECKED IN' : (id==='daily'?'CHECK IN':'MARK DONE'));
+        }
+      });
+      const dailyBtn=document.getElementById('taskBtnDaily');
+      if(dailyBtn && state.checkinDate===localDayKey()) dailyBtn.textContent='CHECKED IN';
+    }
+    function completeDemoTask(id) {
+      if(!Object.prototype.hasOwnProperty.call(demoTaskPoints,id) || id==='daily') return;
+      const state=getDemoState();
+      if(state.completed.includes(id)) return;
+      state.completed.push(id);
+      state.points+=demoTaskPoints[id];
+      saveDemoState(state);
+      updateDemoDashboard();
+      showToast(demoTaskLabels[id]+' marked complete in this browser preview.');
+    }
+    function recordDemoCheckin() {
+      const state=getDemoState();
+      const today=localDayKey();
+      if(state.checkinDate===today){showToast('আজকের demo check-in ইতিমধ্যে করা হয়েছে।');return;}
+      const previous=new Date(); previous.setDate(previous.getDate()-1);
+      const yesterday=[previous.getFullYear(),String(previous.getMonth()+1).padStart(2,'0'),String(previous.getDate()).padStart(2,'0')].join('-');
+      state.streak=state.checkinDate===yesterday ? state.streak+1 : 1;
+      state.checkinDate=today;
+      state.points+=demoTaskPoints.daily;
+      saveDemoState(state);
+      updateDemoDashboard();
+      showToast('Demo check-in complete · +5 preview points.');
+    }
+    function filterTasks(category) {
+      document.querySelectorAll('[data-task-filter]').forEach(btn=>btn.classList.toggle('active',btn.dataset.taskFilter===category));
+      let visible=0;
+      document.querySelectorAll('[data-task-id]').forEach(card=>{
+        const show=category==='all'||card.dataset.taskCategory===category;
+        card.style.display=show?'flex':'none';
+        if(show) visible++;
+      });
+      const label=document.getElementById('taskFilterCount');
+      if(label) label.textContent=visible+' ACTIVITIES';
+    }
+    function filterTransactions(type) {
+      document.querySelectorAll('[data-tx-filter]').forEach(btn=>btn.classList.toggle('active',btn.dataset.txFilter===type));
+      document.querySelectorAll('[data-tx-type]').forEach(row=>{
+        row.style.display=(type==='all'||row.dataset.txType===type)?'flex':'none';
+      });
+      const wallet=document.getElementById('tabWallet');
+      if(wallet && !wallet.classList.contains('active')) switchTab('tabWallet');
+    }
+    updateDemoDashboard();
     document.addEventListener('keydown', event => { if (event.key === 'Escape') { closeAction(); closeRegisterPreview(); } });
   </script>
 </body>
