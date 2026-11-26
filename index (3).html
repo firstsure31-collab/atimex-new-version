@@ -664,6 +664,56 @@
     .server-estimate strong{font:900 13px 'Plus Jakarta Sans',sans-serif;color:#138b54;white-space:nowrap}
     .server-sample-warning{margin-top:9px;padding:7px 8px;border-radius:9px;border:1px solid #f2e5c5;background:#fff9e9;color:#97712e;font-size:7px;line-height:1.5;text-align:center;font-weight:800}
     .server-package .gbtn{font-size:8px}
+\n
+    /* Separate payment chooser and provider detail pages */
+    .payment-screen{display:none;position:fixed;inset:0;z-index:95;overflow-y:auto;background:radial-gradient(circle at 15% 0%,#e6f8ed,transparent 34%),#f1f7f3;padding:0 12px 28px}
+    .payment-screen.show{display:block;animation:authFade .2s ease both}
+    .payment-shell{width:min(100%,450px);min-height:100vh;margin:0 auto;background:#fbfefc;box-shadow:0 0 38px rgba(24,61,39,.08)}
+    .payment-header{height:62px;position:sticky;top:0;z-index:4;padding:0 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e5efe8;background:rgba(255,255,255,.94);backdrop-filter:blur(16px)}
+    .payment-back{width:35px;height:35px;display:grid;place-items:center;border:1px solid #e4eee7;border-radius:12px;background:#fff;color:#477059;cursor:pointer}
+    .payment-brand{display:flex;align-items:center;gap:8px;color:#17452d;font:900 12px 'Plus Jakarta Sans',sans-serif}
+    .payment-brand small{display:block;margin-top:3px;color:#91a398;font:800 7px 'DM Sans',sans-serif;letter-spacing:1px}
+    .payment-brand-icon{width:29px;height:29px;display:grid;place-items:center;border-radius:10px;background:#e6f8ec;color:#15955c}
+    .payment-content{padding:20px 16px 30px}
+    .payment-context-card{margin:14px 0;padding:14px;border:1px solid #dcefe2;border-radius:16px;background:linear-gradient(120deg,#effaf3,#fff);display:grid;gap:5px}
+    .payment-context-card small{font-size:7px;font-weight:900;letter-spacing:1px;color:#8da194}
+    .payment-context-card b{font:900 12px 'Plus Jakarta Sans',sans-serif;color:#294b36}
+    .payment-context-card strong{font:900 20px 'Plus Jakarta Sans',sans-serif;color:#13965b}
+    .payment-context-card.compact{margin:13px 0}
+    .payment-context-card.compact strong{font-size:16px}
+    .payment-method-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:17px 0}
+    .payment-method-option{min-width:0;display:flex;align-items:center;gap:10px;padding:13px 10px;border:1px solid #e4eee7;border-radius:16px;background:#fff;box-shadow:0 7px 19px rgba(28,92,52,.045);text-align:left;cursor:pointer;transition:.18s}
+    .payment-method-option:hover{transform:translateY(-2px);border-color:#a9ddba;box-shadow:0 10px 22px rgba(28,92,52,.09)}
+    .payment-method-option>span:nth-child(2){flex:1;min-width:0}
+    .payment-method-option b{display:block;font-size:10px;color:#2e4c38}
+    .payment-method-option small{display:block;margin-top:3px;font-size:7px;color:#98a69c}
+    .payment-method-option>i{font-size:9px;color:#a8b7ad}
+    .pay-logo{width:42px;height:42px;flex:0 0 auto;display:grid;place-items:center;border-radius:13px;font:900 14px 'Plus Jakarta Sans',sans-serif;box-shadow:inset 0 1px 0 rgba(255,255,255,.65)}
+    .pay-logo.bkash{background:#ffeaf2;color:#d82c75}
+    .pay-logo.nagad{background:#fff0e4;color:#ed6b19}
+    .pay-logo.rocket{background:#f1eaff;color:#8145c1}
+    .pay-logo.upay{background:#fff8df;color:#b68b14}
+    .pay-logo.large{width:55px;height:55px;border-radius:17px;font-size:18px}
+    .payment-preview-warning{display:flex;align-items:flex-start;gap:8px;padding:11px;border:1px solid #f2e6c8;border-radius:12px;background:#fff9e9;color:#98732d;font-size:8px;line-height:1.6}
+    .payment-preview-warning i{margin-top:1px}
+    .payment-detail-title{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+    .payment-detail-title .page-title{font-size:20px}
+    .payment-detail-title .page-subtitle{margin-top:3px}
+    .payment-tutorial{padding:14px;border:1px solid #e3eee6;border-radius:16px;background:#fff}
+    .payment-tutorial-heading{display:flex;align-items:center;gap:8px;color:#31533b;font-size:10px}
+    .payment-tutorial-heading i{color:#15965d}
+    .payment-tutorial ol{margin:10px 0 0;padding-left:18px;color:#7e9184;font-size:8px;line-height:1.8}
+    .payment-tutorial li{padding:2px 0 2px 3px}
+    .payment-recipient-box{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:12px 0;padding:12px;border:1px solid #e1ece4;border-radius:13px;background:#f8fcf9}
+    .payment-recipient-box small{display:block;color:#94a398;font-size:6px;font-weight:900;letter-spacing:.8px}
+    .payment-recipient-box b{display:block;margin-top:5px;color:#698171;font-size:9px}
+    .payment-copy-disabled{padding:8px 10px;border:0;border-radius:9px;background:#e5eee8;color:#9aaa9f;font-size:8px;font-weight:900;cursor:not-allowed}
+    .payment-field-label{display:block;margin:12px 0 6px;color:#809487;font-size:7px;font-weight:900;letter-spacing:.8px}
+    .payment-field{width:100%;height:44px;padding:0 12px;border:1px solid #dfeae3;border-radius:12px;outline:none;background:#fff;color:#294b36;font:700 11px 'DM Sans',sans-serif}
+    .payment-field:focus{border-color:#49b77a;box-shadow:0 0 0 3px rgba(35,174,99,.10)}
+    .demo-payment-status{margin-top:12px;padding:12px;border:1px solid #bfe8cc;border-radius:12px;background:#edfaf1;color:#16844f;font-size:9px;font-weight:800;line-height:1.6}
+    .payment-footnote{margin:11px 0 0;color:#9aa89f;font-size:7px;line-height:1.6;text-align:center}
+    @media(max-width:360px){.payment-content{padding-left:12px;padding-right:12px}.payment-method-option{padding:11px 8px;gap:7px}.pay-logo{width:36px;height:36px}}
 \n  </style>
 </head>
 <body>
@@ -753,6 +803,7 @@
             <button class="gbtn soft" onclick="filterTransactions('all')"><i class="fa-solid fa-clock-rotate-left"></i> Activity</button>
           </div>
         </div>
+        <button class="gbtn full" style="margin-top:13px" onclick="openPaymentMethods('deposit')"><i class="fa-solid fa-circle-plus"></i> DEPOSIT / ADD FUNDS</button>
         <div class="wallet-kpi-row">
           <div class="wallet-kpi"><small>VERIFIED</small><b>৳0.00</b></div>
           <div class="wallet-kpi"><small>UNDER REVIEW</small><b>৳0.00</b></div>
@@ -831,7 +882,7 @@
             <div class="server-estimate"><span>দৈনিক প্রদর্শিত অঙ্ক</span><strong>৳700.00</strong></div>
             <div class="server-facts"><div><small>PACKAGE DURATION</small><b>7 দিন</b></div><div><small>PAYMENT</small><b>Disabled</b></div></div>
             <div class="server-sample-warning">ডেমো নমুনা মাত্র · বাস্তব আয় বা গ্যারান্টি নয়</div>
-            <button class="gbtn full" id="serverBtnRyzen" onclick="activateDemoServer('ryzen')">ACTIVATE DEMO</button>
+            <button class="gbtn full" id="serverBtnRyzen" onclick="openPaymentMethods('package','ryzen')">BUY NOW</button>
           </article>
           <article class="card server-package">
             <div class="server-package-top"><span class="plan-ribbon">SAMPLE PACKAGE</span><span class="server-chip"><i class="fa-solid fa-microchip"></i> SERVER 02</span></div>
@@ -841,7 +892,7 @@
             <div class="server-estimate"><span>দৈনিক প্রদর্শিত অঙ্ক</span><strong>৳2,000.00</strong></div>
             <div class="server-facts"><div><small>PACKAGE DURATION</small><b>7 দিন</b></div><div><small>PAYMENT</small><b>Disabled</b></div></div>
             <div class="server-sample-warning">ডেমো নমুনা মাত্র · বাস্তব আয় বা গ্যারান্টি নয়</div>
-            <button class="gbtn full" id="serverBtnIntel" onclick="activateDemoServer('intel')">ACTIVATE DEMO</button>
+            <button class="gbtn full" id="serverBtnIntel" onclick="openPaymentMethods('package','intel')">BUY NOW</button>
           </article>
           <article class="card server-package">
             <div class="server-package-top"><span class="plan-ribbon">SAMPLE PACKAGE</span><span class="server-chip"><i class="fa-solid fa-microchip"></i> SERVER 03</span></div>
@@ -851,7 +902,7 @@
             <div class="server-estimate"><span>দৈনিক প্রদর্শিত অঙ্ক</span><strong>৳4,500.00</strong></div>
             <div class="server-facts"><div><small>PACKAGE DURATION</small><b>7 দিন</b></div><div><small>PAYMENT</small><b>Disabled</b></div></div>
             <div class="server-sample-warning">ডেমো নমুনা মাত্র · বাস্তব আয় বা গ্যারান্টি নয়</div>
-            <button class="gbtn full" id="serverBtnAmd" onclick="activateDemoServer('amd')">ACTIVATE DEMO</button>
+            <button class="gbtn full" id="serverBtnAmd" onclick="openPaymentMethods('package','amd')">BUY NOW</button>
           </article>
         </div>
         <div class="section-head"><h2 class="section-title">My Servers</h2><span class="eyebrow">ACTIVE DEMOS</span></div>
@@ -918,6 +969,61 @@
       <button class="nav-btn" data-tab="tabProfile" onclick="switchTab('tabProfile')"><i class="fa-solid fa-user"></i><span>Profile</span></button>
     </nav>
   </div>
+
+  <section class="payment-screen" id="paymentScreen" aria-label="Payment method preview">
+    <div class="payment-shell">
+      <header class="payment-header">
+        <button class="payment-back" id="paymentBackBtn" onclick="paymentGoBack()" aria-label="Back"><i class="fa-solid fa-arrow-left"></i></button>
+        <div class="payment-brand"><span class="payment-brand-icon"><i class="fa-solid fa-shield-halved"></i></span><b>ATIMEX <small>PAYMENT PREVIEW</small></b></div>
+        <button class="payment-back" onclick="closePaymentScreen()" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </header>
+      <main class="payment-content">
+        <div id="paymentChooser">
+          <div class="eyebrow">SELECT PAYMENT METHOD</div>
+          <h1 class="page-title">Choose a Method</h1>
+          <p class="page-subtitle" id="paymentChooserSubtitle">Select one service to open its individual payment guide.</p>
+          <div class="payment-context-card" id="paymentContextCard">
+            <small>PAYMENT SUMMARY · DEMO</small><b id="paymentContextTitle">Deposit preview</b><strong id="paymentContextAmount">Amount not set</strong>
+          </div>
+          <div class="payment-method-grid">
+            <button class="payment-method-option" onclick="openPaymentMethod('bkash')"><span class="pay-logo bkash">bK</span><span><b>bKash</b><small>Mobile wallet</small></span><i class="fa-solid fa-chevron-right"></i></button>
+            <button class="payment-method-option" onclick="openPaymentMethod('nagad')"><span class="pay-logo nagad">ন</span><span><b>Nagad</b><small>Mobile wallet</small></span><i class="fa-solid fa-chevron-right"></i></button>
+            <button class="payment-method-option" onclick="openPaymentMethod('rocket')"><span class="pay-logo rocket"><i class="fa-solid fa-rocket"></i></span><span><b>Rocket</b><small>Mobile wallet</small></span><i class="fa-solid fa-chevron-right"></i></button>
+            <button class="payment-method-option" onclick="openPaymentMethod('upay')"><span class="pay-logo upay">u</span><span><b>Upay</b><small>Mobile wallet</small></span><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+          <div class="payment-preview-warning"><i class="fa-solid fa-circle-info"></i><span>এটি Demo preview। এখানে কোনো টাকা পাঠাবেন না। বাস্তব payment merchant gateway যুক্ত হলে চালু হবে।</span></div>
+        </div>
+        <div id="paymentDetail" hidden>
+          <div class="payment-detail-title">
+            <span class="pay-logo large" id="paymentDetailLogo">bK</span>
+            <div><div class="eyebrow">INDIVIDUAL METHOD PAGE</div><h1 class="page-title" id="paymentDetailName">bKash</h1><p class="page-subtitle">Payment guide · Demo only</p></div>
+          </div>
+          <div class="payment-context-card compact">
+            <small id="paymentDetailContextLabel">PAYMENT SUMMARY · DEMO</small><b id="paymentDetailContextTitle">Deposit preview</b><strong id="paymentDetailContextAmount">Amount not set</strong>
+          </div>
+          <div class="payment-tutorial">
+            <div class="payment-tutorial-heading"><i class="fa-solid fa-book-open"></i><b>কীভাবে করবেন · Tutorial</b></div>
+            <ol>
+              <li>এই স্ক্রিনটি শুধু Demo। এখানে কোনো ব্যক্তিগত payment number দেওয়া নেই।</li>
+              <li>বাস্তব লেনদেনের জন্য অনুমোদিত official merchant checkout ব্যবহার করতে হবে।</li>
+              <li>Demo পরীক্ষা করতে নিচে sample sender number ও sample TrxID লিখুন। এতে কোনো টাকা পাঠানো বা server request হবে না।</li>
+            </ol>
+          </div>
+          <div class="payment-recipient-box">
+            <div><small>MERCHANT PAYMENT NUMBER</small><b>Demo mode · Not configured</b></div>
+            <button type="button" class="payment-copy-disabled" disabled><i class="fa-regular fa-copy"></i> COPY</button>
+          </div>
+          <label class="payment-field-label" for="demoSenderNumber">SENDER NUMBER · SAMPLE ONLY</label>
+          <input class="payment-field" id="demoSenderNumber" type="tel" inputmode="numeric" maxlength="11" placeholder="01XXXXXXXXX" autocomplete="off">
+          <label class="payment-field-label" for="demoTrxId">TRANSACTION ID · SAMPLE ONLY</label>
+          <input class="payment-field" id="demoTrxId" type="text" maxlength="20" placeholder="Enter a sample TrxID" autocomplete="off" autocapitalize="characters" oninput="this.value=this.value.toUpperCase().replace(/[^A-Z0-9]/g,'')">
+          <button class="gbtn full" style="margin-top:13px" onclick="submitDemoPaymentRequest()"><i class="fa-solid fa-shield-check"></i> VERIFY DEMO REQUEST</button>
+          <div id="demoPaymentStatus" class="demo-payment-status" hidden></div>
+          <p class="payment-footnote">No real payment verification, account credit, package purchase or request submission is performed by this preview.</p>
+        </div>
+      </main>
+    </div>
+  </section>
 
   <div class="modal-backdrop" id="actionModal" onclick="if(event.target===this)closeAction()">
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
@@ -1004,7 +1110,100 @@
     function closeAction() {
       document.getElementById('actionModal').classList.remove('show');
       document.body.style.overflow = '';
+    }\n
+    const DEMO_PAYMENT_METHODS = {
+      bkash:{name:"bKash",logo:"bK",className:"bkash"},
+      nagad:{name:"Nagad",logo:"ন",className:"nagad"},
+      rocket:{name:"Rocket",logo:'<i class="fa-solid fa-rocket"></i>',className:"rocket"},
+      upay:{name:"Upay",logo:"u",className:"upay"}
+    };
+    const DEMO_SERVER_PACKAGES = {
+      ryzen:{name:"Ryzen",price:2500,daily:700},
+      intel:{name:"Intel",price:7000,daily:2000},
+      amd:{name:"AMD",price:10000,daily:4500}
+    };
+    let paymentContext = {type:"deposit",packageKey:null,method:null,step:"chooser"};
+    function openPaymentMethods(type="deposit",packageKey=null,method=null){
+      paymentContext={type,packageKey,method:null,step:"chooser"};
+      const title=document.getElementById("paymentContextTitle");
+      const amount=document.getElementById("paymentContextAmount");
+      const subtitle=document.getElementById("paymentChooserSubtitle");
+      const summary=document.getElementById("paymentContextCard");
+      if(type==="package" && DEMO_SERVER_PACKAGES[packageKey]){
+        const pack=DEMO_SERVER_PACKAGES[packageKey];
+        if(title)title.textContent=pack.name+" · Package sample";
+        if(amount)amount.textContent="৳"+pack.price.toLocaleString("en-BD");
+        if(subtitle)subtitle.textContent="Choose a payment method to view its separate demo guide.";
+      }else{
+        if(title)title.textContent="Deposit · Demo preview";
+        if(amount)amount.textContent="Demo amount not set";
+        if(subtitle)subtitle.textContent="Select bKash, Nagad, Rocket or Upay to open its individual demo page.";
+      }
+      if(summary)summary.hidden=false;
+      document.getElementById("paymentChooser").hidden=false;
+      document.getElementById("paymentDetail").hidden=true;
+      document.getElementById("paymentScreen").classList.add("show");
+      document.body.style.overflow="hidden";
+      const status=document.getElementById("demoPaymentStatus");
+      if(status){status.hidden=true;status.textContent="";}
+      const sender=document.getElementById("demoSenderNumber");if(sender)sender.value="";
+      const trx=document.getElementById("demoTrxId");if(trx)trx.value="";
+      if(method)openPaymentMethod(method);
     }
+    function openPaymentMethod(method){
+      const data=DEMO_PAYMENT_METHODS[method];
+      if(!data)return;
+      paymentContext.method=method;
+      paymentContext.step="detail";
+      document.getElementById("paymentChooser").hidden=true;
+      document.getElementById("paymentDetail").hidden=false;
+      const logo=document.getElementById("paymentDetailLogo");
+      logo.className="pay-logo large "+data.className;
+      logo.innerHTML=data.logo;
+      document.getElementById("paymentDetailName").textContent=data.name;
+      const title=document.getElementById("paymentDetailContextTitle");
+      const amount=document.getElementById("paymentDetailContextAmount");
+      const label=document.getElementById("paymentDetailContextLabel");
+      if(paymentContext.type==="package" && DEMO_SERVER_PACKAGES[paymentContext.packageKey]){
+        const p=DEMO_SERVER_PACKAGES[paymentContext.packageKey];
+        title.textContent=p.name+" · Package sample";
+        amount.textContent="৳"+p.price.toLocaleString("en-BD");
+        label.textContent="PACKAGE SAMPLE · NO LIVE CHARGE";
+      }else{
+        title.textContent="Deposit · Demo preview";
+        amount.textContent="No live amount";
+        label.textContent="DEPOSIT PREVIEW · NO LIVE CHARGE";
+      }
+      const status=document.getElementById("demoPaymentStatus");
+      if(status){status.hidden=true;status.textContent="";}
+      document.getElementById("demoSenderNumber").value="";
+      document.getElementById("demoTrxId").value="";
+      document.getElementById("paymentBackBtn").innerHTML='<i class="fa-solid fa-arrow-left"></i>';
+    }
+    function paymentGoBack(){
+      if(paymentContext.step==="detail"){
+        paymentContext.step="chooser";
+        document.getElementById("paymentDetail").hidden=true;
+        document.getElementById("paymentChooser").hidden=false;
+      }else closePaymentScreen();
+    }
+    function closePaymentScreen(){
+      document.getElementById("paymentScreen").classList.remove("show");
+      document.body.style.overflow="";
+      paymentContext={type:"deposit",packageKey:null,method:null,step:"chooser"};
+    }
+    function submitDemoPaymentRequest(){
+      if(!paymentContext.method){showToast("আগে একটি payment method নির্বাচন করুন।");return;}
+      const sender=(document.getElementById("demoSenderNumber").value||"").replace(/\s+/g,"");
+      const trx=(document.getElementById("demoTrxId").value||"").trim().toUpperCase();
+      if(!/^01[3-9][0-9]{8}$/.test(sender)){showToast("Sample sender number হিসেবে ১১ ডিজিট লিখুন।");return;}
+      if(!/^[A-Z0-9]{6,20}$/.test(trx)){showToast("একটি sample TrxID লিখুন।");return;}
+      const status=document.getElementById("demoPaymentStatus");
+      status.hidden=false;
+      status.innerHTML='<i class="fa-solid fa-circle-check"></i> Demo request received · Status: <b>PREVIEW PENDING</b><br><small>কোনো বাস্তব payment verify বা request submit হয়নি। কোনো balance বা package active করা হয়নি।</small>';
+      showToast("Demo request received · No real payment submitted.");
+    }
+
 
     function openProfilePopup(key) {
       const data = {
@@ -1487,7 +1686,7 @@
     }
     updateDemoDashboard();
     updateDemoServers();
-    document.addEventListener('keydown', event => { if (event.key === 'Escape') { closeAction(); closeRegisterPreview(); } });
+    document.addEventListener('keydown', event => { if (event.key === 'Escape') { closeAction(); closePaymentScreen(); closeRegisterPreview(); } });
   </script>
 </body>
 </html>
