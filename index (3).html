@@ -786,9 +786,9 @@
           <button class="avatar" aria-label="Open profile" onclick="switchTab('tabProfile')"><i class="fa-solid fa-user"></i></button>
         </div>
         <div class="dash-hero">
-          <div class="dash-hero-top"><span class="dash-hero-kicker">VERIFIED REWARDS BALANCE</span><span class="dash-status">PREVIEW ACCOUNT</span></div>
+          <div class="dash-hero-top"><span class="dash-hero-kicker">VERIFIED REWARDS BALANCE</span><span class="dash-status">ACCOUNT OVERVIEW</span></div>
           <div class="dash-balance">৳ 0.00</div>
-          <div class="dash-balance-note">Illustrative preview only · Not a live balance</div>
+          <div class="dash-balance-note">Illustrative balance · Live wallet connection pending</div>
           <div class="dash-hero-actions">
             <button onclick="switchTab('tabTasks')"><i class="fa-solid fa-list-check"></i> EXPLORE TASKS</button>
             <button onclick="switchTab('tabWallet')"><i class="fa-solid fa-wallet"></i> OPEN WALLET</button>
@@ -796,7 +796,7 @@
         </div>
         <div class="dash-metrics">
           <div class="dash-metric"><span class="dash-metric-icon"><i class="fa-solid fa-circle-check"></i></span><b id="homeTasksDone">0/4</b><small>TASKS DONE</small></div>
-          <div class="dash-metric"><span class="dash-metric-icon"><i class="fa-solid fa-star"></i></span><b id="homePoints">0</b><small>DEMO POINTS</small></div>
+          <div class="dash-metric"><span class="dash-metric-icon"><i class="fa-solid fa-star"></i></span><b id="homePoints">0</b><small>ACTIVITY POINTS</small></div>
           <div class="dash-metric"><span class="dash-metric-icon"><i class="fa-solid fa-fire"></i></span><b id="homeStreak">0 days</b><small>CHECK-IN STREAK</small></div>
         </div>
 
@@ -815,24 +815,24 @@
           <p style="margin:9px 0 0;color:#9197a0;font-size:8px">Complete genuine activities and review their status here.</p>
         </div>
 
-        <div class="section-head"><h2 class="section-title">Featured Activities</h2><span class="eyebrow">DEMO LIST</span></div>
+        <div class="section-head"><h2 class="section-title">Featured Activities</h2><span class="eyebrow">ACTIVITY LIST</span></div>
         <div class="task-list">
-          <div class="task-modern"><span class="task-modern-icon"><i class="fa-solid fa-user-check"></i></span><span class="task-modern-copy"><b>Complete your profile</b><small>Add your member details to keep your account information up to date.</small><span class="task-points">+10 demo points</span></span><button class="gbtn small" onclick="switchTab('tabProfile')">OPEN</button></div>
-          <div class="task-modern"><span class="task-modern-icon"><i class="fa-solid fa-book-open"></i></span><span class="task-modern-copy"><b>Read the member guide</b><small>Understand account settings, privacy and activity tracking.</small><span class="task-points">+15 demo points</span></span><button class="gbtn small" onclick="switchTab('tabTasks')">VIEW</button></div>
+          <div class="task-modern"><span class="task-modern-icon"><i class="fa-solid fa-user-check"></i></span><span class="task-modern-copy"><b>Complete your profile</b><small>Add your member details to keep your account information up to date.</small><span class="task-points">+10 activity points</span></span><button class="gbtn small" onclick="switchTab('tabProfile')">OPEN</button></div>
+          <div class="task-modern"><span class="task-modern-icon"><i class="fa-solid fa-book-open"></i></span><span class="task-modern-copy"><b>Read the member guide</b><small>Understand account settings, privacy and activity tracking.</small><span class="task-points">+15 activity points</span></span><button class="gbtn small" onclick="switchTab('tabTasks')">VIEW</button></div>
         </div>
-        <div class="dash-note" style="margin-top:14px"><b><i class="fa-solid fa-circle-info"></i> Transparent rewards</b><br>Only completed and independently verified activities should appear as eligible rewards. This preview does not accept deposits or promise returns.</div>
-        <div class="foot-note">ATIEARNBD · Member activity dashboard preview</div>
+        <div class="dash-note" style="margin-top:14px"><b><i class="fa-solid fa-circle-info"></i> Transparent rewards</b><br>Only completed and independently verified activities should appear as eligible rewards. Deposits and payouts are not connected yet.</div>
+        <div class="foot-note">ATIEARNBD · Member activity dashboard</div>
       </section>
 
       <!-- WALLET -->
       <section id="tabWallet" class="page">
         <div class="eyebrow">YOUR ACCOUNT LEDGER</div><h1 class="page-title">Wallet</h1><p class="page-subtitle">View verified rewards, payout history and available channels.</p>
         <div class="wallet-feature" style="margin-top:16px">
-          <div class="balance-top"><span class="balance-label">VERIFIED REWARD BALANCE</span><span class="live-tag">PREVIEW</span></div>
+          <div class="balance-top"><span class="balance-label">VERIFIED REWARD BALANCE</span><span class="live-tag">NOT CONNECTED</span></div>
           <div class="balance-amount">৳ 0.00</div>
-          <div class="balance-foot">Sample only · No live payment or balance is connected</div>
+          <div class="balance-foot">Live payment and wallet services are not connected yet</div>
           <div class="wallet-actions">
-            <button class="gbtn" onclick="openAction('Payout information','A payout can only be requested for a balance that has been genuinely earned, verified and made available. The live payout service is not connected in this preview.')"><i class="fa-solid fa-arrow-up-right-from-square"></i> Payout info</button>
+            <button class="gbtn" onclick="openAction('Payout information','A payout can only be requested for a balance that has been genuinely earned, verified and made available. The live payout service is not connected yet.')"><i class="fa-solid fa-arrow-up-right-from-square"></i> Payout info</button>
             <button class="gbtn soft" onclick="filterTransactions('all')"><i class="fa-solid fa-clock-rotate-left"></i> Activity</button>
           </div>
         </div>
@@ -842,26 +842,26 @@
           <div class="wallet-kpi"><small>UNDER REVIEW</small><b>৳0.00</b></div>
           <div class="wallet-kpi"><small>PAID OUT</small><b>৳0.00</b></div>
         </div>
-        <div class="section-head"><h2 class="section-title">Activity History</h2><span class="eyebrow">SAMPLE LEDGER</span></div>
+        <div class="section-head"><h2 class="section-title">Activity History</h2><span class="eyebrow">ACCOUNT ACTIVITY</span></div>
         <div class="tx-filters" aria-label="Transaction filters">
           <button class="filter-chip active" data-tx-filter="all" onclick="filterTransactions('all')">All activity</button>
           <button class="filter-chip" data-tx-filter="reward" onclick="filterTransactions('reward')">Rewards</button>
           <button class="filter-chip" data-tx-filter="payout" onclick="filterTransactions('payout')">Payouts</button>
         </div>
         <div class="card activity-list" id="transactionRows">
-          <div class="tx-row" data-tx-type="reward"><span class="tx-icon"><i class="fa-solid fa-star"></i></span><span class="tx-copy"><b>Verified task reward</b><small>Demo entry · Pending live connection</small></span><b class="tx-amount">+৳0.00</b></div>
+          <div class="tx-row" data-tx-type="reward"><span class="tx-icon"><i class="fa-solid fa-star"></i></span><span class="tx-copy"><b>Verified task reward</b><small>Waiting for account connection</small></span><b class="tx-amount">+৳0.00</b></div>
           <div class="tx-row" data-tx-type="payout"><span class="tx-icon pending"><i class="fa-solid fa-arrow-up"></i></span><span class="tx-copy"><b>Payout request</b><small>No payout request has been submitted</small></span><b class="tx-amount neutral">৳0.00</b></div>
-          <div class="tx-row" data-tx-type="reward"><span class="tx-icon"><i class="fa-solid fa-calendar-check"></i></span><span class="tx-copy"><b>Activity check-in</b><small>Demo entry · Points only</small></span><b class="tx-amount">+0 pts</b></div>
+          <div class="tx-row" data-tx-type="reward"><span class="tx-icon"><i class="fa-solid fa-calendar-check"></i></span><span class="tx-copy"><b>Activity check-in</b><small>Activity points only · Not cash balance</small></span><b class="tx-amount">+0 pts</b></div>
         </div>
         <div class="dash-note" style="margin-top:13px">No deposit is required to view tasks or track verified rewards. Payment processing will only be added after a compliant payout setup is ready.</div>
-        <div class="foot-note">Wallet data is illustrative and stored nowhere.</div>
+        <div class="foot-note">Wallet data will appear after secure account and payment services are connected.</div>
       </section>
 
       <!-- TASKS -->
       <section id="tabTasks" class="page">
-        <div class="eyebrow">ACTIVITY & PROGRESS</div><h1 class="page-title">Tasks</h1><p class="page-subtitle">Track real activities and the demo points attached to each task.</p>
+        <div class="eyebrow">ACTIVITY & PROGRESS</div><h1 class="page-title">Tasks</h1><p class="page-subtitle">Track activities and the points attached to each task.</p>
         <div class="card task-summary" style="margin-top:16px">
-          <div><div class="eyebrow">YOUR PROGRESS</div><div style="font:900 23px 'Plus Jakarta Sans';margin-top:5px;color:#1c3156"><span id="taskDoneCount">0</span> <span style="color:#9299a3;font-size:12px">/ 4 tasks</span></div><div style="font-size:8px;color:#8a919c;margin-top:5px">Points are for interface preview only.</div></div>
+          <div><div class="eyebrow">YOUR PROGRESS</div><div style="font:900 23px 'Plus Jakarta Sans';margin-top:5px;color:#1c3156"><span id="taskDoneCount">0</span> <span style="color:#9299a3;font-size:12px">/ 4 tasks</span></div><div style="font-size:8px;color:#8a919c;margin-top:5px">Activity points are indicators only, not cash earnings.</div></div>
           <div class="task-progress" id="taskProgressCircle"><span id="taskProgressText">0%</span></div>
         </div>
         <div class="section-head"><h2 class="section-title">Activity Categories</h2><span class="eyebrow" id="taskFilterCount">4 ACTIVITIES</span></div>
@@ -873,32 +873,32 @@
         </div>
         <div class="task-list" id="taskList">
           <div class="task-modern" data-task-id="profile" data-task-category="profile">
-            <span class="task-modern-icon"><i class="fa-solid fa-user-check"></i></span><span class="task-modern-copy"><b>Complete profile details</b><small>Review the name, email and contact details saved on your profile.</small><span class="task-points">10 demo points</span></span>
+            <span class="task-modern-icon"><i class="fa-solid fa-user-check"></i></span><span class="task-modern-copy"><b>Complete profile details</b><small>Review the name, email and contact details saved on your profile.</small><span class="task-points">10 activity points</span></span>
             <button class="gbtn small" id="taskBtnProfile" onclick="completeDemoTask('profile')">MARK DONE</button>
           </div>
           <div class="task-modern" data-task-id="daily" data-task-category="daily">
-            <span class="task-modern-icon"><i class="fa-solid fa-calendar-check"></i></span><span class="task-modern-copy"><b>Daily activity check-in</b><small>Record today's visit and keep your activity streak.</small><span class="task-points">5 demo points</span></span>
+            <span class="task-modern-icon"><i class="fa-solid fa-calendar-check"></i></span><span class="task-modern-copy"><b>Daily activity check-in</b><small>Record today's visit and keep your activity streak.</small><span class="task-points">5 activity points</span></span>
             <button class="gbtn small" id="taskBtnDaily" onclick="recordDemoCheckin()">CHECK IN</button>
           </div>
           <div class="task-modern" data-task-id="guide" data-task-category="learning">
-            <span class="task-modern-icon"><i class="fa-solid fa-book-open"></i></span><span class="task-modern-copy"><b>Read the member guide</b><small>Learn about privacy, account safety and activity history.</small><span class="task-points">15 demo points</span></span>
+            <span class="task-modern-icon"><i class="fa-solid fa-book-open"></i></span><span class="task-modern-copy"><b>Read the member guide</b><small>Learn about privacy, account safety and activity history.</small><span class="task-points">15 activity points</span></span>
             <button class="gbtn small" id="taskBtnGuide" onclick="completeDemoTask('guide')">MARK DONE</button>
           </div>
           <div class="task-modern" data-task-id="security" data-task-category="learning">
-            <span class="task-modern-icon"><i class="fa-solid fa-shield-halved"></i></span><span class="task-modern-copy"><b>Review security settings</b><small>Check sign-in and contact preferences in the preview.</small><span class="task-points">10 demo points</span></span>
+            <span class="task-modern-icon"><i class="fa-solid fa-shield-halved"></i></span><span class="task-modern-copy"><b>Review security settings</b><small>Check your sign-in and contact preferences.</small><span class="task-points">10 activity points</span></span>
             <button class="gbtn small" id="taskBtnSecurity" onclick="completeDemoTask('security')">MARK DONE</button>
           </div>
         </div>
-        <div class="dash-note" style="margin-top:14px">Demo task buttons only update local preview points. They do not create cash earnings or submit activity to a server.</div>
-        <div class="foot-note">Task progress in this preview is saved only in this browser.</div>
+        <div class="dash-note" style="margin-top:14px">Task progress is currently stored only in this browser. It does not create cash earnings or submit activity to the server.</div>
+        <div class="foot-note">Task progress is saved only in this browser until account sync is connected.</div>
       </section>
 
       <!-- SERVER HUB -->
       <section id="tabServer" class="page">
-        <div class="eyebrow">SERVER PACKAGES · DISPLAY PREVIEW</div>
+        <div class="eyebrow">SERVER PACKAGES</div>
         <h1 class="page-title">My Servers</h1>
-        <p class="page-subtitle">Starter, VIP ও Legend package-এর sample details এবং demo activation history.</p>
-        <div class="card server-hero"><h3>Choose Your Package</h3><p>সব প্যাকেজের মেয়াদ ৭ দিন। BUY NOW চাপলে payment method নির্বাচন করতে পারবেন। এই পেজে payment এখনো demo preview।</p></div>
+        <p class="page-subtitle">Starter, VIP ও Legend package-এর তথ্য এবং activation history.</p>
+        <div class="card server-hero"><h3>Choose Your Package</h3><p>সব প্যাকেজের মেয়াদ ৭ দিন। BUY NOW চাপলে payment method নির্বাচন করতে পারবেন। Payment service এখনো connect করা হয়নি; অনুগ্রহ করে টাকা পাঠাবেন না।</p></div>
         <div class="server-package-grid">
           <article class="card server-package">
             <div class="server-package-top"><span class="plan-ribbon">৭ দিনের প্যাকেজ</span><span class="server-chip">PACKAGE 01</span></div>
@@ -906,7 +906,7 @@
             <h3>Premium</h3><p class="server-desc">Premium seven-day package</p>
             <div class="server-price-block"><small>প্যাকেজ মূল্য</small><b>৳১০,০০০</b></div>
             <div class="server-facts"><div><small>PACKAGE DURATION</small><b>৭ দিন</b></div></div>
-            <div class="server-sample-warning">ডেমো preview · কোনো live charge নয়</div>
+            <div class="server-sample-warning">Payment service সংযুক্ত নয় · এখনো কোনো টাকা কাটা হবে না</div>
             <button class="gbtn full" id="serverBtnPremium" onclick="openPaymentMethods('package','premium')">BUY NOW</button>
           </article>
           <article class="card server-package">
@@ -915,7 +915,7 @@
             <h3>Platinum</h3><p class="server-desc">Platinum seven-day package</p>
             <div class="server-price-block"><small>প্যাকেজ মূল্য</small><b>৳৭,০০০</b></div>
             <div class="server-facts"><div><small>PACKAGE DURATION</small><b>৭ দিন</b></div></div>
-            <div class="server-sample-warning">ডেমো preview · কোনো live charge নয়</div>
+            <div class="server-sample-warning">Payment service সংযুক্ত নয় · এখনো কোনো টাকা কাটা হবে না</div>
             <button class="gbtn full" id="serverBtnPlatinum" onclick="openPaymentMethods('package','platinum')">BUY NOW</button>
           </article>
           <article class="card server-package">
@@ -924,7 +924,7 @@
             <h3>Gold</h3><p class="server-desc">Gold seven-day package</p>
             <div class="server-price-block"><small>প্যাকেজ মূল্য</small><b>৳৫,০০০</b></div>
             <div class="server-facts"><div><small>PACKAGE DURATION</small><b>৭ দিন</b></div></div>
-            <div class="server-sample-warning">ডেমো preview · কোনো live charge নয়</div>
+            <div class="server-sample-warning">Payment service সংযুক্ত নয় · এখনো কোনো টাকা কাটা হবে না</div>
             <button class="gbtn full" id="serverBtnGold" onclick="openPaymentMethods('package','gold')">BUY NOW</button>
           </article>
           <article class="card server-package">
@@ -933,7 +933,7 @@
             <h3>Silver</h3><p class="server-desc">Silver seven-day package</p>
             <div class="server-price-block"><small>প্যাকেজ মূল্য</small><b>৳৩,০০০</b></div>
             <div class="server-facts"><div><small>PACKAGE DURATION</small><b>৭ দিন</b></div></div>
-            <div class="server-sample-warning">ডেমো preview · কোনো live charge নয়</div>
+            <div class="server-sample-warning">Payment service সংযুক্ত নয় · এখনো কোনো টাকা কাটা হবে না</div>
             <button class="gbtn full" id="serverBtnSilver" onclick="openPaymentMethods('package','silver')">BUY NOW</button>
           </article>
           <article class="card server-package">
@@ -942,7 +942,7 @@
             <h3>Bronze</h3><p class="server-desc">Bronze seven-day package</p>
             <div class="server-price-block"><small>প্যাকেজ মূল্য</small><b>৳২,৫০০</b></div>
             <div class="server-facts"><div><small>PACKAGE DURATION</small><b>৭ দিন</b></div></div>
-            <div class="server-sample-warning">ডেমো preview · কোনো live charge নয়</div>
+            <div class="server-sample-warning">Payment service সংযুক্ত নয় · এখনো কোনো টাকা কাটা হবে না</div>
             <button class="gbtn full" id="serverBtnBronze" onclick="openPaymentMethods('package','bronze')">BUY NOW</button>
           </article>
           <article class="card server-package">
@@ -951,7 +951,7 @@
             <h3>Standard</h3><p class="server-desc">Standard seven-day package</p>
             <div class="server-price-block"><small>প্যাকেজ মূল্য</small><b>৳১,০০০</b></div>
             <div class="server-facts"><div><small>PACKAGE DURATION</small><b>৭ দিন</b></div></div>
-            <div class="server-sample-warning">ডেমো preview · কোনো live charge নয়</div>
+            <div class="server-sample-warning">Payment service সংযুক্ত নয় · এখনো কোনো টাকা কাটা হবে না</div>
             <button class="gbtn full" id="serverBtnStandard" onclick="openPaymentMethods('package','standard')">BUY NOW</button>
           </article>
           <article class="card server-package">
@@ -960,14 +960,14 @@
             <h3>Basic</h3><p class="server-desc">Basic seven-day package</p>
             <div class="server-price-block"><small>প্যাকেজ মূল্য</small><b>৳৫০০</b></div>
             <div class="server-facts"><div><small>PACKAGE DURATION</small><b>৭ দিন</b></div></div>
-            <div class="server-sample-warning">ডেমো preview · কোনো live charge নয়</div>
+            <div class="server-sample-warning">Payment service সংযুক্ত নয় · এখনো কোনো টাকা কাটা হবে না</div>
             <button class="gbtn full" id="serverBtnBasic" onclick="openPaymentMethods('package','basic')">BUY NOW</button>
           </article>
         </div>
-        <div class="section-head"><h2 class="section-title">My Servers</h2><span class="eyebrow">ACTIVE DEMOS</span></div>
-        <div class="card server-history-panel" id="myServersList"><div class="server-empty"><span><i class="fa-solid fa-server"></i></span><b>No active demo server</b><small>Activate a free preview above to see it here.</small></div></div>
-        <div class="section-head"><h2 class="section-title">Purchase History</h2><span class="eyebrow">DEMO HISTORY</span></div>
-        <div class="card server-history-panel" id="serverHistoryList"><div class="server-empty"><span><i class="fa-solid fa-clock-rotate-left"></i></span><b>এখনো কোনো package কেনা হয়নি।</b><small>Demo activation history এখানে দেখা যাবে।</small></div></div>
+        <div class="section-head"><h2 class="section-title">My Servers</h2><span class="eyebrow">PACKAGE STATUS</span></div>
+        <div class="card server-history-panel" id="myServersList"><div class="server-empty"><span><i class="fa-solid fa-server"></i></span><b>No active package status</b><small>Package activity will appear here after activation.</small></div></div>
+        <div class="section-head"><h2 class="section-title">Purchase History</h2><span class="eyebrow">ACTIVATION HISTORY</span></div>
+        <div class="card server-history-panel" id="serverHistoryList"><div class="server-empty"><span><i class="fa-solid fa-clock-rotate-left"></i></span><b>এখনো কোনো package কেনা হয়নি।</b><small>Activation history এখানে দেখা যাবে।</small></div></div>
         <div class="dash-note">Sample price ও daily figure বাস্তব payment বা income নয়। এখানে package purchase, deposit, cash payout কিংবা guaranteed return চালু নেই; activation কেবল local demo status save করে।</div>
       </section>
 
@@ -977,13 +977,13 @@
         <div class="card profile-cover profile-hero-premium">
           <div class="profile-main-row">
             <div class="profile-avatar"><i class="fa-solid fa-user"></i></div>
-            <div class="profile-identity"><h3>PREVIEW MEMBER</h3><p><i class="fa-regular fa-envelope"></i> member@example.com</p><span class="verified"><i class="fa-solid fa-circle-check"></i> DESIGN PREVIEW</span></div>
+            <div class="profile-identity"><h3>MEMBER PROFILE</h3><p><i class="fa-regular fa-envelope"></i> Email not connected yet</p><span class="verified"><i class="fa-solid fa-circle-check"></i> ACCOUNT NOT CONNECTED</span></div>
             <button class="profile-edit" aria-label="Edit profile" onclick="openProfilePopup('personal')"><i class="fa-solid fa-pen"></i></button>
           </div>
           <div class="profile-divider"></div>
           <div class="profile-level-grid">
             <div class="profile-level-item"><span class="level-icon"><i class="fa-solid fa-award"></i></span><div><small>MEMBER LEVEL</small><b id="profileLevel">Starter</b></div></div>
-            <div class="profile-level-item"><span class="level-icon purple"><i class="fa-solid fa-star"></i></span><div><small>DEMO POINTS</small><b id="profilePoints">0</b></div></div>
+            <div class="profile-level-item"><span class="level-icon purple"><i class="fa-solid fa-star"></i></span><div><small>ACTIVITY POINTS</small><b id="profilePoints">0</b></div></div>
           </div>
         </div>
         <div class="profile-mini-stats">
@@ -1004,7 +1004,7 @@
           <button class="service-row" onclick="openProfilePopup('leaderboard')"><span class="service-icon gold"><i class="fa-solid fa-trophy"></i></span><span class="service-copy"><b>Leaderboard</b><small>ATIEARNBD top contributors</small></span><i class="fa-solid fa-chevron-right"></i></button>
           <button class="service-row" onclick="openProfilePopup('vip')"><span class="service-icon violet"><i class="fa-solid fa-bolt"></i></span><span class="service-copy"><b>VIP Task</b><small>Premium-style activity tasks</small></span><i class="fa-solid fa-chevron-right"></i></button>
           <button class="service-row" onclick="openProfilePopup('network')"><span class="service-icon mint"><i class="fa-solid fa-people-group"></i></span><span class="service-copy"><b>My Network</b><small>Referral team details</small></span><i class="fa-solid fa-chevron-right"></i></button>
-          <button class="service-row" onclick="openProfilePopup('redeem')"><span class="service-icon blue"><i class="fa-solid fa-ticket"></i></span><span class="service-copy"><b>Redeem Code</b><small>Claim demo bonus rewards</small></span><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="service-row" onclick="openProfilePopup('redeem')"><span class="service-icon blue"><i class="fa-solid fa-ticket"></i></span><span class="service-copy"><b>Redeem Code</b><small>Claim bonus rewards</small></span><i class="fa-solid fa-chevron-right"></i></button>
         </div>
 
         <div class="profile-menu-heading"><span>Support & Security</span><small>HELP & PREFERENCES</small></div>
@@ -1016,7 +1016,7 @@
           <button class="service-row" onclick="openProfilePopup('security')"><span class="service-icon blue"><i class="fa-solid fa-shield-halved"></i></span><span class="service-copy"><b>Security Center</b><small>Protect your account</small></span><i class="fa-solid fa-chevron-right"></i></button>
           <button class="service-row service-logout" onclick="openProfilePopup('logout')"><span class="service-icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span><span class="service-copy"><b>Secure Logout</b><small>Return to account access screen</small></span><i class="fa-solid fa-chevron-right"></i></button>
         </div>
-        <div class="foot-note">ATIEARNBD · Premium member experience preview</div>
+        <div class="foot-note">ATIEARNBD · Premium member experience</div>
       </section>
     </main>
 
@@ -1029,11 +1029,11 @@
     </nav>
   </div>
 
-  <section class="payment-screen" id="paymentScreen" hidden aria-hidden="true" aria-label="Payment method preview">
+  <section class="payment-screen" id="paymentScreen" hidden aria-hidden="true" aria-label="Payment method">
     <div class="payment-shell">
       <header class="payment-header">
         <button class="payment-back" id="paymentBackBtn" onclick="paymentGoBack()" aria-label="Back"><i class="fa-solid fa-arrow-left"></i></button>
-        <div class="payment-brand"><span class="payment-brand-icon"><i class="fa-solid fa-shield-halved"></i></span><b>ATIEARNBD <small>PAYMENT PREVIEW</small></b></div>
+        <div class="payment-brand"><span class="payment-brand-icon"><i class="fa-solid fa-shield-halved"></i></span><b>ATIEARNBD <small>PAYMENT</small></b></div>
         <button class="payment-back" onclick="closePaymentScreen()" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
       </header>
       <main class="payment-content">
@@ -1042,12 +1042,12 @@
           <h1 class="page-title">Choose a Method</h1>
           <p class="page-subtitle" id="paymentChooserSubtitle">Select one service to open its individual payment guide.</p>
           <div class="payment-context-card" id="paymentContextCard">
-            <small>PAYMENT SUMMARY · DEMO</small><b id="paymentContextTitle">Deposit preview</b><strong id="paymentContextAmount">Amount not set</strong>
+            <small>PAYMENT SUMMARY</small><b id="paymentContextTitle">Deposit details</b><strong id="paymentContextAmount">Amount not set</strong>
           </div>
           <div id="depositAmountWrap" class="payment-amount-wrap">
-            <label for="depositAmountInput">DEPOSIT AMOUNT · DEMO ONLY</label>
+            <label for="depositAmountInput">DEPOSIT AMOUNT</label>
             <div><span>৳</span><input id="depositAmountInput" type="number" min="100" step="1" value="100" oninput="updatePaymentAmountPreview()" inputmode="numeric"></div>
-            <small>Sample amount only · Minimum preview value ৳100</small>
+            <small>Enter an amount · Minimum ৳100</small>
           </div>
           <div class="payment-method-grid">
             <button class="payment-method-option" onclick="openPaymentMethod('bkash')"><span class="pay-logo bkash"><img src="https://raw.githubusercontent.com/mdmubarokhosin/Bd-MFS-Logo/refs/heads/main/logos/png/bkash.png" alt="bKash logo"></span><span><b>bKash</b><small>Mobile wallet</small></span><i class="fa-solid fa-chevron-right"></i></button>
@@ -1055,35 +1055,35 @@
             <button class="payment-method-option" onclick="openPaymentMethod('rocket')"><span class="pay-logo rocket"><img src="https://raw.githubusercontent.com/mdmubarokhosin/Bd-MFS-Logo/refs/heads/main/logos/png/rocket.png" alt="Rocket logo"></span><span><b>Rocket</b><small>Mobile wallet</small></span><i class="fa-solid fa-chevron-right"></i></button>
             <button class="payment-method-option" onclick="openPaymentMethod('upay')"><span class="pay-logo upay"><img src="https://raw.githubusercontent.com/mdmubarokhosin/Bd-MFS-Logo/refs/heads/main/logos/png/upay.png" alt="Upay logo"></span><span><b>Upay</b><small>Mobile wallet</small></span><i class="fa-solid fa-chevron-right"></i></button>
           </div>
-          <div class="payment-preview-warning"><i class="fa-solid fa-circle-info"></i><span>এটি Demo preview। এখানে কোনো টাকা পাঠাবেন না। বাস্তব payment merchant gateway যুক্ত হলে চালু হবে।</span></div>
+          <div class="payment-preview-warning"><i class="fa-solid fa-circle-info"></i><span>এই payment option এখনো live payment verification-এর সঙ্গে যুক্ত নয়। অনুগ্রহ করে টাকা পাঠাবেন না।</span></div>
         </div>
         <div id="paymentDetail" hidden>
           <div class="payment-detail-title">
             <span class="pay-logo large" id="paymentDetailLogo">bK</span>
-            <div><div class="eyebrow">INDIVIDUAL METHOD PAGE</div><h1 class="page-title" id="paymentDetailName">bKash</h1><p class="page-subtitle">Payment guide · Demo only</p></div>
+            <div><div class="eyebrow">INDIVIDUAL METHOD PAGE</div><h1 class="page-title" id="paymentDetailName">bKash</h1><p class="page-subtitle">Payment guide</p></div>
           </div>
           <div class="payment-context-card compact">
-            <small id="paymentDetailContextLabel">PAYMENT SUMMARY · DEMO</small><b id="paymentDetailContextTitle">Deposit preview</b><strong id="paymentDetailContextAmount">Amount not set</strong>
+            <small id="paymentDetailContextLabel">PAYMENT SUMMARY</small><b id="paymentDetailContextTitle">Deposit details</b><strong id="paymentDetailContextAmount">Amount not set</strong>
           </div>
           <div class="payment-tutorial">
             <div class="payment-tutorial-heading"><i class="fa-solid fa-book-open"></i><b>কীভাবে করবেন · Tutorial</b></div>
             <ol>
-              <li>এই স্ক্রিনটি শুধু Demo। এখানে কোনো ব্যক্তিগত payment number দেওয়া নেই।</li>
+              <li>এই payment method-এর live verification এখনো সংযুক্ত নয়।</li>
               <li>বাস্তব লেনদেনের জন্য অনুমোদিত official merchant checkout ব্যবহার করতে হবে।</li>
-              <li>Demo পরীক্ষা করতে নিচে sample sender number ও sample TrxID লিখুন। এতে কোনো টাকা পাঠানো বা server request হবে না।</li>
+              <li>নিচে payment details লিখলেও তা এখনো server-এ জমা বা verify হবে না। Live verification চালু না হওয়া পর্যন্ত টাকা পাঠাবেন না।</li>
             </ol>
           </div>
           <div class="payment-recipient-box">
             <div><small>PAYMENT NUMBER</small><b id="paymentRecipientNumber">01731567454</b></div>
             <button type="button" class="payment-copy" onclick="copyPaymentNumber()"><i class="fa-regular fa-copy"></i> COPY</button>
           </div>
-          <label class="payment-field-label" for="demoSenderNumber">SENDER NUMBER · SAMPLE ONLY</label>
+          <label class="payment-field-label" for="demoSenderNumber">SENDER NUMBER</label>
           <input class="payment-field" id="demoSenderNumber" type="tel" inputmode="numeric" maxlength="11" placeholder="01XXXXXXXXX" autocomplete="off">
-          <label class="payment-field-label" for="demoTrxId">TRANSACTION ID · SAMPLE ONLY</label>
-          <input class="payment-field" id="demoTrxId" type="text" maxlength="20" placeholder="Enter a sample TrxID" autocomplete="off" autocapitalize="characters" oninput="this.value=this.value.toUpperCase().replace(/[^A-Z0-9]/g,'')">
-          <button class="gbtn full" style="margin-top:13px" onclick="submitDemoPaymentRequest()"><i class="fa-solid fa-shield-check"></i> VERIFY DEMO REQUEST</button>
+          <label class="payment-field-label" for="demoTrxId">TRANSACTION ID</label>
+          <input class="payment-field" id="demoTrxId" type="text" maxlength="20" placeholder="Enter transaction ID" autocomplete="off" autocapitalize="characters" oninput="this.value=this.value.toUpperCase().replace(/[^A-Z0-9]/g,'')">
+          <button class="gbtn full" style="margin-top:13px" onclick="submitDemoPaymentRequest()"><i class="fa-solid fa-shield-check"></i> CHECK DETAILS</button>
           <div id="demoPaymentStatus" class="demo-payment-status" hidden></div>
-          <p class="payment-footnote">No real payment verification, account credit, package purchase or request submission is performed by this preview.</p>
+          <p class="payment-footnote">Live payment verification, account credit, package activation and server submission are not connected yet.</p>
         </div>
       </main>
     </div>
@@ -1096,7 +1096,7 @@
     </div>
   </div>
 
-  <section class="auth-screen" id="registerPreview" aria-label="ATIEARNBD account access preview">
+  <section class="auth-screen" id="registerPreview" aria-label="ATIEARNBD account access">
     <div class="auth-shell">
       <header class="auth-topbar">
         <div class="auth-brand"><span class="auth-brand-icon"><svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false" fill="none"><path d="M7.5 38 18.7 12.8c1.9-4.3 8.7-4.3 10.6 0L40.5 38" stroke="currentColor" stroke-width="4.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.5 28.5h14" stroke="currentColor" stroke-width="4.1" stroke-linecap="round"/><path d="m24.5 31 8.2-8.2 6.1 6.1M32.7 22.8h6.1v6.1" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><b>ATIEARNBD</b></div>
@@ -1147,9 +1147,9 @@
           <div class="auth-or"><span></span> OR <span></span></div>
           <button class="auth-google" type="button" onclick="googlePreview()"><i class="fa-brands fa-google"></i> Continue with Google</button>
         </div>
-        <button type="button" class="auth-skip" onclick="closeRegisterPreview()"><i class="fa-solid fa-forward-step"></i> Skip for now · Open Preview</button>
+        <button type="button" class="auth-skip" onclick="closeRegisterPreview()"><i class="fa-solid fa-forward-step"></i> Skip for now</button>
         <div class="auth-security-note"><span><i class="fa-solid fa-shield-halved"></i></span><div><b>ATIEARNBD Member Access</b><small>Authentication and account security will be connected in the next development stage.</small></div></div>
-        <p class="auth-bottom-note">DESIGN PREVIEW · No account will be created or accessed yet.</p>
+        <p class="auth-bottom-note">Account registration and sign-in are not connected yet.</p>
       </div>
     </div>
   </section>
@@ -1196,7 +1196,7 @@
     let paymentContext = {type:"deposit",packageKey:null,method:null,step:"chooser"};
     function openPaymentMethods(type="deposit",packageKey=null,method=null){
       paymentContext={type,packageKey,method:null,step:"chooser"};
-      // Ensure the payment overlay is never hidden behind the account-access preview.
+      // Ensure the payment overlay is never hidden behind the account-access screen.
       const authScreen=document.getElementById("registerPreview");
       if(authScreen)authScreen.classList.remove("show");
       const title=document.getElementById("paymentContextTitle");
@@ -1209,11 +1209,11 @@
         const pack=DEMO_SERVER_PACKAGES[packageKey];
         if(title)title.textContent=pack.name+" · ৭ দিনের প্যাকেজ";
         if(amount)amount.textContent=pack.priceLabel;
-        if(subtitle)subtitle.textContent="পেমেন্ট method বেছে নিয়ে demo guide খুলুন।";
+        if(subtitle)subtitle.textContent="পেমেন্ট method বেছে নিয়ে payment details দেখুন।";
       }else{
-        if(title)title.textContent="Deposit · Demo preview";
+        if(title)title.textContent="Deposit details";
         if(amount)amount.textContent="৳100";
-        if(subtitle)subtitle.textContent="Select bKash, Nagad, Rocket or Upay to open its individual demo page.";
+        if(subtitle)subtitle.textContent="Select bKash, Nagad, Rocket or Upay to view payment details.";
       }
       if(summary)summary.hidden=false;
       if(type==="deposit")updatePaymentAmountPreview();
@@ -1258,11 +1258,11 @@
         const p=DEMO_SERVER_PACKAGES[paymentContext.packageKey];
         title.textContent=p.name+" · ৭ দিনের প্যাকেজ";
         amount.textContent=p.priceLabel;
-        label.textContent="৭-DAY PACKAGE · DEMO ONLY";
+        label.textContent="৭-DAY PACKAGE";
       }else{
-        title.textContent="Deposit · Demo preview";
+        title.textContent="Deposit details";
         amount.textContent="No live amount";
-        label.textContent="DEPOSIT PREVIEW · NO LIVE CHARGE";
+        label.textContent="DEPOSIT DETAILS · SERVICE NOT CONNECTED";
       }
       if(paymentContext.type==="deposit")updatePaymentAmountPreview();
       const status=document.getElementById("demoPaymentStatus");
@@ -1298,31 +1298,31 @@
       if(!paymentContext.method){showToast("আগে একটি payment method নির্বাচন করুন।");return;}
       const sender=(document.getElementById("demoSenderNumber").value||"").replace(/\s+/g,"");
       const trx=(document.getElementById("demoTrxId").value||"").trim().toUpperCase();
-      if(!/^01[3-9][0-9]{8}$/.test(sender)){showToast("Sample sender number হিসেবে ১১ ডিজিট লিখুন।");return;}
-      if(!/^[A-Z0-9]{6,20}$/.test(trx)){showToast("একটি sample TrxID লিখুন।");return;}
+      if(!/^01[3-9][0-9]{8}$/.test(sender)){showToast("Sender number হিসেবে ১১ ডিজিট লিখুন।");return;}
+      if(!/^[A-Z0-9]{6,20}$/.test(trx)){showToast("একটি valid TrxID লিখুন।");return;}
       const status=document.getElementById("demoPaymentStatus");
       status.hidden=false;
-      status.innerHTML='<i class="fa-solid fa-circle-check"></i> Demo request received · Status: <b>PREVIEW PENDING</b><br><small>কোনো বাস্তব payment verify বা request submit হয়নি। কোনো balance বা package active করা হয়নি।</small>';
-      showToast("Demo request received · No real payment submitted.");
+      status.innerHTML='<i class="fa-solid fa-circle-check"></i> Details checked · Status: <b>NOT SUBMITTED</b><br><small>Payment verify বা request server-এ submit হয়নি। কোনো balance credit বা package active হয়নি।</small>';
+      showToast("Details checked · No payment request submitted.");
     }
 
 
     function openProfilePopup(key) {
       const data = {
         personal: { title:"Personal Details", html:'<div class="profile-popup-card"><strong>Member profile</strong><small>Name, email address and profile photo editing will be available after secure account authentication is connected.</small></div>' },
-        wallet: { title:"Wallet", html:'<div class="profile-popup-stats"><div class="profile-popup-stat"><small>DEMO POINTS</small><b id="popupWalletPoints">0</b></div><div class="profile-popup-stat"><small>CASH BALANCE</small><b>Not connected</b></div></div><div class="profile-popup-card"><strong>Manage all balances</strong><small>This preview tracks non-cash demo points only. No deposits, payments or withdrawals are available here.</small></div><button class="gbtn full" onclick="closeAction();switchTab(\'tabWallet\')">Open Wallet Activity</button>' },
-        salary: { title:"Fixed Salary", html:'<div class="profile-popup-card"><strong>Request weekly salary</strong><small>There is no salary program or verified payroll connection in this preview. A weekly salary or fixed income is not promised.</small></div><div class="popup-note">Salary requests must only be enabled when a real, documented employment or reward policy and payment process exist.</div>' },
-        withdrawals: { title:"Withdraw Records", html:'<div class="popup-empty"><i class="fa-solid fa-clock-rotate-left"></i><b>No withdrawal records</b><small>Real withdrawal history is not connected in this design preview.</small></div>' },
+        wallet: { title:"Wallet", html:'<div class="profile-popup-stats"><div class="profile-popup-stat"><small>ACTIVITY POINTS</small><b id="popupWalletPoints">0</b></div><div class="profile-popup-stat"><small>CASH BALANCE</small><b>Not connected</b></div></div><div class="profile-popup-card"><strong>Manage all balances</strong><small>This area tracks activity points only. Deposits, payments and withdrawals are not connected yet.</small></div><button class="gbtn full" onclick="closeAction();switchTab(\'tabWallet\')">Open Wallet Activity</button>' },
+        salary: { title:"Fixed Salary", html:'<div class="profile-popup-card"><strong>Request weekly salary</strong><small>There is no salary program or verified payroll connection yet. A weekly salary or fixed income is not promised.</small></div><div class="popup-note">Salary requests must only be enabled when a real, documented employment or reward policy and payment process exist.</div>' },
+        withdrawals: { title:"Withdraw Records", html:'<div class="popup-empty"><i class="fa-solid fa-clock-rotate-left"></i><b>No withdrawal records</b><small>Real withdrawal history is not connected yet.</small></div>' },
         leaderboard: { title:"Leaderboard", html:'<div class="profile-popup-card"><strong>Top contributors</strong><small>Leaderboard data will appear here when verified activity records are connected.</small></div><div class="popup-empty"><i class="fa-solid fa-trophy"></i><b>Leaderboard is not live yet</b><small>No sample users or rankings are being displayed as real members.</small></div>' },
-        vip: { title:"VIP Task", html:'<div class="profile-popup-card"><strong>Premium-style activities</strong><small>Browse optional learning and participation activities. Tasks award preview points only, not cash.</small></div><div class="profile-popup-list"><div class="profile-popup-row"><i class="fa-solid fa-user-check"></i><span><b>Complete profile</b><small>Review your member details · 10 demo points</small></span></div><div class="profile-popup-row"><i class="fa-solid fa-calendar-check"></i><span><b>Daily check-in</b><small>Record your visit · 5 demo points</small></span></div><div class="profile-popup-row"><i class="fa-solid fa-book-open"></i><span><b>Read member guide</b><small>Learn about account safety · 15 demo points</small></span></div></div><button class="gbtn full" style="margin-top:12px" onclick="closeAction();switchTab(\'tabTasks\')">View Tasks</button>' },
+        vip: { title:"VIP Task", html:'<div class="profile-popup-card"><strong>Premium-style activities</strong><small>Browse optional learning and participation activities. Tasks award activity points only, not cash.</small></div><div class="profile-popup-list"><div class="profile-popup-row"><i class="fa-solid fa-user-check"></i><span><b>Complete profile</b><small>Review your member details · 10 activity points</small></span></div><div class="profile-popup-row"><i class="fa-solid fa-calendar-check"></i><span><b>Daily check-in</b><small>Record your visit · 5 activity points</small></span></div><div class="profile-popup-row"><i class="fa-solid fa-book-open"></i><span><b>Read member guide</b><small>Learn about account safety · 15 activity points</small></span></div></div><button class="gbtn full" style="margin-top:12px" onclick="closeAction();switchTab(\'tabTasks\')">View Tasks</button>' },
         network: { title:"My Network", html:'<div class="profile-popup-stats"><div class="profile-popup-stat"><small>TEAM MEMBERS</small><b>0</b></div><div class="profile-popup-stat"><small>ACTIVE REFERRALS</small><b>0</b></div></div><div class="popup-empty"><i class="fa-solid fa-people-group"></i><b>Network is not connected</b><small>Referral links and verified team information will appear after account services are connected.</small></div>' },
-        redeem: { title:"Redeem Code", html:'<div class="profile-popup-card"><strong>Claim a demo reward</strong><small>Code redemption is a visual preview only. No code or cash reward can be claimed at this stage.</small></div><label for="previewRedeemCode" style="display:block;font-size:8px;font-weight:900;color:#8a909a;margin:12px 0 5px">REDEEM CODE</label><input id="previewRedeemCode" class="popup-select" type="text" placeholder="Enter your code" autocomplete="off"><button class="gbtn full" onclick="showToast(\'Code redemption is not connected in this preview.\')">CHECK CODE</button>' },
+        redeem: { title:"Redeem Code", html:'<div class="profile-popup-card"><strong>Claim a reward</strong><small>Code redemption is not connected yet. No code or cash reward can be claimed at this stage.</small></div><label for="previewRedeemCode" style="display:block;font-size:8px;font-weight:900;color:#8a909a;margin:12px 0 5px">REDEEM CODE</label><input id="previewRedeemCode" class="popup-select" type="text" placeholder="Enter your code" autocomplete="off"><button class="gbtn full" onclick="showToast(\'Code redemption is not connected yet.\')">CHECK CODE</button>' },
         support: { title:"Customer Service", html:'<div class="profile-popup-card"><strong>Support information</strong><small>Support hours, verified contact details and ticket submission will be added when official support channels are ready.</small></div><div class="popup-empty"><i class="fa-solid fa-headset"></i><b>Support contact not configured</b><small>Please do not send personal or payment information to unofficial contacts.</small></div>' },
-        app: { title:"ATIEARNBD App", html:'<div class="profile-popup-card"><strong>App-style experience</strong><small>This responsive website is designed to feel like a mobile app. A verified installable app package is not available in this preview.</small></div><div class="profile-popup-row"><i class="fa-solid fa-mobile-screen-button"></i><span><b>Mobile-friendly layout</b><small>Use the browser menu to add the site to your home screen when supported.</small></span></div>' },
+        app: { title:"ATIEARNBD App", html:'<div class="profile-popup-card"><strong>App-style experience</strong><small>This responsive website is designed to feel like a mobile app. A verified installable app package is not available yet.</small></div><div class="profile-popup-row"><i class="fa-solid fa-mobile-screen-button"></i><span><b>Mobile-friendly layout</b><small>Use the browser menu to add the site to your home screen when supported.</small></span></div>' },
         currency: { title:"Currency", html:'<p>Choose a display preference. This setting does not convert balances or change any underlying amount.</p><label for="profileCurrency" style="display:block;font-size:8px;font-weight:900;color:#8a909a">CURRENCY PREFERENCE</label><select id="profileCurrency" class="popup-select"><option value="BDT">BDT · Bangladeshi Taka</option><option value="USDT">USDT · Tether</option><option value="INR">INR · Indian Rupee</option></select><button class="gbtn full" onclick="saveProfilePreference(\'currency\',\'profileCurrency\')">Save Preference</button>' },
-        language: { title:"Language", html:'<p>Choose a language preference for a future translated interface. This preview currently remains in its existing language.</p><label for="profileLanguage" style="display:block;font-size:8px;font-weight:900;color:#8a909a">LANGUAGE PREFERENCE</label><select id="profileLanguage" class="popup-select"><option value="system">System language</option><option value="bn">বাংলা</option><option value="en">English</option><option value="hi">हिन्दी</option></select><button class="gbtn full" onclick="saveProfilePreference(\'language\',\'profileLanguage\')">Save Preference</button>' },
+        language: { title:"Language", html:'<p>Choose a language preference for a future translated interface. Translated language options are not available yet.</p><label for="profileLanguage" style="display:block;font-size:8px;font-weight:900;color:#8a909a">LANGUAGE PREFERENCE</label><select id="profileLanguage" class="popup-select"><option value="system">System language</option><option value="bn">বাংলা</option><option value="en">English</option><option value="hi">हिन्दी</option></select><button class="gbtn full" onclick="saveProfilePreference(\'language\',\'profileLanguage\')">Save Preference</button>' },
         security: { title:"Security Center", html:'<div class="profile-popup-card"><strong><i class="fa-solid fa-shield-halved"></i> Protect your account</strong><small>Authentication, password changes, active sessions and recovery options are not connected yet.</small></div><div class="popup-note">Never share your password, one-time code or payment PIN with anyone claiming to be support.</div>' },
-        logout: { title:"Secure Logout", html:'<div class="profile-popup-card"><strong>Leave the preview?</strong><small>This demo has no signed-in account session to terminate. You can return to the sign-in screen preview.</small></div><button class="gbtn full" onclick="closeAction();openRegisterPreview();switchAuthMode(\'login\')">Return to Login Preview</button>' }
+        logout: { title:"Secure Logout", html:'<div class="profile-popup-card"><strong>Sign out?</strong><small>No signed-in account session is active yet. You can return to the login screen.</small></div><button class="gbtn full" onclick="closeAction();openRegisterPreview();switchAuthMode(\'login\')">Return to Login</button>' }
       };
       const item = data[key];
       if (!item) return;
@@ -1349,7 +1349,7 @@
       if (!select) return;
       try { localStorage.setItem("atimex_profile_" + key, select.value); }
       catch (error) { showToast("Preference could not be saved in this browser."); return; }
-      showToast("Preference saved for this browser preview.");
+      showToast("Preference saved on this device.");
       closeAction();
     }
     function getDemoServers() {
@@ -1360,20 +1360,20 @@
     }
     function saveDemoServers(items) {
       try { localStorage.setItem("atimex_demo_servers", JSON.stringify(items)); }
-      catch (error) { showToast("Demo server state could not be saved."); }
+      catch (error) { showToast("Package status could not be saved on this device."); }
     }
     function activateDemoServer(key) {
       const names = Object.fromEntries(Object.entries(DEMO_SERVER_PACKAGES).map(([key,pack])=>[key,pack.name]));
       if (!Object.prototype.hasOwnProperty.call(names,key)) return;
       const items = getDemoServers();
       if (items.some(item => item.key === key)) {
-        showToast(names[key] + " demo is already active.");
+        showToast(names[key] + " is already active on this device.");
         return;
       }
       items.unshift({key:key,name:names[key],startedAt:Date.now()});
       saveDemoServers(items);
       updateDemoServers();
-      showToast(names[key] + " free demo activated in this browser.");
+      showToast(names[key] + " free local activation saved on this device.");
     }
     function updateDemoServers() {
       const names = Object.fromEntries(Object.entries(DEMO_SERVER_PACKAGES).map(([key,pack])=>[key,pack.name]));
@@ -1381,14 +1381,14 @@
       const active = getDemoServers();
       const activeEl = document.getElementById("myServersList");
       const historyEl = document.getElementById("serverHistoryList");
-      // Payment preview buttons remain available after local demo activation.
+      // Payment details remain accessible after local package status is saved.
       if (activeEl) activeEl.innerHTML = active.length ? active.map(item => {
         const expires = new Date(item.startedAt + 7*24*60*60*1000);
-        return '<div class="server-active-row"><span class="server-active-icon"><i class="fa-solid ' + icons[item.key] + '"></i></span><span class="server-active-copy"><b>' + names[item.key] + ' · Free demo</b><small>Started ' + new Date(item.startedAt).toLocaleDateString() + ' · Ends ' + expires.toLocaleDateString() + '</small></span><span class="server-active-status">ACTIVE</span></div>';
-      }).join("") : '<div class="server-empty"><span><i class="fa-solid fa-server"></i></span><b>No active demo server</b><small>Activate a free preview above to see it here.</small></div>';
+        return '<div class="server-active-row"><span class="server-active-icon"><i class="fa-solid ' + icons[item.key] + '"></i></span><span class="server-active-copy"><b>' + names[item.key] + ' · Free local activation</b><small>Started ' + new Date(item.startedAt).toLocaleDateString() + ' · Ends ' + expires.toLocaleDateString() + '</small></span><span class="server-active-status">ACTIVE</span></div>';
+      }).join("") : '<div class="server-empty"><span><i class="fa-solid fa-server"></i></span><b>No active package status</b><small>Package activity will appear here after activation.</small></div>';
       if (historyEl) historyEl.innerHTML = active.length ? active.map(item => {
         return '<div class="server-active-row"><span class="server-active-icon"><i class="fa-solid fa-clock-rotate-left"></i></span><span class="server-active-copy"><b>' + names[item.key] + ' · Free activation</b><small>' + new Date(item.startedAt).toLocaleString() + '</small></span><span class="server-active-status">PREVIEW</span></div>';
-      }).join("") : '<div class="server-empty"><span><i class="fa-solid fa-clock-rotate-left"></i></span><b>No activation history yet</b><small>Your free demo activations will appear here.</small></div>';
+      }).join("") : '<div class="server-empty"><span><i class="fa-solid fa-clock-rotate-left"></i></span><b>No activation history yet</b><small>Your activation history will appear here.</small></div>';
     }
 
     let toastTimer;
@@ -1448,14 +1448,14 @@
         showToast('সঠিক ১১ সংখ্যার মোবাইল নম্বর দিন।');
         return;
       }
-      showToast('Registration design preview only — account creation is not connected.');
+      showToast('Registration is not connected yet. Account creation is unavailable.');
     }
     function submitLoginPreview(event) {
       event.preventDefault();
-      showToast('Login design preview only — authentication is not connected.');
+      showToast('Login is not connected yet.');
     }
     function googlePreview() {
-      showToast('Continue with Google — Supabase Google Auth will be connected later.');
+      showToast('Google sign-in is not connected yet.');
     }
     function prepareATIEARNBDGlassShatter(splash) {
       const word = splash?.querySelector('.splash-word');
@@ -1694,7 +1694,7 @@
     }
     function saveDemoState(state) {
       try { localStorage.setItem('atimex_safe_preview_state', JSON.stringify(state)); }
-      catch (error) { console.warn('Preview state could not be saved:', error); }
+      catch (error) { console.warn('Activity state could not be saved:', error); }
     }
     function localDayKey() {
       const now = new Date();
@@ -1749,12 +1749,12 @@
       state.points+=demoTaskPoints[id];
       saveDemoState(state);
       updateDemoDashboard();
-      showToast(demoTaskLabels[id]+' marked complete in this browser preview.');
+      showToast(demoTaskLabels[id]+' marked complete on this device. Account sync is not connected yet.');
     }
     function recordDemoCheckin() {
       const state=getDemoState();
       const today=localDayKey();
-      if(state.checkinDate===today){showToast('আজকের demo check-in ইতিমধ্যে করা হয়েছে।');return;}
+      if(state.checkinDate===today){showToast('আজকের check-in ইতিমধ্যে করা হয়েছে।');return;}
       const previous=new Date(); previous.setDate(previous.getDate()-1);
       const yesterday=[previous.getFullYear(),String(previous.getMonth()+1).padStart(2,'0'),String(previous.getDate()).padStart(2,'0')].join('-');
       state.streak=state.checkinDate===yesterday ? state.streak+1 : 1;
@@ -1762,7 +1762,7 @@
       state.points+=demoTaskPoints.daily;
       saveDemoState(state);
       updateDemoDashboard();
-      showToast('Demo check-in complete · +5 preview points.');
+      showToast('Check-in saved on this device · +5 activity points. Account sync is not connected yet.');
     }
     function filterTasks(category) {
       document.querySelectorAll('[data-task-filter]').forEach(btn=>btn.classList.toggle('active',btn.dataset.taskFilter===category));
