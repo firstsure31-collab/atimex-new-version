@@ -698,6 +698,8 @@
     .pay-logo.rocket{background:#f1eaff;color:#8145c1}
     .pay-logo.upay{background:#fff8df;color:#b68b14}
     .pay-logo.large{width:55px;height:55px;border-radius:17px;font-size:18px}
+    .pay-logo img{display:block;width:88%;height:88%;object-fit:contain}
+    .pay-logo.large img{width:90%;height:90%}
     .payment-preview-warning{display:flex;align-items:flex-start;gap:8px;padding:11px;border:1px solid #f2e6c8;border-radius:12px;background:#fff9e9;color:#98732d;font-size:8px;line-height:1.6}
     .payment-preview-warning i{margin-top:1px}
     .payment-detail-title{display:flex;align-items:center;gap:12px;margin-bottom:12px}
@@ -1029,10 +1031,10 @@
             <small>Sample amount only · Minimum preview value ৳100</small>
           </div>
           <div class="payment-method-grid">
-            <button class="payment-method-option" onclick="openPaymentMethod('bkash')"><span class="pay-logo bkash">bK</span><span><b>bKash</b><small>Mobile wallet</small></span><i class="fa-solid fa-chevron-right"></i></button>
-            <button class="payment-method-option" onclick="openPaymentMethod('nagad')"><span class="pay-logo nagad">ন</span><span><b>Nagad</b><small>Mobile wallet</small></span><i class="fa-solid fa-chevron-right"></i></button>
-            <button class="payment-method-option" onclick="openPaymentMethod('rocket')"><span class="pay-logo rocket"><i class="fa-solid fa-rocket"></i></span><span><b>Rocket</b><small>Mobile wallet</small></span><i class="fa-solid fa-chevron-right"></i></button>
-            <button class="payment-method-option" onclick="openPaymentMethod('upay')"><span class="pay-logo upay">u</span><span><b>Upay</b><small>Mobile wallet</small></span><i class="fa-solid fa-chevron-right"></i></button>
+            <button class="payment-method-option" onclick="openPaymentMethod('bkash')"><span class="pay-logo bkash"><img src="https://raw.githubusercontent.com/mdmubarokhosin/Bd-MFS-Logo/refs/heads/main/logos/png/bkash.png" alt="bKash logo"></span><span><b>bKash</b><small>Mobile wallet</small></span><i class="fa-solid fa-chevron-right"></i></button>
+            <button class="payment-method-option" onclick="openPaymentMethod('nagad')"><span class="pay-logo nagad"><img src="https://raw.githubusercontent.com/mdmubarokhosin/Bd-MFS-Logo/refs/heads/main/logos/png/nagad.png" alt="Nagad logo"></span><span><b>Nagad</b><small>Mobile wallet</small></span><i class="fa-solid fa-chevron-right"></i></button>
+            <button class="payment-method-option" onclick="openPaymentMethod('rocket')"><span class="pay-logo rocket"><img src="https://raw.githubusercontent.com/mdmubarokhosin/Bd-MFS-Logo/refs/heads/main/logos/png/rocket.png" alt="Rocket logo"></span><span><b>Rocket</b><small>Mobile wallet</small></span><i class="fa-solid fa-chevron-right"></i></button>
+            <button class="payment-method-option" onclick="openPaymentMethod('upay')"><span class="pay-logo upay"><img src="https://raw.githubusercontent.com/mdmubarokhosin/Bd-MFS-Logo/refs/heads/main/logos/png/upay.png" alt="Upay logo"></span><span><b>Upay</b><small>Mobile wallet</small></span><i class="fa-solid fa-chevron-right"></i></button>
           </div>
           <div class="payment-preview-warning"><i class="fa-solid fa-circle-info"></i><span>এটি Demo preview। এখানে কোনো টাকা পাঠাবেন না। বাস্তব payment merchant gateway যুক্ত হলে চালু হবে।</span></div>
         </div>
@@ -1155,10 +1157,10 @@
       document.body.style.overflow = '';
     }
     const DEMO_PAYMENT_METHODS = {
-      bkash:{name:"bKash",logo:"bK",className:"bkash"},
-      nagad:{name:"Nagad",logo:"ন",className:"nagad"},
-      rocket:{name:"Rocket",logo:'<i class="fa-solid fa-rocket"></i>',className:"rocket"},
-      upay:{name:"Upay",logo:"u",className:"upay"}
+      bkash:{name:"bKash",logo:'<img src="https://raw.githubusercontent.com/mdmubarokhosin/Bd-MFS-Logo/refs/heads/main/logos/png/bkash.png" alt="bKash logo">',className:"bkash"},
+      nagad:{name:"Nagad",logo:'<img src="https://raw.githubusercontent.com/mdmubarokhosin/Bd-MFS-Logo/refs/heads/main/logos/png/nagad.png" alt="Nagad logo">',className:"nagad"},
+      rocket:{name:"Rocket",logo:'<img src="https://raw.githubusercontent.com/mdmubarokhosin/Bd-MFS-Logo/refs/heads/main/logos/png/rocket.png" alt="Rocket logo">',className:"rocket"},
+      upay:{name:"Upay",logo:'<img src="https://raw.githubusercontent.com/mdmubarokhosin/Bd-MFS-Logo/refs/heads/main/logos/png/upay.png" alt="Upay logo">',className:"upay"}
     };
     const DEMO_SERVER_PACKAGES = {
       premium:{name:"Premium",price:10000,priceLabel:"৳১০,০০০",days:7},
