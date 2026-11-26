@@ -318,14 +318,14 @@
       position:fixed; inset:0; z-index:10000; display:flex; align-items:center; justify-content:center;
       overflow:hidden; isolation:isolate; color:#16345f;
       background:
-        radial-gradient(ellipse at 50% 42%,rgba(67,137,238,.16),transparent 31%),
-        radial-gradient(ellipse at 50% 110%,rgba(112,169,245,.22),transparent 44%),
-        linear-gradient(145deg,#ffffff 0%,#f2f7ff 53%,#eaf2ff 100%);
+        radial-gradient(ellipse at 50% 42%,rgba(54,122,226,.24),transparent 34%),
+        radial-gradient(ellipse at 50% 110%,rgba(71,137,235,.34),transparent 47%),
+        linear-gradient(145deg,#e5efff 0%,#d7e6ff 52%,#c8dcff 100%);
       opacity:1; visibility:visible;
     }
     #atimexSplash::before {
       content:""; position:absolute; inset:-40%; z-index:-1;
-      background:conic-gradient(from 0deg,transparent 0 22%,rgba(67,137,238,.13) 29%,transparent 37% 61%,rgba(25,102,210,.10) 68%,transparent 76%);
+      background:conic-gradient(from 0deg,transparent 0 22%,rgba(54,121,222,.18) 29%,transparent 37% 61%,rgba(25,91,195,.15) 68%,transparent 76%);
       animation:splashNebula 12s linear infinite;
     }
     #atimexSplash::after {
@@ -376,11 +376,17 @@
     }
     .splash-letter {
       display:inline-block; color:transparent;
-      background:linear-gradient(180deg,#173762 0%,#286ac4 48%,#5795ea 100%);
+      background:linear-gradient(90deg,#173762 0%,#286ac4 23%,#eaf4ff 42%,#63a5ff 52%,#1c5dbd 73%,#173762 100%);
+      background-size:220% 100%; background-position:0% 50%;
       -webkit-background-clip:text; background-clip:text;
       transform-style:preserve-3d; opacity:0;
-      text-shadow:0 0 24px rgba(44,112,211,.16);
-      animation:letterForge 5.15s cubic-bezier(.2,.72,.22,1) both;
+      text-shadow:0 0 12px rgba(58,132,235,.3);
+      animation:letterForge 5.15s cubic-bezier(.2,.72,.22,1) both, neonLetterFlow 1.55s ease-in-out .25s infinite alternate;
+    }
+    /* A separate moving highlight runs through every character while its 3D entrance plays. */
+    @keyframes neonLetterFlow {
+      0% { background-position:0% 50%; text-shadow:0 0 7px rgba(64,139,245,.22),0 0 2px rgba(225,240,255,.2); }
+      100% { background-position:100% 50%; text-shadow:0 0 19px rgba(48,126,244,.72),0 0 8px rgba(194,222,255,.8); }
     }
     .splash-letter:nth-child(1) { animation-delay:.00s; }
     .splash-letter:nth-child(2) { animation-delay:.08s; }
