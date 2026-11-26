@@ -620,17 +620,20 @@
     .popup-empty small{display:block;margin-top:5px;color:#9aa79e;font-size:8px;line-height:1.5}
     .popup-select{width:100%;margin:7px 0 12px;padding:12px;border:1px solid #dcebe1;border-radius:12px;background:#fbfefc;color:#31523d;font:700 11px 'DM Sans',sans-serif}
     .popup-note{padding:10px 12px;border-radius:11px;background:#fff8e8;border:1px solid #f5e8c8;color:#97712e;font-size:8px;line-height:1.6}
-    .server-package-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:13px}
+    .server-package-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:13px}
     .server-package{padding:13px;overflow:hidden;position:relative}
-    .server-package:nth-child(3){grid-column:1/-1}
     .server-package-top{display:flex;align-items:center;justify-content:space-between;gap:6px}
     .server-chip{font-size:7px;color:#8c9e92;font-weight:900;white-space:nowrap}
     .server-chip i{color:#16a168}
     .server-art{height:66px;margin:12px 0 9px;border-radius:15px;display:grid;place-items:center;font-size:29px;color:#fff;overflow:hidden;position:relative}
     .server-art::after{content:'';position:absolute;width:115px;height:115px;border:1px solid rgba(255,255,255,.25);border-radius:50%;right:-36px;top:-65px;box-shadow:0 0 0 12px rgba(255,255,255,.08),0 0 0 24px rgba(255,255,255,.05)}
-    .server-art.starter{background:linear-gradient(135deg,#0b7654,#20bc82)}
-    .server-art.vip{background:linear-gradient(135deg,#2359a7,#49a9ed)}
-    .server-art.legend{background:linear-gradient(135deg,#7542af,#bd72df)}
+    .server-art.basic{background:linear-gradient(135deg,#28734f,#54bd84)}
+    .server-art.standard{background:linear-gradient(135deg,#287e8b,#53c4c0)}
+    .server-art.bronze{background:linear-gradient(135deg,#96613b,#d59a61)}
+    .server-art.silver{background:linear-gradient(135deg,#657b89,#a8bdc8)}
+    .server-art.gold{background:linear-gradient(135deg,#a47716,#e8c45b)}
+    .server-art.platinum{background:linear-gradient(135deg,#456a9d,#8eb9ed)}
+    .server-art.premium{background:linear-gradient(135deg,#60419a,#bd81e7)}
     .server-package h3{margin:0;color:#233e2d;font:900 14px 'Plus Jakarta Sans',sans-serif}
     .server-desc{min-height:28px;margin:5px 0 10px;color:#87968c;font-size:8px;line-height:1.5}
     .server-facts{display:grid;grid-template-columns:1fr 1fr;gap:6px}
@@ -653,7 +656,7 @@
     .server-active-copy b{display:block;color:#365541;font-size:9px}
     .server-active-copy small{display:block;margin-top:3px;color:#95a198;font-size:7px}
     .server-active-status{padding:5px 7px;border-radius:8px;background:#e9f8ee;color:#168d55;font-size:7px;font-weight:900}
-    @media(max-width:350px){.server-package-grid{grid-template-columns:1fr}.server-package:nth-child(3){grid-column:auto}}
+    @media(max-width:350px){.server-package-grid{grid-template-columns:1fr}}
 
 
     .server-price-block{padding:10px 11px;margin-top:10px;border:1px solid #e5f1e8;border-radius:12px;background:linear-gradient(120deg,#f5fcf7,#fff)}
@@ -664,10 +667,11 @@
     .server-estimate strong{font:900 13px 'Plus Jakarta Sans',sans-serif;color:#138b54;white-space:nowrap}
     .server-sample-warning{margin-top:9px;padding:7px 8px;border-radius:9px;border:1px solid #f2e5c5;background:#fff9e9;color:#97712e;font-size:7px;line-height:1.5;text-align:center;font-weight:800}
     .server-package .gbtn{font-size:8px}
-\n
+
     /* Separate payment chooser and provider detail pages */
-    .payment-screen{display:none;position:fixed;inset:0;width:100%;height:100vh;height:100dvh;z-index:10001;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;isolation:isolate;background:radial-gradient(circle at 15% 0%,#e6f8ed,transparent 34%),#f1f7f3;padding:0 12px 28px}
-    .payment-screen.show{display:block;visibility:visible;animation:authFade .2s ease both}
+    .payment-screen,.payment-screen[hidden],.payment-screen:not(.show){display:none!important;visibility:hidden!important;pointer-events:none!important}
+    .payment-screen{position:fixed;top:0;right:0;bottom:0;left:0;width:100%;height:100vh;height:100dvh;z-index:10001;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;isolation:isolate;background:radial-gradient(circle at 15% 0%,#e6f8ed,transparent 34%),#f1f7f3;padding:0 12px 28px}
+    .payment-screen.show{display:block!important;visibility:visible!important;pointer-events:auto!important;animation:authFade .2s ease both}
     .payment-shell{width:min(100%,450px);min-height:100vh;min-height:100dvh;margin:0 auto;background:#fbfefc;box-shadow:0 0 38px rgba(24,61,39,.08)}
     .payment-header{height:62px;position:sticky;top:0;z-index:4;padding:0 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e5efe8;background:rgba(255,255,255,.94);backdrop-filter:blur(16px)}
     .payment-back{width:35px;height:35px;display:grid;place-items:center;border:1px solid #e4eee7;border-radius:12px;background:#fff;color:#477059;cursor:pointer}
@@ -714,7 +718,7 @@
     .demo-payment-status{margin-top:12px;padding:12px;border:1px solid #bfe8cc;border-radius:12px;background:#edfaf1;color:#16844f;font-size:9px;font-weight:800;line-height:1.6}
     .payment-footnote{margin:11px 0 0;color:#9aa89f;font-size:7px;line-height:1.6;text-align:center}
     @media(max-width:360px){.payment-content{padding-left:12px;padding-right:12px}.payment-method-option{padding:11px 8px;gap:7px}.pay-logo{width:36px;height:36px}}
-\n
+
     .payment-amount-wrap{margin:13px 0;padding:12px;border:1px solid #e4eee7;border-radius:14px;background:#fff}
     .payment-amount-wrap[hidden]{display:none}
     .payment-amount-wrap label{display:block;color:#8c9f92;font-size:7px;font-weight:900;letter-spacing:.8px}
@@ -722,7 +726,7 @@
     .payment-amount-wrap>div span{color:#188c55;font:900 17px 'Plus Jakarta Sans',sans-serif}
     .payment-amount-wrap input{width:100%;height:32px;border:0;outline:0;background:transparent;color:#21442e;font:900 18px 'Plus Jakarta Sans',sans-serif}
     .payment-amount-wrap small{display:block;margin-top:4px;color:#a0ada4;font-size:7px}
-\n  </style>
+  </style>
 </head>
 <body>
   <section id="atimexSplash" aria-label="ATIMEX intro animation">
@@ -873,37 +877,70 @@
         <div class="eyebrow">SERVER PACKAGES · DISPLAY PREVIEW</div>
         <h1 class="page-title">My Servers</h1>
         <p class="page-subtitle">Starter, VIP ও Legend package-এর sample details এবং demo activation history.</p>
-        <div class="card server-hero"><h3>Choose Your Server</h3><p>নিচের মূল্য ও দৈনিক অঙ্কগুলো শুধু sample display value—এগুলো কোনো বাস্তব আয়, নিশ্চিত রিটার্ন বা পেমেন্টের প্রতিশ্রুতি নয়। কোনো টাকা নেওয়া হবে না।</p></div>
+        <div class="card server-hero"><h3>Choose Your Package</h3><p>সব প্যাকেজের মেয়াদ ৭ দিন। BUY NOW চাপলে payment method নির্বাচন করতে পারবেন। এই পেজে payment এখনো demo preview।</p></div>
         <div class="server-package-grid">
           <article class="card server-package">
-            <div class="server-package-top"><span class="plan-ribbon">SAMPLE PACKAGE</span><span class="server-chip"><i class="fa-solid fa-microchip"></i> SERVER 01</span></div>
-            <div class="server-art starter"><i class="fa-solid fa-seedling"></i></div>
-            <h3>Starter</h3><p class="server-desc">Seven-day server package preview</p>
-            <div class="server-price-block"><small>এককালীন মূল্য · Sample</small><b>৳2,500</b></div>
-            <div class="server-estimate"><span>দৈনিক প্রদর্শিত অঙ্ক</span><strong>৳700.00</strong></div>
-            <div class="server-facts"><div><small>PACKAGE DURATION</small><b>7 দিন</b></div><div><small>PAYMENT</small><b>Disabled</b></div></div>
-            <div class="server-sample-warning">ডেমো নমুনা মাত্র · বাস্তব আয় বা গ্যারান্টি নয়</div>
-            <button class="gbtn full" id="serverBtnStarter" onclick="openPaymentMethods('package','ryzen')">BUY NOW</button>
+            <div class="server-package-top"><span class="plan-ribbon">৭ দিনের প্যাকেজ</span><span class="server-chip">PACKAGE 01</span></div>
+            <div class="server-art premium"><i class="fa-solid fa-gem"></i></div>
+            <h3>Premium</h3><p class="server-desc">Premium seven-day package</p>
+            <div class="server-price-block"><small>প্যাকেজ মূল্য</small><b>৳১০,০০০</b></div>
+            <div class="server-facts"><div><small>PACKAGE DURATION</small><b>৭ দিন</b></div></div>
+            <div class="server-sample-warning">ডেমো preview · কোনো live charge নয়</div>
+            <button class="gbtn full" id="serverBtnPremium" onclick="openPaymentMethods('package','premium')">BUY NOW</button>
           </article>
           <article class="card server-package">
-            <div class="server-package-top"><span class="plan-ribbon">SAMPLE PACKAGE</span><span class="server-chip"><i class="fa-solid fa-microchip"></i> SERVER 02</span></div>
-            <div class="server-art vip"><i class="fa-solid fa-crown"></i></div>
-            <h3>VIP</h3><p class="server-desc">Seven-day server package preview</p>
-            <div class="server-price-block"><small>এককালীন মূল্য · Sample</small><b>৳7,000</b></div>
-            <div class="server-estimate"><span>দৈনিক প্রদর্শিত অঙ্ক</span><strong>৳2,000.00</strong></div>
-            <div class="server-facts"><div><small>PACKAGE DURATION</small><b>7 দিন</b></div><div><small>PAYMENT</small><b>Disabled</b></div></div>
-            <div class="server-sample-warning">ডেমো নমুনা মাত্র · বাস্তব আয় বা গ্যারান্টি নয়</div>
-            <button class="gbtn full" id="serverBtnVip" onclick="openPaymentMethods('package','intel')">BUY NOW</button>
+            <div class="server-package-top"><span class="plan-ribbon">৭ দিনের প্যাকেজ</span><span class="server-chip">PACKAGE 02</span></div>
+            <div class="server-art platinum"><i class="fa-solid fa-crown"></i></div>
+            <h3>Platinum</h3><p class="server-desc">Platinum seven-day package</p>
+            <div class="server-price-block"><small>প্যাকেজ মূল্য</small><b>৳৭,০০০</b></div>
+            <div class="server-facts"><div><small>PACKAGE DURATION</small><b>৭ দিন</b></div></div>
+            <div class="server-sample-warning">ডেমো preview · কোনো live charge নয়</div>
+            <button class="gbtn full" id="serverBtnPlatinum" onclick="openPaymentMethods('package','platinum')">BUY NOW</button>
           </article>
           <article class="card server-package">
-            <div class="server-package-top"><span class="plan-ribbon">SAMPLE PACKAGE</span><span class="server-chip"><i class="fa-solid fa-microchip"></i> SERVER 03</span></div>
-            <div class="server-art legend"><i class="fa-solid fa-gem"></i></div>
-            <h3>Legend</h3><p class="server-desc">Seven-day server package preview</p>
-            <div class="server-price-block"><small>এককালীন মূল্য · Sample</small><b>৳10,000</b></div>
-            <div class="server-estimate"><span>দৈনিক প্রদর্শিত অঙ্ক</span><strong>৳4,500.00</strong></div>
-            <div class="server-facts"><div><small>PACKAGE DURATION</small><b>7 দিন</b></div><div><small>PAYMENT</small><b>Disabled</b></div></div>
-            <div class="server-sample-warning">ডেমো নমুনা মাত্র · বাস্তব আয় বা গ্যারান্টি নয়</div>
-            <button class="gbtn full" id="serverBtnLegend" onclick="openPaymentMethods('package','amd')">BUY NOW</button>
+            <div class="server-package-top"><span class="plan-ribbon">৭ দিনের প্যাকেজ</span><span class="server-chip">PACKAGE 03</span></div>
+            <div class="server-art gold"><i class="fa-solid fa-medal"></i></div>
+            <h3>Gold</h3><p class="server-desc">Gold seven-day package</p>
+            <div class="server-price-block"><small>প্যাকেজ মূল্য</small><b>৳৫,০০০</b></div>
+            <div class="server-facts"><div><small>PACKAGE DURATION</small><b>৭ দিন</b></div></div>
+            <div class="server-sample-warning">ডেমো preview · কোনো live charge নয়</div>
+            <button class="gbtn full" id="serverBtnGold" onclick="openPaymentMethods('package','gold')">BUY NOW</button>
+          </article>
+          <article class="card server-package">
+            <div class="server-package-top"><span class="plan-ribbon">৭ দিনের প্যাকেজ</span><span class="server-chip">PACKAGE 04</span></div>
+            <div class="server-art silver"><i class="fa-solid fa-award"></i></div>
+            <h3>Silver</h3><p class="server-desc">Silver seven-day package</p>
+            <div class="server-price-block"><small>প্যাকেজ মূল্য</small><b>৳৩,০০০</b></div>
+            <div class="server-facts"><div><small>PACKAGE DURATION</small><b>৭ দিন</b></div></div>
+            <div class="server-sample-warning">ডেমো preview · কোনো live charge নয়</div>
+            <button class="gbtn full" id="serverBtnSilver" onclick="openPaymentMethods('package','silver')">BUY NOW</button>
+          </article>
+          <article class="card server-package">
+            <div class="server-package-top"><span class="plan-ribbon">৭ দিনের প্যাকেজ</span><span class="server-chip">PACKAGE 05</span></div>
+            <div class="server-art bronze"><i class="fa-solid fa-medal"></i></div>
+            <h3>Bronze</h3><p class="server-desc">Bronze seven-day package</p>
+            <div class="server-price-block"><small>প্যাকেজ মূল্য</small><b>৳২,৫০০</b></div>
+            <div class="server-facts"><div><small>PACKAGE DURATION</small><b>৭ দিন</b></div></div>
+            <div class="server-sample-warning">ডেমো preview · কোনো live charge নয়</div>
+            <button class="gbtn full" id="serverBtnBronze" onclick="openPaymentMethods('package','bronze')">BUY NOW</button>
+          </article>
+          <article class="card server-package">
+            <div class="server-package-top"><span class="plan-ribbon">৭ দিনের প্যাকেজ</span><span class="server-chip">PACKAGE 06</span></div>
+            <div class="server-art standard"><i class="fa-solid fa-layer-group"></i></div>
+            <h3>Standard</h3><p class="server-desc">Standard seven-day package</p>
+            <div class="server-price-block"><small>প্যাকেজ মূল্য</small><b>৳১,০০০</b></div>
+            <div class="server-facts"><div><small>PACKAGE DURATION</small><b>৭ দিন</b></div></div>
+            <div class="server-sample-warning">ডেমো preview · কোনো live charge নয়</div>
+            <button class="gbtn full" id="serverBtnStandard" onclick="openPaymentMethods('package','standard')">BUY NOW</button>
+          </article>
+          <article class="card server-package">
+            <div class="server-package-top"><span class="plan-ribbon">৭ দিনের প্যাকেজ</span><span class="server-chip">PACKAGE 07</span></div>
+            <div class="server-art basic"><i class="fa-solid fa-seedling"></i></div>
+            <h3>Basic</h3><p class="server-desc">Basic seven-day package</p>
+            <div class="server-price-block"><small>প্যাকেজ মূল্য</small><b>৳৫০০</b></div>
+            <div class="server-facts"><div><small>PACKAGE DURATION</small><b>৭ দিন</b></div></div>
+            <div class="server-sample-warning">ডেমো preview · কোনো live charge নয়</div>
+            <button class="gbtn full" id="serverBtnBasic" onclick="openPaymentMethods('package','basic')">BUY NOW</button>
           </article>
         </div>
         <div class="section-head"><h2 class="section-title">My Servers</h2><span class="eyebrow">ACTIVE DEMOS</span></div>
@@ -971,7 +1008,7 @@
     </nav>
   </div>
 
-  <section class="payment-screen" id="paymentScreen" aria-label="Payment method preview">
+  <section class="payment-screen" id="paymentScreen" hidden aria-hidden="true" aria-label="Payment method preview">
     <div class="payment-shell">
       <header class="payment-header">
         <button class="payment-back" id="paymentBackBtn" onclick="paymentGoBack()" aria-label="Back"><i class="fa-solid fa-arrow-left"></i></button>
@@ -1124,9 +1161,13 @@
       upay:{name:"Upay",logo:"u",className:"upay"}
     };
     const DEMO_SERVER_PACKAGES = {
-      ryzen:{name:"Starter",price:2500,daily:700},
-      intel:{name:"VIP",price:7000,daily:2000},
-      amd:{name:"Legend",price:10000,daily:4500}
+      premium:{name:"Premium",price:10000,priceLabel:"৳১০,০০০",days:7},
+      platinum:{name:"Platinum",price:7000,priceLabel:"৳৭,০০০",days:7},
+      gold:{name:"Gold",price:5000,priceLabel:"৳৫,০০০",days:7},
+      silver:{name:"Silver",price:3000,priceLabel:"৳৩,০০০",days:7},
+      bronze:{name:"Bronze",price:2500,priceLabel:"৳২,৫০০",days:7},
+      standard:{name:"Standard",price:1000,priceLabel:"৳১,০০০",days:7},
+      basic:{name:"Basic",price:500,priceLabel:"৳৫০০",days:7}
     };
     let paymentContext = {type:"deposit",packageKey:null,method:null,step:"chooser"};
     function openPaymentMethods(type="deposit",packageKey=null,method=null){
@@ -1142,9 +1183,9 @@
       if(depositWrap)depositWrap.hidden=type==="package";
       if(type==="package" && DEMO_SERVER_PACKAGES[packageKey]){
         const pack=DEMO_SERVER_PACKAGES[packageKey];
-        if(title)title.textContent=pack.name+" · Package sample";
-        if(amount)amount.textContent="৳"+pack.price.toLocaleString("en-BD");
-        if(subtitle)subtitle.textContent="Choose a payment method to view its separate demo guide.";
+        if(title)title.textContent=pack.name+" · ৭ দিনের প্যাকেজ";
+        if(amount)amount.textContent=pack.priceLabel;
+        if(subtitle)subtitle.textContent="পেমেন্ট method বেছে নিয়ে demo guide খুলুন।";
       }else{
         if(title)title.textContent="Deposit · Demo preview";
         if(amount)amount.textContent="৳100";
@@ -1155,7 +1196,7 @@
       document.getElementById("paymentChooser").hidden=false;
       document.getElementById("paymentDetail").hidden=true;
       const paymentScreen=document.getElementById("paymentScreen");
-      if(paymentScreen){paymentScreen.classList.add("show");paymentScreen.scrollTop=0;}
+      if(paymentScreen){paymentScreen.hidden=false;paymentScreen.setAttribute("aria-hidden","false");paymentScreen.classList.add("show");paymentScreen.scrollTop=0;}
       document.body.style.overflow="hidden";
       const status=document.getElementById("demoPaymentStatus");
       if(status){status.hidden=true;status.textContent="";}
@@ -1189,9 +1230,9 @@
       const label=document.getElementById("paymentDetailContextLabel");
       if(paymentContext.type==="package" && DEMO_SERVER_PACKAGES[paymentContext.packageKey]){
         const p=DEMO_SERVER_PACKAGES[paymentContext.packageKey];
-        title.textContent=p.name+" · Package sample";
-        amount.textContent="৳"+p.price.toLocaleString("en-BD");
-        label.textContent="PACKAGE SAMPLE · NO LIVE CHARGE";
+        title.textContent=p.name+" · ৭ দিনের প্যাকেজ";
+        amount.textContent=p.priceLabel;
+        label.textContent="৭-DAY PACKAGE · DEMO ONLY";
       }else{
         title.textContent="Deposit · Demo preview";
         amount.textContent="No live amount";
@@ -1212,7 +1253,8 @@
       }else closePaymentScreen();
     }
     function closePaymentScreen(){
-      document.getElementById("paymentScreen").classList.remove("show");
+      const paymentScreen=document.getElementById("paymentScreen");
+      if(paymentScreen){paymentScreen.classList.remove("show");paymentScreen.hidden=true;paymentScreen.setAttribute("aria-hidden","true");}
       document.body.style.overflow="";
       paymentContext={type:"deposit",packageKey:null,method:null,step:"chooser"};
     }
@@ -1277,7 +1319,7 @@
     function getDemoServers() {
       try {
         const raw = JSON.parse(localStorage.getItem("atimex_demo_servers") || "[]");
-        return Array.isArray(raw) ? raw.filter(item => item && ["ryzen","intel","amd"].includes(item.key)) : [];
+        return Array.isArray(raw) ? raw.filter(item => item && Object.prototype.hasOwnProperty.call(DEMO_SERVER_PACKAGES,item.key)) : [];
       } catch (_) { return []; }
     }
     function saveDemoServers(items) {
@@ -1285,7 +1327,7 @@
       catch (error) { showToast("Demo server state could not be saved."); }
     }
     function activateDemoServer(key) {
-      const names = { ryzen:"Starter", intel:"VIP", amd:"Legend" };
+      const names = Object.fromEntries(Object.entries(DEMO_SERVER_PACKAGES).map(([key,pack])=>[key,pack.name]));
       if (!Object.prototype.hasOwnProperty.call(names,key)) return;
       const items = getDemoServers();
       if (items.some(item => item.key === key)) {
@@ -1298,8 +1340,8 @@
       showToast(names[key] + " free demo activated in this browser.");
     }
     function updateDemoServers() {
-      const names = { ryzen:"Starter", intel:"VIP", amd:"Legend" };
-      const icons = { ryzen:"fa-seedling", intel:"fa-crown", amd:"fa-gem" };
+      const names = Object.fromEntries(Object.entries(DEMO_SERVER_PACKAGES).map(([key,pack])=>[key,pack.name]));
+      const icons = { premium:"fa-gem", platinum:"fa-crown", gold:"fa-medal", silver:"fa-award", bronze:"fa-medal", standard:"fa-layer-group", basic:"fa-seedling" };
       const active = getDemoServers();
       const activeEl = document.getElementById("myServersList");
       const historyEl = document.getElementById("serverHistoryList");
