@@ -655,7 +655,16 @@
     .server-active-status{padding:5px 7px;border-radius:8px;background:#e9f8ee;color:#168d55;font-size:7px;font-weight:900}
     @media(max-width:350px){.server-package-grid{grid-template-columns:1fr}.server-package:nth-child(3){grid-column:auto}}
 
-  </style>
+
+    .server-price-block{padding:10px 11px;margin-top:10px;border:1px solid #e5f1e8;border-radius:12px;background:linear-gradient(120deg,#f5fcf7,#fff)}
+    .server-price-block small{display:block;color:#8ea096;font-size:7px;font-weight:800}
+    .server-price-block b{display:block;margin-top:4px;color:#183e2b;font:900 20px 'Plus Jakarta Sans',sans-serif;letter-spacing:-.5px}
+    .server-estimate{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:7px;padding:9px 10px;border-radius:11px;background:#eef9f2;border:1px solid #dcefe2}
+    .server-estimate span{font-size:7px;color:#738b7b;font-weight:800}
+    .server-estimate strong{font:900 13px 'Plus Jakarta Sans',sans-serif;color:#138b54;white-space:nowrap}
+    .server-sample-warning{margin-top:9px;padding:7px 8px;border-radius:9px;border:1px solid #f2e5c5;background:#fff9e9;color:#97712e;font-size:7px;line-height:1.5;text-align:center;font-weight:800}
+    .server-package .gbtn{font-size:8px}
+\n  </style>
 </head>
 <body>
   <section id="atimexSplash" aria-label="ATIMEX intro animation">
@@ -809,41 +818,47 @@
 
       <!-- SERVER HUB -->
       <section id="tabServer" class="page">
-        <div class="eyebrow">SERVER HUB · DEMO EXPERIENCE</div>
+        <div class="eyebrow">SERVER PACKAGES · DISPLAY PREVIEW</div>
         <h1 class="page-title">My Servers</h1>
-        <p class="page-subtitle">Explore three free, local demo server experiences. No payment, deposit or cash-return promise is involved.</p>
-        <div class="card server-hero"><h3>Choose your demo server</h3><p>Activate a seven-day preview and track it below. Demo activations are saved only in this browser.</p></div>
+        <p class="page-subtitle">Ryzen, Intel ও AMD package-এর sample details এবং demo activation history.</p>
+        <div class="card server-hero"><h3>Choose Your Server</h3><p>নিচের মূল্য ও দৈনিক অঙ্কগুলো শুধু sample display value—এগুলো কোনো বাস্তব আয়, নিশ্চিত রিটার্ন বা পেমেন্টের প্রতিশ্রুতি নয়। কোনো টাকা নেওয়া হবে না।</p></div>
         <div class="server-package-grid">
           <article class="card server-package">
-            <div class="server-package-top"><span class="plan-ribbon">FREE DEMO</span><span class="server-chip"><i class="fa-solid fa-microchip"></i> SERVER 01</span></div>
+            <div class="server-package-top"><span class="plan-ribbon">SAMPLE PACKAGE</span><span class="server-chip"><i class="fa-solid fa-microchip"></i> SERVER 01</span></div>
             <div class="server-art ryzen"><i class="fa-solid fa-microchip"></i></div>
-            <h3>Ryzen</h3><p class="server-desc">Daily activity and learning challenge</p>
-            <div class="server-facts"><div><small>ACCESS</small><b>Free preview</b></div><div><small>DURATION</small><b>7 days</b></div></div>
-            <div class="server-includes"><i class="fa-solid fa-circle-check"></i> Progress tracking <i class="fa-solid fa-circle-check"></i> Demo status</div>
-            <button class="gbtn full" id="serverBtnRyzen" onclick="activateDemoServer('ryzen')">ACTIVATE FREE DEMO</button>
+            <h3>Ryzen</h3><p class="server-desc">Seven-day server package preview</p>
+            <div class="server-price-block"><small>এককালীন মূল্য · Sample</small><b>৳2,500</b></div>
+            <div class="server-estimate"><span>দৈনিক প্রদর্শিত অঙ্ক</span><strong>৳700.00</strong></div>
+            <div class="server-facts"><div><small>PACKAGE DURATION</small><b>7 দিন</b></div><div><small>PAYMENT</small><b>Disabled</b></div></div>
+            <div class="server-sample-warning">ডেমো নমুনা মাত্র · বাস্তব আয় বা গ্যারান্টি নয়</div>
+            <button class="gbtn full" id="serverBtnRyzen" onclick="activateDemoServer('ryzen')">ACTIVATE DEMO</button>
           </article>
           <article class="card server-package">
-            <div class="server-package-top"><span class="plan-ribbon">FREE DEMO</span><span class="server-chip"><i class="fa-solid fa-microchip"></i> SERVER 02</span></div>
+            <div class="server-package-top"><span class="plan-ribbon">SAMPLE PACKAGE</span><span class="server-chip"><i class="fa-solid fa-microchip"></i> SERVER 02</span></div>
             <div class="server-art intel"><i class="fa-solid fa-server"></i></div>
-            <h3>Intel</h3><p class="server-desc">Guides and skill-building challenge</p>
-            <div class="server-facts"><div><small>ACCESS</small><b>Free preview</b></div><div><small>DURATION</small><b>7 days</b></div></div>
-            <div class="server-includes"><i class="fa-solid fa-circle-check"></i> Progress tracking <i class="fa-solid fa-circle-check"></i> Demo status</div>
-            <button class="gbtn full" id="serverBtnIntel" onclick="activateDemoServer('intel')">ACTIVATE FREE DEMO</button>
+            <h3>Intel</h3><p class="server-desc">Seven-day server package preview</p>
+            <div class="server-price-block"><small>এককালীন মূল্য · Sample</small><b>৳7,000</b></div>
+            <div class="server-estimate"><span>দৈনিক প্রদর্শিত অঙ্ক</span><strong>৳2,000.00</strong></div>
+            <div class="server-facts"><div><small>PACKAGE DURATION</small><b>7 দিন</b></div><div><small>PAYMENT</small><b>Disabled</b></div></div>
+            <div class="server-sample-warning">ডেমো নমুনা মাত্র · বাস্তব আয় বা গ্যারান্টি নয়</div>
+            <button class="gbtn full" id="serverBtnIntel" onclick="activateDemoServer('intel')">ACTIVATE DEMO</button>
           </article>
           <article class="card server-package">
-            <div class="server-package-top"><span class="plan-ribbon">FREE DEMO</span><span class="server-chip"><i class="fa-solid fa-microchip"></i> SERVER 03</span></div>
+            <div class="server-package-top"><span class="plan-ribbon">SAMPLE PACKAGE</span><span class="server-chip"><i class="fa-solid fa-microchip"></i> SERVER 03</span></div>
             <div class="server-art amd"><i class="fa-solid fa-network-wired"></i></div>
-            <h3>AMD</h3><p class="server-desc">Community and consistency challenge</p>
-            <div class="server-facts"><div><small>ACCESS</small><b>Free preview</b></div><div><small>DURATION</small><b>7 days</b></div></div>
-            <div class="server-includes"><i class="fa-solid fa-circle-check"></i> Progress tracking <i class="fa-solid fa-circle-check"></i> Demo status</div>
-            <button class="gbtn full" id="serverBtnAmd" onclick="activateDemoServer('amd')">ACTIVATE FREE DEMO</button>
+            <h3>AMD</h3><p class="server-desc">Seven-day server package preview</p>
+            <div class="server-price-block"><small>এককালীন মূল্য · Sample</small><b>৳10,000</b></div>
+            <div class="server-estimate"><span>দৈনিক প্রদর্শিত অঙ্ক</span><strong>৳4,500.00</strong></div>
+            <div class="server-facts"><div><small>PACKAGE DURATION</small><b>7 দিন</b></div><div><small>PAYMENT</small><b>Disabled</b></div></div>
+            <div class="server-sample-warning">ডেমো নমুনা মাত্র · বাস্তব আয় বা গ্যারান্টি নয়</div>
+            <button class="gbtn full" id="serverBtnAmd" onclick="activateDemoServer('amd')">ACTIVATE DEMO</button>
           </article>
         </div>
         <div class="section-head"><h2 class="section-title">My Servers</h2><span class="eyebrow">ACTIVE DEMOS</span></div>
         <div class="card server-history-panel" id="myServersList"><div class="server-empty"><span><i class="fa-solid fa-server"></i></span><b>No active demo server</b><small>Activate a free preview above to see it here.</small></div></div>
-        <div class="section-head"><h2 class="section-title">Activation History</h2><span class="eyebrow">LOCAL PREVIEW</span></div>
-        <div class="card server-history-panel" id="serverHistoryList"><div class="server-empty"><span><i class="fa-solid fa-clock-rotate-left"></i></span><b>No activation history yet</b><small>Your free demo activations will appear here.</small></div></div>
-        <div class="dash-note">This is a local design preview only. It does not accept money, create purchases, promise income or send data to a server.</div>
+        <div class="section-head"><h2 class="section-title">Purchase History</h2><span class="eyebrow">DEMO HISTORY</span></div>
+        <div class="card server-history-panel" id="serverHistoryList"><div class="server-empty"><span><i class="fa-solid fa-clock-rotate-left"></i></span><b>এখনো কোনো package কেনা হয়নি।</b><small>Demo activation history এখানে দেখা যাবে।</small></div></div>
+        <div class="dash-note">Sample price ও daily figure বাস্তব payment বা income নয়। এখানে package purchase, deposit, cash payout কিংবা guaranteed return চালু নেই; activation কেবল local demo status save করে।</div>
       </section>
 
       <!-- PROFILE -->
