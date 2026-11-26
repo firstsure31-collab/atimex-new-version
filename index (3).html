@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#f7fcf8" />
-  <title>ATIMEX — Premium Rewards</title>
+  <title>ATIEARNBD — Premium Rewards</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
@@ -313,7 +313,7 @@
     @media (max-width:370px) { .account-alert { gap:6px; padding:8px; } .activate-btn { padding:7px 8px; font-size:6px; } .profile-level-item { padding:7px; gap:6px; } .profile-level-item b { font-size:8px; } }
 
   
-    /* 6.7-second cinematic ATIMEX intro */
+    /* 6.7-second cinematic ATIEARNBD intro */
     #atimexSplash {
       position:fixed; inset:0; z-index:10000; display:flex; align-items:center; justify-content:center;
       overflow:hidden; isolation:isolate; color:#fff;
@@ -370,7 +370,7 @@
     .splash-word {
       display:flex; align-items:center; justify-content:center; gap:clamp(0px,1.2vw,8px);
       perspective:950px; white-space:nowrap;
-      font:900 clamp(39px,11vw,73px)/1 'Plus Jakarta Sans',sans-serif;
+      font:900 clamp(29px,8.2vw,64px)/1 'Plus Jakarta Sans',sans-serif;
       letter-spacing:clamp(0px,.4vw,3px);
       filter:drop-shadow(0 0 17px rgba(30,255,143,.2));
     }
@@ -388,6 +388,9 @@
     .splash-letter:nth-child(4) { animation-delay:.33s; }
     .splash-letter:nth-child(5) { animation-delay:.44s; }
     .splash-letter:nth-child(6) { animation-delay:.55s; }
+    .splash-letter:nth-child(7) { animation-delay:.66s; }
+    .splash-letter:nth-child(8) { animation-delay:.77s; }
+    .splash-letter:nth-child(9) { animation-delay:.88s; }
     @keyframes letterForge {
       0% { opacity:0; transform:translate3d(0,74px,-150px) rotateX(520deg) rotateY(-390deg) rotateZ(-48deg) scale(.28); filter:blur(12px); }
       18% { opacity:1; filter:blur(0); }
@@ -733,14 +736,14 @@
   </style>
 </head>
 <body>
-  <section id="atimexSplash" aria-label="ATIMEX intro animation">
+  <section id="atimexSplash" aria-label="ATIEARNBD intro animation">
     <div class="splash-aura"></div><div class="splash-orbit"></div><div class="splash-orbit two"></div>
     <span class="splash-particle"></span><span class="splash-particle"></span><span class="splash-particle"></span><span class="splash-particle"></span>
     <span class="splash-particle"></span><span class="splash-particle"></span><span class="splash-particle"></span><span class="splash-particle"></span>
     <div class="splash-center">
       <div class="splash-emblem"><i class="fa-solid fa-bolt"></i></div>
-      <div class="splash-word" aria-label="ATIMEX">
-        <span class="splash-letter">A</span><span class="splash-letter">T</span><span class="splash-letter">I</span><span class="splash-letter">M</span><span class="splash-letter">E</span><span class="splash-letter">X</span>
+      <div class="splash-word" aria-label="ATIEARNBD">
+        <span class="splash-letter">A</span><span class="splash-letter">T</span><span class="splash-letter">I</span><span class="splash-letter">E</span><span class="splash-letter">A</span><span class="splash-letter">R</span><span class="splash-letter">N</span><span class="splash-letter">B</span><span class="splash-letter">D</span>
       </div>
       <div class="splash-tagline">EARN · GROW · REWARD</div>
       <div class="splash-loading"><span></span></div>
@@ -749,10 +752,10 @@
   <div class="ambient a"></div><div class="ambient b"></div><div class="ambient c"></div>
   <div class="app-shell">
     <header class="topbar">
-      <button class="icon-btn header-side" aria-label="Help and support" onclick="openAction('ATIMEX Support','Support information and contact options will be added in a later step.')"><i class="fa-solid fa-headset"></i></button>
+      <button class="icon-btn header-side" aria-label="Help and support" onclick="openAction('ATIEARNBD Support','Support information and contact options will be added in a later step.')"><i class="fa-solid fa-headset"></i></button>
       <div class="brand">
         <div class="logo-orbit"><div class="logo-inner"><i class="fa-solid fa-bolt"></i></div></div>
-        <div><div class="brand-name">ATIMEX</div><div class="brand-sub">EARN · GROW · REWARD</div></div>
+        <div><div class="brand-name">ATIEARNBD</div><div class="brand-sub">EARN · GROW · REWARD</div></div>
       </div>
       <div class="top-actions"><button class="icon-btn" aria-label="Notifications" onclick="openAction('Notifications','Your account updates and important notices will appear here.')"><i class="fa-regular fa-bell"></i><span class="dot"></span></button></div>
     </header>
@@ -763,7 +766,7 @@
         <div class="welcome-row">
           <div class="welcome-copy">
             <div class="eyebrow">MEMBER DASHBOARD</div>
-            <h1>Welcome to <span style="color:#13965c">ATIMEX</span></h1>
+            <h1>Welcome to <span style="color:#13965c">ATIEARNBD</span></h1>
             <p>Your activity, verified rewards and account updates.</p>
           </div>
           <button class="avatar" aria-label="Open profile" onclick="switchTab('tabProfile')"><i class="fa-solid fa-user"></i></button>
@@ -804,7 +807,7 @@
           <div class="task-modern"><span class="task-modern-icon"><i class="fa-solid fa-book-open"></i></span><span class="task-modern-copy"><b>Read the member guide</b><small>Understand account settings, privacy and activity tracking.</small><span class="task-points">+15 demo points</span></span><button class="gbtn small" onclick="switchTab('tabTasks')">VIEW</button></div>
         </div>
         <div class="dash-note" style="margin-top:14px"><b><i class="fa-solid fa-circle-info"></i> Transparent rewards</b><br>Only completed and independently verified activities should appear as eligible rewards. This preview does not accept deposits or promise returns.</div>
-        <div class="foot-note">ATIMEX · Member activity dashboard preview</div>
+        <div class="foot-note">ATIEARNBD · Member activity dashboard preview</div>
       </section>
 
       <!-- WALLET -->
@@ -984,7 +987,7 @@
 
         <div class="profile-menu-heading"><span>Community & Rewards</span><small>MEMBER ACTIVITY</small></div>
         <div class="card profile-services">
-          <button class="service-row" onclick="openProfilePopup('leaderboard')"><span class="service-icon gold"><i class="fa-solid fa-trophy"></i></span><span class="service-copy"><b>Leaderboard</b><small>ATIMEX top contributors</small></span><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="service-row" onclick="openProfilePopup('leaderboard')"><span class="service-icon gold"><i class="fa-solid fa-trophy"></i></span><span class="service-copy"><b>Leaderboard</b><small>ATIEARNBD top contributors</small></span><i class="fa-solid fa-chevron-right"></i></button>
           <button class="service-row" onclick="openProfilePopup('vip')"><span class="service-icon violet"><i class="fa-solid fa-bolt"></i></span><span class="service-copy"><b>VIP Task</b><small>Premium-style activity tasks</small></span><i class="fa-solid fa-chevron-right"></i></button>
           <button class="service-row" onclick="openProfilePopup('network')"><span class="service-icon mint"><i class="fa-solid fa-people-group"></i></span><span class="service-copy"><b>My Network</b><small>Referral team details</small></span><i class="fa-solid fa-chevron-right"></i></button>
           <button class="service-row" onclick="openProfilePopup('redeem')"><span class="service-icon blue"><i class="fa-solid fa-ticket"></i></span><span class="service-copy"><b>Redeem Code</b><small>Claim demo bonus rewards</small></span><i class="fa-solid fa-chevron-right"></i></button>
@@ -993,13 +996,13 @@
         <div class="profile-menu-heading"><span>Support & Security</span><small>HELP & PREFERENCES</small></div>
         <div class="card profile-services">
           <button class="service-row" onclick="openProfilePopup('support')"><span class="service-icon mint"><i class="fa-solid fa-headset"></i></span><span class="service-copy"><b>Customer Service</b><small>Member support information</small></span><i class="fa-solid fa-chevron-right"></i></button>
-          <button class="service-row" onclick="openProfilePopup('app')"><span class="service-icon blue"><i class="fa-solid fa-mobile-screen-button"></i></span><span class="service-copy"><b>ATIMEX App</b><small>App-style experience</small></span><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="service-row" onclick="openProfilePopup('app')"><span class="service-icon blue"><i class="fa-solid fa-mobile-screen-button"></i></span><span class="service-copy"><b>ATIEARNBD App</b><small>App-style experience</small></span><i class="fa-solid fa-chevron-right"></i></button>
           <button class="service-row" onclick="openProfilePopup('currency')"><span class="service-icon gold"><i class="fa-solid fa-coins"></i></span><span class="service-copy"><b>Currency</b><small>BDT, USDT, INR display preference</small></span><i class="fa-solid fa-chevron-right"></i></button>
           <button class="service-row" onclick="openProfilePopup('language')"><span class="service-icon violet"><i class="fa-solid fa-language"></i></span><span class="service-copy"><b>Language</b><small>System language preference</small></span><i class="fa-solid fa-chevron-right"></i></button>
           <button class="service-row" onclick="openProfilePopup('security')"><span class="service-icon blue"><i class="fa-solid fa-shield-halved"></i></span><span class="service-copy"><b>Security Center</b><small>Protect your account</small></span><i class="fa-solid fa-chevron-right"></i></button>
           <button class="service-row service-logout" onclick="openProfilePopup('logout')"><span class="service-icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span><span class="service-copy"><b>Secure Logout</b><small>Return to account access screen</small></span><i class="fa-solid fa-chevron-right"></i></button>
         </div>
-        <div class="foot-note">ATIMEX · Premium member experience preview</div>
+        <div class="foot-note">ATIEARNBD · Premium member experience preview</div>
       </section>
     </main>
 
@@ -1016,7 +1019,7 @@
     <div class="payment-shell">
       <header class="payment-header">
         <button class="payment-back" id="paymentBackBtn" onclick="paymentGoBack()" aria-label="Back"><i class="fa-solid fa-arrow-left"></i></button>
-        <div class="payment-brand"><span class="payment-brand-icon"><i class="fa-solid fa-shield-halved"></i></span><b>ATIMEX <small>PAYMENT PREVIEW</small></b></div>
+        <div class="payment-brand"><span class="payment-brand-icon"><i class="fa-solid fa-shield-halved"></i></span><b>ATIEARNBD <small>PAYMENT PREVIEW</small></b></div>
         <button class="payment-back" onclick="closePaymentScreen()" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
       </header>
       <main class="payment-content">
@@ -1074,16 +1077,16 @@
 
   <div class="modal-backdrop" id="actionModal" onclick="if(event.target===this)closeAction()">
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <div class="modal-top"><h3 id="modalTitle">ATIMEX</h3><button class="modal-close" aria-label="Close" onclick="closeAction()"><i class="fa-solid fa-xmark"></i></button></div>
+      <div class="modal-top"><h3 id="modalTitle">ATIEARNBD</h3><button class="modal-close" aria-label="Close" onclick="closeAction()"><i class="fa-solid fa-xmark"></i></button></div>
       <div id="modalBody" class="modal-body-content"></div><button class="gbtn full" onclick="closeAction()">Close</button>
     </div>
   </div>
 
-  <section class="auth-screen" id="registerPreview" aria-label="ATIMEX account access preview">
+  <section class="auth-screen" id="registerPreview" aria-label="ATIEARNBD account access preview">
     <div class="auth-shell">
       <header class="auth-topbar">
-        <div class="auth-brand"><span class="auth-brand-icon"><i class="fa-solid fa-bolt"></i></span><b>ATIMEX</b></div>
-        <button class="auth-icon" aria-label="Support" onclick="openAction('ATIMEX Support','Support options will be connected later.')"><i class="fa-solid fa-headset"></i></button>
+        <div class="auth-brand"><span class="auth-brand-icon"><i class="fa-solid fa-bolt"></i></span><b>ATIEARNBD</b></div>
+        <button class="auth-icon" aria-label="Support" onclick="openAction('ATIEARNBD Support','Support options will be connected later.')"><i class="fa-solid fa-headset"></i></button>
       </header>
       <div class="auth-content">
         <div class="auth-switch" role="tablist" aria-label="Account access">
@@ -1093,8 +1096,8 @@
 
         <section class="auth-view active" id="registerView" aria-labelledby="registerModeBtn">
           <span class="auth-secure"><i class="fa-solid fa-circle"></i> CREATE YOUR ACCOUNT</span>
-          <h1>JOIN THE ATIMEX<br>COMMUNITY</h1>
-          <p class="auth-intro">Create your member account and begin your ATIMEX journey.</p>
+          <h1>JOIN THE ATIEARNBD<br>COMMUNITY</h1>
+          <p class="auth-intro">Create your member account and begin your ATIEARNBD journey.</p>
           <form class="auth-form" onsubmit="submitRegisterPreview(event)">
             <label for="regName">FULL NAME</label>
             <div class="auth-input-wrap"><i class="fa-regular fa-user"></i><input id="regName" name="name" autocomplete="name" placeholder="Enter your full name" required></div>
@@ -1113,7 +1116,7 @@
         <section class="auth-view" id="loginView" aria-labelledby="loginModeBtn">
           <span class="auth-secure"><i class="fa-solid fa-circle"></i> MEMBER SIGN IN</span>
           <h1>WELCOME<br>BACK</h1>
-          <p class="auth-intro">Log in to continue to your ATIMEX account.</p>
+          <p class="auth-intro">Log in to continue to your ATIEARNBD account.</p>
           <form class="auth-form" onsubmit="submitLoginPreview(event)">
             <label for="loginEmail">EMAIL ADDRESS</label>
             <div class="auth-input-wrap"><i class="fa-regular fa-envelope"></i><input id="loginEmail" name="email" type="email" autocomplete="email" placeholder="Enter your email" required></div>
@@ -1123,7 +1126,7 @@
           </form>
           <div class="auth-or"><span></span> OR <span></span></div>
           <button class="auth-google" type="button" onclick="googlePreview()"><i class="fa-brands fa-google"></i> Continue with Google</button>
-          <p class="auth-login-line">New to ATIMEX? <button type="button" onclick="switchAuthMode('register')">Create an account</button></p>
+          <p class="auth-login-line">New to ATIEARNBD? <button type="button" onclick="switchAuthMode('register')">Create an account</button></p>
         </section>
 
         <div id="authGoogleArea" class="auth-google-wrap">
@@ -1131,7 +1134,7 @@
           <button class="auth-google" type="button" onclick="googlePreview()"><i class="fa-brands fa-google"></i> Continue with Google</button>
         </div>
         <button type="button" class="auth-skip" onclick="closeRegisterPreview()"><i class="fa-solid fa-forward-step"></i> Skip for now · Open Preview</button>
-        <div class="auth-security-note"><span><i class="fa-solid fa-shield-halved"></i></span><div><b>ATIMEX Member Access</b><small>Authentication and account security will be connected in the next development stage.</small></div></div>
+        <div class="auth-security-note"><span><i class="fa-solid fa-shield-halved"></i></span><div><b>ATIEARNBD Member Access</b><small>Authentication and account security will be connected in the next development stage.</small></div></div>
         <p class="auth-bottom-note">DESIGN PREVIEW · No account will be created or accessed yet.</p>
       </div>
     </div>
@@ -1301,7 +1304,7 @@
         network: { title:"My Network", html:'<div class="profile-popup-stats"><div class="profile-popup-stat"><small>TEAM MEMBERS</small><b>0</b></div><div class="profile-popup-stat"><small>ACTIVE REFERRALS</small><b>0</b></div></div><div class="popup-empty"><i class="fa-solid fa-people-group"></i><b>Network is not connected</b><small>Referral links and verified team information will appear after account services are connected.</small></div>' },
         redeem: { title:"Redeem Code", html:'<div class="profile-popup-card"><strong>Claim a demo reward</strong><small>Code redemption is a visual preview only. No code or cash reward can be claimed at this stage.</small></div><label for="previewRedeemCode" style="display:block;font-size:8px;font-weight:900;color:#8a9a90;margin:12px 0 5px">REDEEM CODE</label><input id="previewRedeemCode" class="popup-select" type="text" placeholder="Enter your code" autocomplete="off"><button class="gbtn full" onclick="showToast(\'Code redemption is not connected in this preview.\')">CHECK CODE</button>' },
         support: { title:"Customer Service", html:'<div class="profile-popup-card"><strong>Support information</strong><small>Support hours, verified contact details and ticket submission will be added when official support channels are ready.</small></div><div class="popup-empty"><i class="fa-solid fa-headset"></i><b>Support contact not configured</b><small>Please do not send personal or payment information to unofficial contacts.</small></div>' },
-        app: { title:"ATIMEX App", html:'<div class="profile-popup-card"><strong>App-style experience</strong><small>This responsive website is designed to feel like a mobile app. A verified installable app package is not available in this preview.</small></div><div class="profile-popup-row"><i class="fa-solid fa-mobile-screen-button"></i><span><b>Mobile-friendly layout</b><small>Use the browser menu to add the site to your home screen when supported.</small></span></div>' },
+        app: { title:"ATIEARNBD App", html:'<div class="profile-popup-card"><strong>App-style experience</strong><small>This responsive website is designed to feel like a mobile app. A verified installable app package is not available in this preview.</small></div><div class="profile-popup-row"><i class="fa-solid fa-mobile-screen-button"></i><span><b>Mobile-friendly layout</b><small>Use the browser menu to add the site to your home screen when supported.</small></span></div>' },
         currency: { title:"Currency", html:'<p>Choose a display preference. This setting does not convert balances or change any underlying amount.</p><label for="profileCurrency" style="display:block;font-size:8px;font-weight:900;color:#8a9a90">CURRENCY PREFERENCE</label><select id="profileCurrency" class="popup-select"><option value="BDT">BDT · Bangladeshi Taka</option><option value="USDT">USDT · Tether</option><option value="INR">INR · Indian Rupee</option></select><button class="gbtn full" onclick="saveProfilePreference(\'currency\',\'profileCurrency\')">Save Preference</button>' },
         language: { title:"Language", html:'<p>Choose a language preference for a future translated interface. This preview currently remains in its existing language.</p><label for="profileLanguage" style="display:block;font-size:8px;font-weight:900;color:#8a9a90">LANGUAGE PREFERENCE</label><select id="profileLanguage" class="popup-select"><option value="system">System language</option><option value="bn">বাংলা</option><option value="en">English</option><option value="hi">हिन्दी</option></select><button class="gbtn full" onclick="saveProfilePreference(\'language\',\'profileLanguage\')">Save Preference</button>' },
         security: { title:"Security Center", html:'<div class="profile-popup-card"><strong><i class="fa-solid fa-shield-halved"></i> Protect your account</strong><small>Authentication, password changes, active sessions and recovery options are not connected yet.</small></div><div class="popup-note">Never share your password, one-time code or payment PIN with anyone claiming to be support.</div>' },
@@ -1440,7 +1443,7 @@
     function googlePreview() {
       showToast('Continue with Google — Supabase Google Auth will be connected later.');
     }
-    function prepareATIMEXGlassShatter(splash) {
+    function prepareATIEARNBDGlassShatter(splash) {
       const word = splash?.querySelector('.splash-word');
       if (!splash || !word) return null;
 
@@ -1536,12 +1539,12 @@
       if (!ctx) return null;
 
       const cache = { canvas, ctx, texture, shards, dpr, width:splashRect.width, height:splashRect.height, started:false };
-      drawATIMEXGlassFrame(cache, 0);
+      drawATIEARNBDGlassFrame(cache, 0);
       splash.appendChild(canvas);
       return cache;
     }
 
-    function drawATIMEXGlassFrame(cache, progress) {
+    function drawATIEARNBDGlassFrame(cache, progress) {
       const { ctx, texture, shards, dpr, width, height } = cache;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, width, height);
@@ -1642,7 +1645,7 @@
 
       function animate(now) {
         const progress = Math.min(1, (now - start) / duration);
-        drawATIMEXGlassFrame(cache, progress);
+        drawATIEARNBDGlassFrame(cache, progress);
         if (progress < 1) {
           requestAnimationFrame(animate);
         } else {
@@ -1658,7 +1661,7 @@
     window.addEventListener('load', () => {
       document.body.style.overflow = 'hidden';
       // Prepare the canvas texture and every fragment before the 6.7-second intro finishes.
-      window.atimexSplashShatterCache = prepareATIMEXGlassShatter(document.getElementById('atimexSplash'));
+      window.atimexSplashShatterCache = prepareATIEARNBDGlassShatter(document.getElementById('atimexSplash'));
       window.setTimeout(showAuthAfterSplash, 6700);
     }, { once: true });
     const demoTaskPoints = { profile:10, daily:5, guide:15, security:10 };
