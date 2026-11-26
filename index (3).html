@@ -1279,7 +1279,8 @@
       const active = getDemoServers();
       const activeEl = document.getElementById("myServersList");
       const historyEl = document.getElementById("serverHistoryList");
-      // Payment preview buttons must remain available even if a previous local demo exists.\n      if (activeEl) activeEl.innerHTML = active.length ? active.map(item => {
+      // Payment preview buttons remain available after local demo activation.
+      if (activeEl) activeEl.innerHTML = active.length ? active.map(item => {
         const expires = new Date(item.startedAt + 7*24*60*60*1000);
         return '<div class="server-active-row"><span class="server-active-icon"><i class="fa-solid ' + icons[item.key] + '"></i></span><span class="server-active-copy"><b>' + names[item.key] + ' · Free demo</b><small>Started ' + new Date(item.startedAt).toLocaleDateString() + ' · Ends ' + expires.toLocaleDateString() + '</small></span><span class="server-active-status">ACTIVE</span></div>';
       }).join("") : '<div class="server-empty"><span><i class="fa-solid fa-server"></i></span><b>No active demo server</b><small>Activate a free preview above to see it here.</small></div>';
