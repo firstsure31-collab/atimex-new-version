@@ -710,6 +710,8 @@
     .payment-tutorial-heading i{color:#15965d}
     .payment-tutorial ol{margin:10px 0 0;padding-left:18px;color:#7e9184;font-size:8px;line-height:1.8}
     .payment-tutorial li{padding:2px 0 2px 3px}
+    .payment-copy{border:1px solid #d8eee0;border-radius:10px;background:#effaf3;color:#138b54;padding:8px 11px;font:900 8px 'DM Sans',sans-serif;cursor:pointer}
+    .payment-copy:active{transform:scale(.97)}
     .payment-recipient-box{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:12px 0;padding:12px;border:1px solid #e1ece4;border-radius:13px;background:#f8fcf9}
     .payment-recipient-box small{display:block;color:#94a398;font-size:6px;font-weight:900;letter-spacing:.8px}
     .payment-recipient-box b{display:block;margin-top:5px;color:#698171;font-size:9px}
@@ -1055,8 +1057,8 @@
             </ol>
           </div>
           <div class="payment-recipient-box">
-            <div><small>MERCHANT PAYMENT NUMBER</small><b>Demo mode · Not configured</b></div>
-            <button type="button" class="payment-copy-disabled" disabled><i class="fa-regular fa-copy"></i> COPY</button>
+            <div><small>PAYMENT NUMBER</small><b id="paymentRecipientNumber">01731567454</b></div>
+            <button type="button" class="payment-copy" onclick="copyPaymentNumber()"><i class="fa-regular fa-copy"></i> COPY</button>
           </div>
           <label class="payment-field-label" for="demoSenderNumber">SENDER NUMBER · SAMPLE ONLY</label>
           <input class="payment-field" id="demoSenderNumber" type="tel" inputmode="numeric" maxlength="11" placeholder="01XXXXXXXXX" autocomplete="off">
@@ -1160,8 +1162,11 @@
       bkash:{name:"bKash",logo:'<img src="https://raw.githubusercontent.com/mdmubarokhosin/Bd-MFS-Logo/refs/heads/main/logos/png/bkash.png" alt="bKash logo">',className:"bkash"},
       nagad:{name:"Nagad",logo:'<img src="https://raw.githubusercontent.com/mdmubarokhosin/Bd-MFS-Logo/refs/heads/main/logos/png/nagad.png" alt="Nagad logo">',className:"nagad"},
       rocket:{name:"Rocket",logo:'<img src="https://raw.githubusercontent.com/mdmubarokhosin/Bd-MFS-Logo/refs/heads/main/logos/png/rocket.png" alt="Rocket logo">',className:"rocket"},
-      upay:{name:"Upay",logo:'<img src="https://raw.githubusercontent.com/mdmubarokhosin/Bd-MFS-Logo/refs/heads/main/logos/png/upay.png" alt="Upay logo">',className:"upay"}
+      upay:{name:"Upay",logo:'<img src="https://raw.githubusercontent.com/mdmubarokhosin/Bd-MFS-Logo/refs/heads/main/logos/png/upay.png" alt="Upay logo">',className:"upay",number:"01411169877"}
     };
+    DEMO_PAYMENT_METHODS.bkash.number="01731567454";
+    DEMO_PAYMENT_METHODS.nagad.number="01940779877";
+    DEMO_PAYMENT_METHODS.rocket.number="01731567454";
     const DEMO_SERVER_PACKAGES = {
       premium:{name:"Premium",price:10000,priceLabel:"৳১০,০০০",days:7},
       platinum:{name:"Platinum",price:7000,priceLabel:"৳৭,০০০",days:7},
@@ -1227,6 +1232,8 @@
       logo.className="pay-logo large "+data.className;
       logo.innerHTML=data.logo;
       document.getElementById("paymentDetailName").textContent=data.name;
+      const recipient=document.getElementById("paymentRecipientNumber");
+      if(recipient)recipient.textContent=data.number;
       const title=document.getElementById("paymentDetailContextTitle");
       const amount=document.getElementById("paymentDetailContextAmount");
       const label=document.getElementById("paymentDetailContextLabel");
@@ -1246,6 +1253,16 @@
       document.getElementById("demoSenderNumber").value="";
       document.getElementById("demoTrxId").value="";
       document.getElementById("paymentBackBtn").innerHTML='<i class="fa-solid fa-arrow-left"></i>';
+    }
+    async function copyPaymentNumber(){
+      const number=DEMO_PAYMENT_METHODS[paymentContext.method]?.number;
+      if(!number)return;
+      try{
+        await navigator.clipboard.writeText(number);
+        showToast("Payment number copied.");
+      }catch(_){
+        showToast("Copy unavailable. Please copy the number manually.");
+      }
     }
     function paymentGoBack(){
       if(paymentContext.step==="detail"){
