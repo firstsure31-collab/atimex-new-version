@@ -714,6 +714,14 @@
     .demo-payment-status{margin-top:12px;padding:12px;border:1px solid #bfe8cc;border-radius:12px;background:#edfaf1;color:#16844f;font-size:9px;font-weight:800;line-height:1.6}
     .payment-footnote{margin:11px 0 0;color:#9aa89f;font-size:7px;line-height:1.6;text-align:center}
     @media(max-width:360px){.payment-content{padding-left:12px;padding-right:12px}.payment-method-option{padding:11px 8px;gap:7px}.pay-logo{width:36px;height:36px}}
+\n
+    .payment-amount-wrap{margin:13px 0;padding:12px;border:1px solid #e4eee7;border-radius:14px;background:#fff}
+    .payment-amount-wrap[hidden]{display:none}
+    .payment-amount-wrap label{display:block;color:#8c9f92;font-size:7px;font-weight:900;letter-spacing:.8px}
+    .payment-amount-wrap>div{display:flex;align-items:center;gap:8px;margin-top:7px}
+    .payment-amount-wrap>div span{color:#188c55;font:900 17px 'Plus Jakarta Sans',sans-serif}
+    .payment-amount-wrap input{width:100%;height:32px;border:0;outline:0;background:transparent;color:#21442e;font:900 18px 'Plus Jakarta Sans',sans-serif}
+    .payment-amount-wrap small{display:block;margin-top:4px;color:#a0ada4;font-size:7px}
 \n  </style>
 </head>
 <body>
@@ -985,6 +993,11 @@
           <div class="payment-context-card" id="paymentContextCard">
             <small>PAYMENT SUMMARY · DEMO</small><b id="paymentContextTitle">Deposit preview</b><strong id="paymentContextAmount">Amount not set</strong>
           </div>
+          <div id="depositAmountWrap" class="payment-amount-wrap">
+            <label for="depositAmountInput">DEPOSIT AMOUNT · DEMO ONLY</label>
+            <div><span>৳</span><input id="depositAmountInput" type="number" min="100" step="1" value="100" oninput="updatePaymentAmountPreview()" inputmode="numeric"></div>
+            <small>Sample amount only · Minimum preview value ৳100</small>
+          </div>
           <div class="payment-method-grid">
             <button class="payment-method-option" onclick="openPaymentMethod('bkash')"><span class="pay-logo bkash">bK</span><span><b>bKash</b><small>Mobile wallet</small></span><i class="fa-solid fa-chevron-right"></i></button>
             <button class="payment-method-option" onclick="openPaymentMethod('nagad')"><span class="pay-logo nagad">ন</span><span><b>Nagad</b><small>Mobile wallet</small></span><i class="fa-solid fa-chevron-right"></i></button>
@@ -1129,6 +1142,8 @@
       const amount=document.getElementById("paymentContextAmount");
       const subtitle=document.getElementById("paymentChooserSubtitle");
       const summary=document.getElementById("paymentContextCard");
+      const depositWrap=document.getElementById("depositAmountWrap");
+      if(depositWrap)depositWrap.hidden=type==="package";
       if(type==="package" && DEMO_SERVER_PACKAGES[packageKey]){
         const pack=DEMO_SERVER_PACKAGES[packageKey];
         if(title)title.textContent=pack.name+" · Package sample";
@@ -1136,10 +1151,11 @@
         if(subtitle)subtitle.textContent="Choose a payment method to view its separate demo guide.";
       }else{
         if(title)title.textContent="Deposit · Demo preview";
-        if(amount)amount.textContent="Demo amount not set";
+        if(amount)amount.textContent="৳100";
         if(subtitle)subtitle.textContent="Select bKash, Nagad, Rocket or Upay to open its individual demo page.";
       }
       if(summary)summary.hidden=false;
+      if(type==="deposit")updatePaymentAmountPreview();
       document.getElementById("paymentChooser").hidden=false;
       document.getElementById("paymentDetail").hidden=true;
       document.getElementById("paymentScreen").classList.add("show");
@@ -1149,6 +1165,16 @@
       const sender=document.getElementById("demoSenderNumber");if(sender)sender.value="";
       const trx=document.getElementById("demoTrxId");if(trx)trx.value="";
       if(method)openPaymentMethod(method);
+    }
+    function updatePaymentAmountPreview(){
+      if(paymentContext.type!=="deposit")return;
+      const input=document.getElementById("depositAmountInput");
+      const raw=Number(input?.value||0);
+      const display=Number.isFinite(raw)&&raw>=100?"৳"+raw.toLocaleString("en-BD"):"Enter at least ৳100";
+      const amount=document.getElementById("paymentContextAmount");
+      const detailAmount=document.getElementById("paymentDetailContextAmount");
+      if(amount)amount.textContent=display;
+      if(detailAmount)detailAmount.textContent=display;
     }
     function openPaymentMethod(method){
       const data=DEMO_PAYMENT_METHODS[method];
